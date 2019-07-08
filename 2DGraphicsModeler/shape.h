@@ -15,11 +15,11 @@ public:
     virtual ~Shape();
     //const QBrush& get_brush()const;
 
-    void set_shape(ShapeType shape);
-    void set_pen(Qt::GlobalColor, int width, Qt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle);
-    void set_brush(Qt::GlobalColor, Qt::BrushStyle);
+    void setShape(ShapeType shape);
+    void setPen(Qt::GlobalColor, int width, Qt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle);
+    void setBrush(Qt::GlobalColor, Qt::BrushStyle);
 
-    void default_style();
+    void defaultStyle();
     void draw_rect(int width,   int height);
     virtual void draw(const int x, const int y)=0;
 protected:
