@@ -1,37 +1,51 @@
 #include "shape.h"
 
-Shape::Shape(): shapeId {0},\
-    shape {NONE}, pen(),brush()
-{}
-Shape::~Shape()
-{}
-void Shape::setShape(ShapeType rhs)
-{
-    shape=rhs;
+//Shape::Shape():  qpainter{nullptr},
+//    shapeId{0},shape{NONE}, pen{NONE},brush{NONE}
+//{
+//}
+
+Shape::~Shape(){}
+
+ShapeType Shape::get_shape() const{
+    return shape;
+}
+const QBrush& Shape::get_brush()const{
+    return brush;
+}
+const QPen& Shape::get_pen()const{
+    return pen;
+}
+//const Shape::QPencil& get_pencil()const{
+//    return pencil;
+//}
+
+void Shape::set_shape(ShapeType shapeIn){
+    shape=shapeIn;
 }
 
-void Shape::setPen(Qt::GlobalColor gc, int width, Qt::PenStyle ps,\
-                   Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs)
+void Shape::set_pen(Qt::GlobalColor , int penWidth, Qt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle )
 {
-    pen.setColor(gc);
-    pen.setWidth(width);
-    pen.setStyle(ps);
-    pen.setCapStyle(pcs);
-    pen.setJoinStyle(pjs);
+
+   pen.setColor(penColor);
+   pen.setWidth(penWidth);
+   pen.setStyle(penStyle);
+   pen.setCapStyle(penCapStyle);
+   pen.setJoinStyle(penJoinStyle);
+
+}
+//void set_pencil(Qt::GlobalColor);
+
+
+void Shape::set_brush(Qt::GlobalColor, Qt::BrushStyle)
+{
+    brush.setColor(brushColor);
+    brush.setStyle(brushStyle);
 }
 
-void Shape::setBrush(Qt::GlobalColor gc, Qt::BrushStyle bs)
+QPainter& Shape::get_qpainter()
 {
-    brush.setColor(gc);
-    brush.setStyle(bs);
+    return qpainter;
 }
+//void default_style();
 
-void Shape::defaultStyle()
-{
-    pen.setColor(Qt::black);
-    pen.setWidth(0);
-    pen.setCapStyle(Qt::SquareCap);
-    pen.setJoinStyle(Qt::RoundJoin);
-    brush.setColor(Qt::black);
-    brush.setStyle(Qt::SolidPattern);
-}
