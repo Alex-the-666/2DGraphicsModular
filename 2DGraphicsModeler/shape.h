@@ -13,7 +13,7 @@ class Shape
 public:
     Shape();
     virtual ~Shape();
-    const QBrush& get_brush()const;
+    //const QBrush& get_brush()const;
 
     void set_shape(ShapeType shape);
     void set_pen(Qt::GlobalColor, int width, Qt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle);
@@ -23,10 +23,10 @@ public:
     void draw_rect(int width,   int height);
     virtual void draw(const int x, const int y)=0;
 protected:
-    QPainter& get_qpainter();
+    //QPainter& get_qpainter();
 
 private:
-    QPainter& qpainter;
+    //QPainter& qpainter;
 
     //shapeDimensions must be inherited
 
