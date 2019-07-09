@@ -13,6 +13,8 @@ class Shape
 public:
     Shape() = delete;
     Shape(QPaintDevice* parent);
+    Shape(Shape&) = delete;
+    Shape& operator =(Shape&)= delete;
 
     virtual ~Shape();
 
@@ -26,10 +28,12 @@ public:
                  Qt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle);
     void set_brush(Qt::GlobalColor, Qt::BrushStyle);
 
-    void default_style();
+    void defaultStyle();
 
     virtual void draw(const int x, const int y)=0;
-   virtual void move(int xIn, int yIn) = 0;
+    virtual void move(int xIn, int yIn) = 0;
+    virtual double area()=0;
+    virtual double perimeter()=0;
 
 protected:
     QPainter& get_qpainter();
