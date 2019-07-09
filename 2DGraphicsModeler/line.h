@@ -17,7 +17,7 @@ public:
     void setDimension(int x,int y,int x2,int y2);
 
     void draw (const int x, const int y)override;
-    void move(int x, int y) override;
+    void move(const int x,const int y) override;
     double area() override;
     double perimeter() override;
 
