@@ -1,8 +1,10 @@
-#pragma once
 #ifndef VECTOR_H
 #define VECTOR_H
 #include <stdexcept>
+
 const int STARTSIZE = 8;
+
+namespace  custom {
 template<typename T>
 class vector
 {
@@ -234,5 +236,5 @@ private:
 	T* elem;
 	int space;
 };
-
+}
 #endif // VECTOR_H
