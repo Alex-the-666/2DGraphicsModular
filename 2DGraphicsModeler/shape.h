@@ -7,7 +7,7 @@
 
 using namespace std;
 
-enum ShapeType{LINE,POLYLINE, POLYGON,RECTANGLE,SQUARE, ELLIPSE};
+enum ShapeType{LINE,POLYLINE, POLYGON,RECTANGLE,ELLIPSE, TEXT};
 class Shape
 {
 public:
