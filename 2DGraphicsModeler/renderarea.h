@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QWidget>
-#include "shape.h"
+#include "line.h"
 
 class RenderArea : public QWidget
 {

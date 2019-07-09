@@ -10,5 +10,6 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
 
 void RenderArea::paintEvent(QPaintEvent *event)
 {
-
+    Line test(this);
+    test.draw(3,4);
 }
