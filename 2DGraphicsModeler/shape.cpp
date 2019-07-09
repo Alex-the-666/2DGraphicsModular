@@ -14,36 +14,32 @@ const QBrush& Shape::get_brush()const{
 const QPen& Shape::get_pen()const{
     return pen;
 }
-//const Shape::QPencil& get_pencil()const{
-//    return pencil;
-//}
 
-void Shape::set_shape(ShapeType shapeIn){
-    shape=shapeIn;
+void Shape::set_shape(ShapeType arg){
+    shape=arg;
 }
 
-void Shape::set_pen(Qt::GlobalColor , int penWidth, Qt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle )
+void Shape::set_pen(Qt::GlobalColor gc, int width,\
+                    Qt::PenStyle ps, Qt::PenCapStyle pcs,\
+                    Qt::PenJoinStyle pjs)
 {
-
-   pen.setColor(penColor);
-   pen.setWidth(penWidth);
-   pen.setStyle(penStyle);
-   pen.setCapStyle(penCapStyle);
-   pen.setJoinStyle(penJoinStyle);
-
+   pen.setColor(gc);
+   pen.setWidth(width);
+   pen.setStyle(ps);
+   pen.setCapStyle(pcs);
+   pen.setJoinStyle(pjs);
 }
-//void set_pencil(Qt::GlobalColor);
 
 
-void Shape::set_brush(Qt::GlobalColor, Qt::BrushStyle)
+void Shape::set_brush(Qt::GlobalColor gc, Qt::BrushStyle bs)
 {
-    brush.setColor(brushColor);
-    brush.setStyle(brushStyle);
+    brush.setColor(gc);
+    brush.setStyle(bs);
 }
 
 QPainter& Shape::get_qpainter()
 {
     return painter;
 }
-//void default_style();
+
 
