@@ -8,12 +8,19 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     setAutoFillBackground(true);
 }
 
-void RenderArea::addShape(const Shape & rhs)
+void RenderArea::addShape(Shape* rhs)
 {
-    Shape* temp = nullptr;
-    switch(rhs.getShape())
+    switch(rhs->getShape())
     {
     case LINE:
+    {
+        Line* temp = new Line(this, LINE, rhs->getPen(), rhs->getBrush());
+        temp->setDimension(dynamic_cast<Line*>(rhs)->getQPointOne(),\
+                           dynamic_cast<Line*>(rhs)->getQPointTwo());
+        shapeVector.push_back(temp);
+        temp = nullptr;
+    }
+
         break;
     case POLYLINE:
         break;
@@ -26,12 +33,17 @@ void RenderArea::addShape(const Shape & rhs)
     case TEXT:
         break;
     }
-
-    shapeVector.push_back( nullptr);
 }
 
 void RenderArea::paintEvent(QPaintEvent *event)
 {
-    Line test(this);
-    test.draw(3,4);
+    Line asdf(this);
+    asdf.setDimension(10,10,400,400);
+   // asdf.draw(100,100);
+    Line* aser = &asdf;
+    addShape(aser);
+    custom::vector<Shape*>::iterator it = shapeVector.begin();
+    Shape* qwer =(*it);
+    //qwer->draw(34,34);
+    //Crashing here.
 }
