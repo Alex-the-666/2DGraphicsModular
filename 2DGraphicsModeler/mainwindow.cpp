@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
      file->addAction(saveAction);
      file->addAction(openAction);
      connect(quitAction, &QAction::triggered, qApp, &QApplication::quit);
+
+     renderArea = new RenderArea(this);
 }
 
 MainWindow::~MainWindow()
