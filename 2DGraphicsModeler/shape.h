@@ -23,15 +23,15 @@ public:
 
     virtual ~Shape();
 
-    ShapeType get_shape() const;
-    const QBrush& get_brush()const;
-    const QPen& get_pen()const;
+    ShapeType getShape() const;
+    const QBrush& getBrush()const;
+    const QPen& getPen()const;
 
 
-    void set_shape(ShapeType arg);
-    void set_pen(Qt::GlobalColor gc1, int width,\
+    void setShape(ShapeType arg);
+    void setPen(Qt::GlobalColor gc1, int width,\
                  Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs);
-    void set_brush(Qt::GlobalColor gc2, Qt::BrushStyle bs);
+    void setBrush(Qt::GlobalColor gc2, Qt::BrushStyle bs);
 
     void defaultStyle();
 
@@ -41,7 +41,7 @@ public:
     virtual double perimeter()=0;
 
 protected:
-    QPainter& get_qpainter();
+    QPainter& getQPainter();
 
 
 private:

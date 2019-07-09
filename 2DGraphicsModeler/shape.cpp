@@ -23,21 +23,21 @@ Shape::Shape(QPaintDevice *parent, ShapeType arg,\
 
 Shape::~Shape(){}
 
-ShapeType Shape::get_shape() const{
+ShapeType Shape::getShape() const{
     return shape;
 }
-const QBrush& Shape::get_brush()const{
+const QBrush& Shape::getBrush()const{
     return brush;
 }
-const QPen& Shape::get_pen()const{
+const QPen& Shape::getPen()const{
     return pen;
 }
 
-void Shape::set_shape(ShapeType arg){
+void Shape::setShape(ShapeType arg){
     shape=arg;
 }
 
-void Shape::set_pen(Qt::GlobalColor gc, int width,\
+void Shape::setPen(Qt::GlobalColor gc, int width,\
                     Qt::PenStyle ps, Qt::PenCapStyle pcs,\
                     Qt::PenJoinStyle pjs)
 {
@@ -49,7 +49,7 @@ void Shape::set_pen(Qt::GlobalColor gc, int width,\
 }
 
 
-void Shape::set_brush(Qt::GlobalColor gc, Qt::BrushStyle bs)
+void Shape::setBrush(Qt::GlobalColor gc, Qt::BrushStyle bs)
 {
     brush.setColor(gc);
     brush.setStyle(bs);
@@ -66,7 +66,7 @@ void Shape::defaultStyle()
 }
 
 
-QPainter& Shape::get_qpainter()
+QPainter& Shape::getQPainter()
 {
     return painter;
 }

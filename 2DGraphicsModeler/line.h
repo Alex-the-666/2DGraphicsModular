@@ -11,9 +11,16 @@ public:
                Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
                Qt::GlobalColor gc2, Qt::BrushStyle bs);
     Line(QPaintDevice *parent, ShapeType arg,\
-         QPen rhsPen, QBrush rhsBrush):\
-        Shape(parent,arg,rhsPen,rhsBrush);
-    virtual ~Line();
+         QPen rhsPen, QBrush rhsBrush);
+    virtual ~Line()override;
+
+    void setDimension(int x,int y,int x2,int y2);
+
+    void draw (const int x, const int y)override;
+    void move(int x, int y) override;
+    double area() override;
+    double perimeter() override;
+
 private:
     QPoint one,two;
 };
