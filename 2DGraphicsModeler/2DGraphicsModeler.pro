@@ -25,11 +25,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        line.cpp \
         main.cpp \
         mainwindow.cpp \
         shape.cpp
 
 HEADERS += \
+        line.h \
         mainwindow.h \
         shape.h \
         vector.h
