@@ -37,6 +37,17 @@ void Shape::set_brush(Qt::GlobalColor gc, Qt::BrushStyle bs)
     brush.setStyle(bs);
 }
 
+void Shape::defaultStyle()
+{
+    pen.setColor(Qt::black);
+    pen.setWidth(0);
+    pen.setCapStyle(Qt::SquareCap);
+    pen.setJoinStyle(Qt::RoundJoin);
+    brush.setColor(Qt::black);
+    brush.setStyle(Qt::SolidPattern);
+}
+
+
 QPainter& Shape::get_qpainter()
 {
     return painter;
