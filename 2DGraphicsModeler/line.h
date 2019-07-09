@@ -15,6 +15,7 @@ public:
     virtual ~Line()override;
 
     void setDimension(int x,int y,int x2,int y2);
+    void setDimension(QPoint one,QPoint two);
 
     QPoint getQPointOne()const;
     QPoint getQPointTwo()const;

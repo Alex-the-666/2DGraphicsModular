@@ -35,6 +35,22 @@ void Line::setDimension(int x, int y, int x2, int y2)
     two.setY(y2);
 }
 
+void Line::setDimension(QPoint rhs1, QPoint rhs2)
+{
+    one = rhs1;
+    two = rhs2;
+}
+
+QPoint Line::getQPointOne() const
+{
+    return one;
+}
+
+QPoint Line::getQPointTwo() const
+{
+ return two;
+}
+
 void Line::draw(const int x, const int y)
 {
     QPainter& painter = getQPainter();
