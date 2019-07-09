@@ -35,10 +35,10 @@ public:
 
     void defaultStyle();
 
-    virtual void draw(const int x, const int y)=0;
+    virtual void draw(const int x, const int y) = 0;
     virtual void move(const int x,const int y) = 0;
-    virtual double area()=0;
-    virtual double perimeter()=0;
+    virtual double area() const = 0;
+    virtual double perimeter() const =0;
 
 protected:
     QPainter& getQPainter();

@@ -47,12 +47,12 @@ void Line::move(int x, int y)
     "I do nothing right now XD";
 }
 
-double Line::area()
+double Line::area() const
 {
     return 0;
 }
 
-double Line::perimeter()
+double Line::perimeter() const
 {
     return sqrt(QPoint::dotProduct(one,two));
 }
