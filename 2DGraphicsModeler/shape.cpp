@@ -1,9 +1,7 @@
 #include "shape.h"
 
-//Shape::Shape():  qpainter{nullptr},
-//    shapeId{0},shape{NONE}, pen{NONE},brush{NONE}
-//{
-//}
+Shape::Shape(QPaintDevice* parent): painter(parent)
+{}
 
 Shape::~Shape(){}
 
@@ -45,7 +43,7 @@ void Shape::set_brush(Qt::GlobalColor, Qt::BrushStyle)
 
 QPainter& Shape::get_qpainter()
 {
-    return qpainter;
+    return painter;
 }
 //void default_style();
 

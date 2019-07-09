@@ -1,12 +1,8 @@
 #ifndef SHAPE_H
 #define SHAPE_H
-#include <string>
-#include <iostream>
-#include <iomanip>
 #include <Qt>
 #include <QFont>
-#include <QPen>
-#include <QBrush>
+#include <QPainter>
 #include "vector.h"
 
 using namespace std;
@@ -17,12 +13,12 @@ struct ShapeDimensions
    int width;
 };
 
-enum ShapeType{NONE,LINE,POLYLINE, POLYGON,RECTANGLE,SQUARE, ELLIPSE};
+enum ShapeType{LINE,POLYLINE, POLYGON,RECTANGLE,SQUARE, ELLIPSE};
 class Shape
 {
 public:
-    Shape(QPaintDevice* device = nullptr, int shapeId = 0, ShapeType shape = ShapeType::NONE);
-    //Shape( int shapeId,ShapeType shape,QPen pen, QBrush brush,QPainter* qpainter);
+    Shape() = delete;
+    Shape(QPaintDevice* parent);
 
     virtual ~Shape();
 
@@ -47,12 +43,7 @@ protected:
 
 
 private:
-    QPainter& qpainter;
-
-    QPaintDevice* device;
-
-    //shapeDimensions must be inherited
-
+    QPainter painter;
     int shapeId;
     ShapeType shape;
     QPen pen;
