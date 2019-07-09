@@ -3,13 +3,16 @@
 
 #include <QObject>
 #include <QWidget>
+#include "shape.h"
 #include "line.h"
+#include "vector.h"
 
 class RenderArea : public QWidget
 {
     Q_OBJECT
 public:
     explicit RenderArea(QWidget *parent = nullptr);
+    void addShape(const Shape&);
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -17,6 +20,8 @@ protected:
 signals:
 
 public slots:
+private:
+    custom::vector<Shape*> shapeVector;
 };
 
 #endif // RENDERAREA_H
