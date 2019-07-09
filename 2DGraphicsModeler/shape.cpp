@@ -3,6 +3,24 @@
 Shape::Shape(QPaintDevice* parent): painter(parent)
 {}
 
+Shape::Shape(QPaintDevice *parent, ShapeType arg,\
+             Qt::GlobalColor gc1, double width, Qt::PenStyle ps,\
+             Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
+             Qt::GlobalColor gc2, Qt::BrushStyle bs):\
+    painter(parent),shape {arg},
+    pen(gc1,width,ps,pcs,pjs),\
+    brush(gc2,bs)
+{}
+
+Shape::Shape(QPaintDevice *parent, ShapeType arg,\
+             QPen rhsPen, QBrush rhsBrush):\
+    painter(parent), shape {arg},\
+    pen(rhsPen), brush (rhsBrush)
+{
+
+}
+
+
 Shape::~Shape(){}
 
 ShapeType Shape::get_shape() const{

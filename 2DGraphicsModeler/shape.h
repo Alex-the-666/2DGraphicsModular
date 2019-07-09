@@ -13,6 +13,11 @@ class Shape
 public:
     Shape() = delete;
     Shape(QPaintDevice* parent);
+    Shape(QPaintDevice* parent, ShapeType arg, Qt::GlobalColor gc1, double width,\
+          Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
+          Qt::GlobalColor gc2, Qt::BrushStyle bs);
+    Shape(QPaintDevice *parent, ShapeType arg,\
+          QPen rhsPen, QBrush rhsBrush);
     Shape(Shape&) = delete;
     Shape& operator =(Shape&)= delete;
 
@@ -24,9 +29,9 @@ public:
 
 
     void set_shape(ShapeType arg);
-    void set_pen(Qt::GlobalColor, int width,\
-                 Qt::PenStyle, Qt::PenCapStyle, Qt::PenJoinStyle);
-    void set_brush(Qt::GlobalColor, Qt::BrushStyle);
+    void set_pen(Qt::GlobalColor gc1, int width,\
+                 Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs);
+    void set_brush(Qt::GlobalColor gc2, Qt::BrushStyle bs);
 
     void defaultStyle();
 
