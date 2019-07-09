@@ -37,13 +37,13 @@ void RenderArea::addShape(Shape* rhs)
 
 void RenderArea::paintEvent(QPaintEvent *event)
 {
-    Line asdf(this);
-    asdf.setDimension(10,10,400,400);
-   // asdf.draw(100,100);
-    Line* aser = &asdf;
-    addShape(aser);
+    Line line1(this);
+    line1.setShape(LINE);
+    line1.setDimension(10,10,400,400);
+    line1.draw(100,100);
+    addShape(&line1);
     custom::vector<Shape*>::iterator it = shapeVector.begin();
-    Shape* qwer =(*it);
-    //qwer->draw(34,34);
+    (*it)->draw(30,30);
+
     //Crashing here.
 }

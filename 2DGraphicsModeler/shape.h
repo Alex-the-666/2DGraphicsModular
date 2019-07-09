@@ -18,6 +18,7 @@ public:
           Qt::GlobalColor gc2, Qt::BrushStyle bs);
     Shape(QPaintDevice *parent, ShapeType arg,\
           QPen rhsPen, QBrush rhsBrush);
+
     Shape(Shape&) = delete;
     Shape& operator =(Shape&)= delete;
 
