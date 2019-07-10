@@ -1,4 +1,5 @@
 #include "line.h"
+#include <cmath>
 
 Line::Line(QPaintDevice *parent): Shape(parent),\
     one(0,0), two(100,100)
