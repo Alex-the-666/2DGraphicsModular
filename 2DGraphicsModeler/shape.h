@@ -8,6 +8,8 @@
 using namespace std;
 
 enum ShapeType{LINE,POLYLINE, POLYGON,RECTANGLE,ELLIPSE, TEXT};
+const string SHAPE_IDENTIFIERS[] = {"LINE", "POLYLINE", "POLYGON", "RECTANGLE", "ELIPSE", "TEXT"};
+
 class Shape
 {
 public:
@@ -35,6 +37,9 @@ public:
     void setBrush(Qt::GlobalColor gc2, Qt::BrushStyle bs);
 
     void defaultStyle();
+
+    virtual void write(ostream& os);
+    virtual void read(istream& is);
 
     virtual void draw(const int x, const int y) = 0;
     virtual void move(const int x,const int y) = 0;

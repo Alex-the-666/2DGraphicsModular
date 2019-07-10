@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent) :
      file->addAction(saveAction);
      file->addAction(openAction);
      connect(quitAction, &QAction::triggered, qApp, &QApplication::quit);
-
      renderArea = new RenderArea(this);
 }
 
@@ -32,3 +31,5 @@ void MainWindow::on_actionLogin_triggered()
     admin = new adminLogin(this);
     admin -> show();
 }
+
+
