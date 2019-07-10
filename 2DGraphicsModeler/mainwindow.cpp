@@ -32,4 +32,16 @@ void MainWindow::on_actionLogin_triggered()
     admin -> show();
 }
 
+void MainWindow::on_actionLoad_triggered()
+{
+
+}
+
+void MainWindow::on_actionSave_triggered()
+{
+    admin = new adminLogin(this);
+    admin -> show();
+}
+
+
 
