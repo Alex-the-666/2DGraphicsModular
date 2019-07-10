@@ -7,6 +7,8 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
     move(0, 36);
+
+
 }
 
 void RenderArea::addShape(Shape* rhs)
@@ -38,11 +40,26 @@ void RenderArea::addShape(Shape* rhs)
 
 void RenderArea::paintEvent(QPaintEvent *event)
 {
-    Line line1(this);
-    line1.setDimension(10,10,400,400);
-    line1.draw(100,100);
-    addShape(&line1);
-    custom::vector<Shape*>::iterator it = shapeVector.begin();
-    (*it)->draw(0,0);
+    if(arthurTest==true)
+    {
+
+        Line *line1 = new Line(this);
+        line1->setDimension(10,10,100+offset,40+offset);
+        addShape(line1);
+
+
+        shapeVector.push_back(line1);
+        line1 = nullptr;
+
+        arthurTest=false;
+        if(offset<300)
+            offset +=30;
+}
+
+     custom::vector<Shape*>::iterator it;
+    for (it = shapeVector.begin(); it != shapeVector.end(); it++)
+    {
+        (*it)->draw(0,0);
+    }
 
 }

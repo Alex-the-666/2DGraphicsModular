@@ -32,3 +32,9 @@ void MainWindow::on_actionLogin_triggered()
     admin = new adminLogin(this);
     admin -> show();
 }
+
+void MainWindow::on_TestAddShape_released()
+{
+    renderArea->arthurTest=true;
+    renderArea->update();
+}

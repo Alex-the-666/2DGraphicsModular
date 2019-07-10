@@ -19,6 +19,9 @@ public:
 private slots:
     void on_actionLogin_triggered();
 
+
+    void on_TestAddShape_released();
+
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;

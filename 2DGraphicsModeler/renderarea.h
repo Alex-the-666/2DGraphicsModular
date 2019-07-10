@@ -13,6 +13,9 @@ class RenderArea : public QWidget
 public:
     explicit RenderArea(QWidget *parent = nullptr);
     void addShape(Shape* rhs);
+        bool arthurTest = false;
+        int offset=0;
+
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -22,6 +25,7 @@ signals:
 public slots:
 private:
     custom::vector<Shape*> shapeVector;
+
 };
 
 #endif // RENDERAREA_H
