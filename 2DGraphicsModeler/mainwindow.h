@@ -20,9 +20,7 @@ private slots:
     void on_actionLogin_triggered();
     void on_TestAddShape_released();
     void on_actionSave_triggered();
-    void on_actionLoad_triggered();
     void on_actionOpen_triggered();
-
     void on_actionQuit_triggered();
 
 private:
