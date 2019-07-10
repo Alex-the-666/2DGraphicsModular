@@ -71,4 +71,10 @@ QPainter& Shape::getQPainter()
     return painter;
 }
 
+void Shape::write(ostream &os){
+    os << SHAPE_IDENTIFIERS[shape];
+}
 
+void Shape::read(istream &is){
+
+}

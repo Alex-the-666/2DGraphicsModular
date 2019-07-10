@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent) :
      file->addAction(saveAction);
      file->addAction(openAction);
      connect(quitAction, &QAction::triggered, qApp, &QApplication::quit);
-
      renderArea = new RenderArea(this);
 }
 
@@ -38,3 +37,9 @@ void MainWindow::on_TestAddShape_released()
     renderArea->arthurTest=true;
     renderArea->update();
 }
+
+void MainWindow::on_actionLoad_triggered()
+{
+
+}
+
