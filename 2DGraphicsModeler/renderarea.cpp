@@ -45,7 +45,7 @@ void RenderArea::paintEvent(QPaintEvent *event)
 
         Line *line1 = new Line(this);
         line1->setDimension(10,10,100+offset,40+offset);
-        addShape(line1);
+        //addShape(line1);
 
 //This is the new version 7/10/2019 3:58PM
         shapeVector.push_back(line1);
