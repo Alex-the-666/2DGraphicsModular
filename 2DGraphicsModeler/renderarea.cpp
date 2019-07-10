@@ -15,7 +15,7 @@ void RenderArea::addShape(Shape* rhs)
     {
     case LINE:
     {
-        Line* temp = new Line(this, LINE, rhs->getPen(), rhs->getBrush());
+        Line* temp = new Line(this, rhs->getPen(), rhs->getBrush());
         temp->setDimension(dynamic_cast<Line*>(rhs)->getQPointOne(),\
                            dynamic_cast<Line*>(rhs)->getQPointTwo());
         shapeVector.push_back(temp);
@@ -39,12 +39,10 @@ void RenderArea::addShape(Shape* rhs)
 void RenderArea::paintEvent(QPaintEvent *event)
 {
     Line line1(this);
-    line1.setShape(LINE);
     line1.setDimension(10,10,400,400);
     line1.draw(100,100);
     addShape(&line1);
     custom::vector<Shape*>::iterator it = shapeVector.begin();
-    (*it)->draw(30,30);
+    (*it)->draw(0,0);
 
-    //Crashing here.
 }
