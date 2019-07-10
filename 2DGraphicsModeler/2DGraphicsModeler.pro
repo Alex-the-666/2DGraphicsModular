@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        adminlogin.cpp \
         line.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -32,6 +33,7 @@ SOURCES += \
         shape.cpp
 
 HEADERS += \
+        adminlogin.h \
         line.h \
         mainwindow.h \
         renderarea.h \
@@ -39,6 +41,7 @@ HEADERS += \
         vector.h
 
 FORMS += \
+        adminlogin.ui \
         mainwindow.ui
 
 # Default rules for deployment.

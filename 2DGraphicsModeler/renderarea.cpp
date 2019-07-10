@@ -6,6 +6,7 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     setMinimumSize(minSize);
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
+    move(0, 36);
 }
 
 void RenderArea::addShape(Shape* rhs)
