@@ -50,3 +50,4 @@ compile_commands.json
 #pro.user
 *.pro.user
 2DGraphicsModeler/2DGraphicsModeler.pro.user
+*.user
