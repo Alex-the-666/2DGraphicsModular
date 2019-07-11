@@ -10,8 +10,8 @@ Shape::Shape(QPaintDevice *parent, ShapeType arg,\
     painter(parent),shape {arg},
     pen(gc1,width,ps,pcs,pjs),\
     brush(gc2,bs)
-{}
 
+{}
 Shape::Shape(QPaintDevice *parent, ShapeType arg,\
              QPen rhsPen, QBrush rhsBrush):\
     painter(parent), shape {arg},\

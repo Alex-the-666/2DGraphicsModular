@@ -11,6 +11,11 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
 
 }
 
+void RenderArea::tripFlag()
+{
+ add = true;
+}
+
 void RenderArea::addShape(Shape* rhs)
 {
     switch(rhs->getShape())
@@ -38,28 +43,26 @@ void RenderArea::addShape(Shape* rhs)
     }
 }
 
-void RenderArea::paintEvent(QPaintEvent *event)
+void RenderArea::testAddLines()
 {
-    if(arthurTest==true)
+    if(add == true)
     {
+    Line *line1 = new Line(this);
+    line1->setDimension(10,10,100+offset,40+offset);
 
-        Line *line1 = new Line(this);
-        line1->setDimension(10,10,100+offset,40+offset);
-        //addShape(line1);
-
-//This is the new version 7/10/2019 3:58PM
-        shapeVector.push_back(line1);
-        line1 = nullptr;
-
-        arthurTest=false;
-        if(offset<300)
-            offset +=30;
+    shapeVector.push_back(line1);
+    if(offset<300)
+        offset +=30;
+    }
 }
 
-     custom::vector<Shape*>::iterator it;
-    for (it = shapeVector.begin(); it != shapeVector.end(); it++)
-    {
+void RenderArea::paintEvent(QPaintEvent *event)
+{
+  //for(int i =0; i<5;i++)
+  //{}
+    testAddLines();
+    for (custom::vector<Shape*>::iterator it = shapeVector.begin();\
+         it != shapeVector.end(); it++)
         (*it)->draw(0,0);
-    }
 
 }

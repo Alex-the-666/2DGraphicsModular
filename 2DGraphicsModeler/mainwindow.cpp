@@ -24,7 +24,7 @@ void MainWindow::on_actionLogin_triggered()
 
 void MainWindow::on_TestAddShape_released()
 {
-    renderArea->arthurTest=true;
+    renderArea->tripFlag();
     renderArea->update();
 }
 
