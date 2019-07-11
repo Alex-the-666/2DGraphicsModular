@@ -72,9 +72,23 @@ QPainter& Shape::getQPainter()
 }
 
 void Shape::write(ostream &os){
-    os << SHAPE_IDENTIFIERS[shape];
+    os << SHAPE_IDENTIFIERS[shape] << endl;
+    os << shapeId << endl;
 }
 
 void Shape::read(istream &is){
+   string readShapeTypeStr;
+   is >> readShapeTypeStr;//ok to use >> operator as shapes are just one word
+   this->shape = getShapeFromString(readShapeTypeStr);
+   is >> this->shapeId;
 
+}
+
+ShapeType Shape::getShapeFromString(string name){
+    for(int i = 0; i < 6; i++){
+        if(name.compare(SHAPE_IDENTIFIERS[i]) == 0){
+            return static_cast<ShapeType>(i);
+        }
+    }
+    return LINE;
 }

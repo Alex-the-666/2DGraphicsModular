@@ -24,6 +24,8 @@ public:
     void move(const int x,const int y) override;
     double area() const override;
     double perimeter() const override;
+    void write(ostream& os) override;
+    void read(istream& is) override;
 
 private:
     QPoint one,two;

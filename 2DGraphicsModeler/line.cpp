@@ -73,3 +73,22 @@ double Line::perimeter() const
 {
     return sqrt(QPoint::dotProduct(one,two));
 }
+
+void Line::write(ostream &os){
+    Line::write(os);
+    os << one.x() << endl << one.y() << endl;
+    os << two.x() << endl << two.y() << endl;
+}
+
+void Line::read(istream &is){
+   Shape::read(is);
+   int x1;
+   int x2;
+   int y1;
+   int y2;
+   is >> x1;
+   is >> y1;
+   is >> x2;
+   is >>y2;
+   setDimension(x1, y1, x2, y2);
+}

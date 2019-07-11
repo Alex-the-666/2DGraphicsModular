@@ -45,12 +45,12 @@ public:
     virtual void move(const int x,const int y) = 0;
     virtual double area() const = 0;
     virtual double perimeter() const =0;
-
 protected:
     QPainter& getQPainter();
 
 
 private:
+    ShapeType getShapeFromString(string str);
     QPainter painter;
     int shapeId;
     ShapeType shape;
