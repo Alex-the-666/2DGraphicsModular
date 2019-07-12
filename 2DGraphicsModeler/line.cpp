@@ -22,6 +22,18 @@ Line::Line(QPaintDevice *parent,\
         one(0,0), two(100,100)
 {}
 
+Line::Line(QPaintDevice *parent, const ShapeBuffer& buffer): Shape(parent, buffer)
+{
+    if(buffer.shape==LINE)
+    {
+    custom::vector<QPoint>::const_iterator it = buffer.qPointVector.begin();
+    setDimension(*it, *(it+1));
+    }
+    else {
+        //should throw an exception here
+    }
+}
+
 Line::~Line()
 
 {
@@ -61,7 +73,9 @@ void Line::draw(const int x, const int y)
 
 void Line::move(int x, int y)
 {
-    "I do nothing right now XD";
+    if(one.rx()+x<1000 && one.ry()+y< 500 &&\
+        two.rx()+x<1000 && two.ry()+y<500 )
+        setDimension(one.rx()+x,one.ry()+y,two.rx()+x,two.ry()+y);
 }
 
 double Line::area() const
@@ -74,13 +88,13 @@ double Line::perimeter() const
     return sqrt(QPoint::dotProduct(one,two));
 }
 
-void Line::write(ostream &os){
-    Line::write(os);
-    os << one.x() << endl << one.y() << endl;
-    os << two.x() << endl << two.y() << endl;
+void Line::write(std::ostream &os){
+    Shape::write(os);
+    os << one.rx() << std::endl << one.ry() << std::endl;
+    os << two.rx() << std::endl << two.ry() << std::endl;
 }
 
-void Line::read(istream &is){
+void Line::read(std::istream &is){
    Shape::read(is);
    int x1;
    int x2;

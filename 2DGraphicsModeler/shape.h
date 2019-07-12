@@ -4,11 +4,9 @@
 #include <QFont>
 #include <QPainter>
 #include "vector.h"
+#include "shapebuffer.h"
 
-using namespace std;
-
-enum ShapeType{LINE,POLYLINE, POLYGON,RECTANGLE,ELLIPSE, TEXT};
-const string SHAPE_IDENTIFIERS[] = {"LINE", "POLYLINE", "POLYGON", "RECTANGLE", "ELIPSE", "TEXT"};
+const std::string SHAPE_IDENTIFIERS[] = {"LINE", "POLYLINE", "POLYGON", "RECTANGLE", "ELIPSE", "TEXT"};
 
 class Shape
 {
@@ -20,6 +18,7 @@ public:
           Qt::GlobalColor gc2, Qt::BrushStyle bs);
     Shape(QPaintDevice *parent, ShapeType arg,\
           QPen rhsPen, QBrush rhsBrush);
+    Shape(QPaintDevice *parent, const ShapeBuffer& buffer);
 
     Shape(Shape&) = delete;
     Shape& operator =(Shape&)= delete;
@@ -38,8 +37,8 @@ public:
 
     void defaultStyle();
 
-    virtual void write(ostream& os);
-    virtual void read(istream& is);
+    virtual void write(std::ostream& os);
+    virtual void read(std::istream& is);
 
     virtual void draw(const int x, const int y) = 0;
     virtual void move(const int x,const int y) = 0;
@@ -50,7 +49,7 @@ protected:
 
 
 private:
-    ShapeType getShapeFromString(string str);
+    ShapeType getShapeFromString(std::string str);
     QPainter painter;
     int shapeId;
     ShapeType shape;

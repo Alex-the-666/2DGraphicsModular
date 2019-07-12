@@ -10,6 +10,7 @@ enum ShapeType{LINE,POLYLINE, POLYGON,RECTANGLE,ELLIPSE, TEXT};
 
 class ShapeBuffer
 {
+
 public:
     ShapeBuffer();
 

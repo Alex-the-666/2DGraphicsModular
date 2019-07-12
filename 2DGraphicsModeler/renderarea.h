@@ -13,12 +13,6 @@ class RenderArea : public QWidget
 public:
     explicit RenderArea(QWidget *parent = nullptr);
     void tripFlag();
-
-
-
-
-
-
 protected:
     void paintEvent(QPaintEvent *event) override;
     void testAddLines();

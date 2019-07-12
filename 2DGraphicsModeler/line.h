@@ -2,6 +2,7 @@
 #define LINE_H
 
 #include "shape.h"
+
 class Line: public Shape
 {
 public:
@@ -12,6 +13,7 @@ public:
                Qt::GlobalColor gc2, Qt::BrushStyle bs);
     Line(QPaintDevice *parent,\
          QPen rhsPen, QBrush rhsBrush);
+    Line(QPaintDevice *parent, const ShapeBuffer& buffer);
     virtual ~Line()override;
 
     void setDimension(int x,int y,int x2,int y2);
@@ -24,8 +26,8 @@ public:
     void move(const int x,const int y) override;
     double area() const override;
     double perimeter() const override;
-    void write(ostream& os) override;
-    void read(istream& is) override;
+    void write(std::ostream& os) override;
+    void read(std::istream& is) override;
 
 private:
     QPoint one,two;
