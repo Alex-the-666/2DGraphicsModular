@@ -12,16 +12,20 @@ class RenderArea : public QWidget
     Q_OBJECT
 public:
     explicit RenderArea(QWidget *parent = nullptr);
-    void tripFlag();
+    void passBuffer(const ShapeBuffer& fromParent);
+
+    void tripFlag();//test function
 protected:
+    void addShape(const ShapeBuffer& buffer);
     void paintEvent(QPaintEvent *event) override;
     void testAddLines();
-    void addShape(Shape* rhs);
+
 
 signals:
 
 public slots:
 private:
+    ShapeBuffer buffer;
     custom::vector<Shape*> shapeVector;
     bool add = false;
     int offset=0;

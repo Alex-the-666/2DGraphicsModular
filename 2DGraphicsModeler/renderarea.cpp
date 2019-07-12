@@ -11,20 +11,24 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
 
 }
 
+void RenderArea::passBuffer(const ShapeBuffer &fromParent)
+{
+    buffer = fromParent;
+
+}
+
 void RenderArea::tripFlag()
 {
  add = true;
 }
 
-void RenderArea::addShape(Shape* rhs)
+void RenderArea::addShape(const ShapeBuffer& buffer)
 {
-    switch(rhs->getShape())
+    switch(buffer.shape)
     {
     case LINE:
     {
-        Line* temp = new Line(this, rhs->getPen(), rhs->getBrush());
-        temp->setDimension(dynamic_cast<Line*>(rhs)->getQPointOne(),\
-                           dynamic_cast<Line*>(rhs)->getQPointTwo());
+        Line* temp = new Line(this,buffer);
         shapeVector.push_back(temp);
         temp = nullptr;
     }

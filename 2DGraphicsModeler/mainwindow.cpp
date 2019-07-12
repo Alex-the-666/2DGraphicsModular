@@ -8,7 +8,35 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-     renderArea = new RenderArea(this);
+    renderArea = new RenderArea(this);
+}
+
+void MainWindow::pushBufferToRenderArea()
+{
+
+}
+
+bool MainWindow::loadShapes()
+{
+    bool loaded = false;
+    bool corrupt = false;
+    while(loaded==false)//This is just a placeholder
+        //It simiulates the flag until it finishes reading
+        //it the file/buffer
+    {
+        ShapeBuffer parentBuffer;
+        /*
+         Code to read input into the buffer
+         should have a way to trip
+         corrupt flag in event
+         of txt corruption.
+         */
+        renderArea->passBuffer(parentBuffer);
+        if(corrupt == true)
+            return false;
+        loaded=true;
+    }
+return true;
 }
 
 MainWindow::~MainWindow()

@@ -14,6 +14,8 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+    void pushBufferToRenderArea();
+    bool loadShapes();
     ~MainWindow();
 
 private slots:
@@ -27,6 +29,7 @@ private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
     adminLogin *admin;
+    ShapeBuffer buffer;
 };
 
 #endif // MAINWINDOW_H
