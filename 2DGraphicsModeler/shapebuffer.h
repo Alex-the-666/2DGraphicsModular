@@ -6,7 +6,7 @@
 #include <QPen>
 #include <QFont>
 
-enum ShapeType{LINE,POLYLINE, POLYGON,RECTANGLE,ELLIPSE, TEXT};
+enum ShapeType{LINE, POLYLINE, POLYGON, RECTANGLE, ELLIPSE, TEXT};
 
 class ShapeBuffer
 {
