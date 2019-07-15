@@ -28,16 +28,16 @@ void ShapeBuffer::defaultStyle()
 
 }
 
-void ShapeBuffer::readIn(QTextStream&)
+void ShapeBuffer::readIn(QTextStream& is)
 {
     try{
-
+/*
         QString path = "D:/test.txt";
         QString string1 = "ShapeId: 1";
         QString string3 = "Line";
         QString string2 = "ShapeDimensions: 20, 90, 100, 20";
         QStringList list = string1.split(' ');
-        /*
+*/        /*
 
   QFile file(path);
     file.open(QIODevice::WriteOnly);
@@ -55,7 +55,18 @@ void ShapeBuffer::readIn(QTextStream&)
   */
     switch (shape)
     {
-    case LINE:break;
+    case LINE:
+    {
+
+        QString myString = is.readLine();
+        shapeID = setID(myString);
+        myString = is.readLine();
+        shape = setShape(myString);
+
+
+
+    }
+        break;
     case POLYLINE: break;
     case POLYGON: break;
     case RECTANGLE: break;
@@ -70,6 +81,11 @@ void ShapeBuffer::readIn(QTextStream&)
     }
 }
 
+int ShapeBuffer::setID(QString& arg)const
+{
+    QStringList myList = arg.split(' ');
+    return myList[1].toInt();
+}
 ShapeType ShapeBuffer::setShape(QString& string3)const
 {    if (string3.contains("Line"))
     return LINE;
