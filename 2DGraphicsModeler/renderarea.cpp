@@ -7,14 +7,11 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
     move(0, 36);
-
-
 }
 
 void RenderArea::passBuffer(const ShapeBuffer &fromParent)
 {
     buffer = fromParent;
-
 }
 
 void RenderArea::tripFlag()
@@ -23,7 +20,7 @@ void RenderArea::tripFlag()
 }
 
 void RenderArea::addShape(const ShapeBuffer& buffer)
-{
+{//DISCONTINUE THIS FUNCTION FOR NOW
     switch(buffer.shape)
     {
     case LINE:
@@ -47,13 +44,18 @@ void RenderArea::addShape(const ShapeBuffer& buffer)
 
 
         temp1 = nullptr;
+
        }
+        break;
+    case SQUARE:
         break;
     case POLYGON:
         break;
     case RECTANGLE:
         break;
     case ELLIPSE:
+        break;
+    case CIRCLE:
         break;
     case TEXT:
         break;
@@ -83,8 +85,7 @@ void RenderArea::paintEvent(QPaintEvent *event)
     polyLine obj(this);
     asdf.setDimension(10,10,400,400);
    // asdf.draw(100,100);
-    Line* aser = &asdf;
-    addShape(aser);
+
     custom::vector<Shape*>::iterator it = shapeVector.begin();
     Shape* qwer =(*it);
     //qwer->draw(34,34);

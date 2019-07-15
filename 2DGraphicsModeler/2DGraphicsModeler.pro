@@ -26,12 +26,15 @@ CONFIG += c++11
 
 SOURCES += \
         adminlogin.cpp \
+        circle.cpp \
         contact.cpp \
+        ellipse.cpp \
         line.cpp \
         main.cpp \
         mainwindow.cpp \
         polyline.cpp \
         palette.cpp \
+        polygon.cpp \
         polyline.cpp \
         renderarea.cpp \
         shape.cpp \
@@ -40,11 +43,14 @@ SOURCES += \
 
 HEADERS += \
         adminlogin.h \
+        circle.h \
         contact.h \
+        ellipse.h \
         line.h \
         mainwindow.h \
         polyline.h \
         palette.h \
+        polygon.h \
         polyline.h \
         renderarea.h \
         shape.h \
