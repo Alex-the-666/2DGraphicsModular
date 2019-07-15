@@ -5,8 +5,11 @@
 #include <QBrush>
 #include <QPen>
 #include <QFont>
+#include <QFile>
+#include <QTextStream>
 
-enum ShapeType{LINE, POLYLINE, POLYGON, RECTANGLE, ELLIPSE, TEXT};
+enum ShapeType{LINE, POLYLINE, POLYGON, RECTANGLE,\
+               SQUARE, ELLIPSE, CIRCLE, TEXT};
 
 class ShapeBuffer
 {
@@ -18,7 +21,10 @@ public:
     void reset();
     void defaultStyle();
 
+    void readIn(QTextStream&);
+
     //buffer variables
+    int shapeID=0;
     ShapeType shape;
     custom::vector<QPoint> qPointVector;
     QRect qRect;
