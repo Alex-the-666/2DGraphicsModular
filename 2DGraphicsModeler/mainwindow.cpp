@@ -53,6 +53,13 @@ void MainWindow::on_actionLogin_triggered()
     admin -> show();
 }
 
+void MainWindow::on_actionContact_Us_triggered()
+{
+    contact = new Contact(this);
+    contact -> show();
+}
+
+
 void MainWindow::on_TestAddShape_released()
 {
     renderArea->tripFlag();

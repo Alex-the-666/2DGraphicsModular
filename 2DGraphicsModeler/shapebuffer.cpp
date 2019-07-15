@@ -10,10 +10,8 @@ void ShapeBuffer::reset()
     shape=LINE;
     qPointVector.resize(0);
     qRect.setRect(0,0,0,0);
-    //qPolygon.set
-    //I don't know how to use QPolygon
+    qPolygon.setPoint(0,0,0);
     defaultStyle();
-
 }
 
 void ShapeBuffer::defaultStyle()
@@ -28,29 +26,11 @@ void ShapeBuffer::defaultStyle()
 
 }
 
-void ShapeBuffer::readIn(QTextStream&)
+void ShapeBuffer::readIn(QTextStream& is)
 {
-    try{
+    try{   /*
 
-        QString path = "D:/test.txt";
-        QString string1 = "ShapeId: 1";
-        QString string3 = "Line";
-        QString string2 = "ShapeDimensions: 20, 90, 100, 20";
-        QStringList list = string1.split(' ');
-        /*
-=======
-
-void ShapeBuffer::readIn(QTextStream&)
-{
-    try{
-    QString path = "D:/test.txt";
-    QString string1 = "ShapeId: 1";
-    QString string3 = "Line";
-    QString string2 = "ShapeDimensions: 20, 90, 100, 20";
-    QStringList list = string1.split(' ');
-/*
->>>>>>> parent of 34d0ab8... Revert "Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular"
-    QFile file(path);
+  QFile file(path);
     file.open(QIODevice::WriteOnly);
 
     QTextStream out(&file);
@@ -61,25 +41,144 @@ void ShapeBuffer::readIn(QTextStream&)
     for (int i= 1; i < list.size(); i++)
     {
         out << list.at(i).toInt();
-<<<<<<< HEAD
+
     }
   */
+        QString myString = is.readLine();
+        shapeID = setID(myString);
+        myString = is.readLine();
+        shape = setShape(myString);
     switch (shape)
     {
-    case LINE:break;
-    case POLYLINE: break;
-    case POLYGON: break;
-    case RECTANGLE: break;
-    case SQUARE: break;
-    case ELLIPSE: break;
-    case CIRCLE: break;
-    case TEXT: break;
+    case LINE:
+    {
+        myString = is.readLine();
+        qPointVector = getLineDimensions(myString);
+        myString = is.readLine();
+        pen.setColor(setColor(myString));
+        myString = is.readLine();
+        pen.setWidth(setID(myString));
+        myString = is.readLine();
+        pen.setStyle(setPenStyle(myString));
+        myString = is.readLine();
+        pen.setCapStyle(setPenCapStyle(myString));
+        myString = is.readLine();
+        pen.setJoinStyle(setPenJoinStyle(myString));
     }
+        break;
+    case POLYLINE:{
+       myString = is.readLine();
+       qPolygon = getPolygonDimensions(myString);
+       myString = is.readLine();
+       pen.setColor(setColor(myString));
+       myString = is.readLine();
+       pen.setWidth(setID(myString));
+       myString = is.readLine();
+       pen.setStyle(setPenStyle(myString));
+       myString = is.readLine();
+       pen.setCapStyle(setPenCapStyle(myString));
+       myString = is.readLine();
+       pen.setJoinStyle(setPenJoinStyle(myString));
+
+
+    } break;
+    case POLYGON:{
+        myString = is.readLine();
+        qPolygon = getPolygonDimensions(myString);
+        myString = is.readLine();
+        pen.setColor(setColor(myString));
+        myString = is.readLine();
+        pen.setWidth(setID(myString));
+        myString = is.readLine();
+        pen.setStyle(setPenStyle(myString));
+        myString = is.readLine();
+        pen.setCapStyle(setPenCapStyle(myString));
+        myString = is.readLine();
+        pen.setJoinStyle(setPenJoinStyle(myString));
+        myString = is.readLine();
+        brush.setColor(setColor(myString));
+        myString = is.readLine();
+        brush.setStyle(setBrushStyle(myString));
+    }
+        break;
+    case ELLIPSE:
+    case RECTANGLE:
+    {
+        myString = is.readLine();
+        qRect = getQRect(myString);
+        myString = is.readLine();
+        pen.setColor(setColor(myString));
+        myString = is.readLine();
+        pen.setWidth(setID(myString));
+        myString = is.readLine();
+        pen.setStyle(setPenStyle(myString));
+        myString = is.readLine();
+        pen.setCapStyle(setPenCapStyle(myString));
+        myString = is.readLine();
+        pen.setJoinStyle(setPenJoinStyle(myString));
+        myString = is.readLine();
+        brush.setColor(setColor(myString));
+        myString = is.readLine();
+        brush.setStyle(setBrushStyle(myString));
+
+    }break;
+    case SQUARE:
+    case CIRCLE:
+    {
+        myString = is.readLine();
+        qRect = getEllipseOrSquare(myString);
+        myString = is.readLine();
+        pen.setColor(setColor(myString));
+        myString = is.readLine();
+        pen.setWidth(setID(myString));
+        myString = is.readLine();
+        pen.setStyle(setPenStyle(myString));
+        myString = is.readLine();
+        pen.setCapStyle(setPenCapStyle(myString));
+        myString = is.readLine();
+        pen.setJoinStyle(setPenJoinStyle(myString));
+        myString = is.readLine();
+        brush.setColor(setColor(myString));
+        myString = is.readLine();
+        brush.setStyle(setBrushStyle(myString));
+
+    }
+        break;
+    case TEXT:
+    {
+        myString = is.readLine();
+        qRect = getQRect(myString);
+        myString = is.readLine();
+        qStringText = getQStringText(myString);
+        myString = is.readLine();
+        brush.setColor(setColor(myString));
+        /*Some variable = */setTextAlignment(myString);
+        myString = is.readLine();
+        /*font size*/setID(myString);
+        myString = is.readLine();
+        /*font family*/getQStringText(myString);
+        myString = is.readLine();
+        font.setStyle(getTextFontStyle(myString));
+        myString = is.readLine();
+        font.setWeight(getTextFontWeight(myString));
+    }
+        break;
+    }//end switch block
+}//end try block
    catch(MyException){
+
+    }
+    catch(...)
+    {
 
     }
 }
 
+int ShapeBuffer::setID(QString& arg)const
+{
+    QStringList myList = arg.split(' ');
+    return myList[1].toInt();
+}
 ShapeType ShapeBuffer::setShape(QString& string3)const
 {    if (string3.contains("Line"))
     return LINE;
@@ -203,4 +302,55 @@ QFont::Weight ShapeBuffer::getTextFontWeight(QString & x) const
         return QFont::Bold;
     else
         throw MyException();
+}
+
+custom::vector<QPoint> ShapeBuffer::getLineDimensions(QString & x) const
+{
+    x.remove(',');
+    QStringList myList = x.split(' ');
+    custom::vector<QPoint> temp;
+    temp.push_back(QPoint(myList[1].toInt(),myList[2].toInt()));
+    temp.push_back(QPoint(myList[3].toInt(),myList[4].toInt()));
+    return temp;
+}
+
+QPolygon ShapeBuffer::getPolygonDimensions(QString & x) const
+{
+    x.remove(',');
+    QStringList myList = x.split(' ');
+    QPolygon temp;
+    for (int i=1; i<myList.size(); i += 2)
+        temp << QPoint(myList[i].toInt(),myList[i+1].toInt());
+    return temp;
+}
+
+QRect ShapeBuffer::getQRect(QString & x) const
+{
+    x.remove(',');
+    QStringList myList = x.split(' ');
+    QRect temp(myList[1].toInt(),myList[2].toInt(),\
+            myList[3].toInt(),myList[4].toInt());
+    //constructor variables
+    //(int x, int y, int width, int height)
+    return temp;
+
+
+}
+
+QRect ShapeBuffer::getEllipseOrSquare(QString & x) const
+{
+    x.remove(',');
+    QStringList myList = x.split(' ');
+    QRect temp(myList[1].toInt(),myList[2].toInt(),\
+            myList[3].toInt(),myList[3].toInt());
+    //constructor variables
+    //(int x, int y, int width, int height)
+    return temp;
+}
+
+QString ShapeBuffer::getQStringText(QString & x) const
+{
+    QStringList myList = x.split(':');
+    QString temp = myList[1];
+    return temp.trimmed();
 }
