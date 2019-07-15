@@ -48,7 +48,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Thank you for using 2D Graphics Modeler.&lt;/p&gt;&lt;p&gt;In case you have any concerns or questions, &lt;/p&gt;&lt;p&gt;you can contact us through &lt;a href=&quot;contact2d.tk&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;this link&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;or directly e-mail us through &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#aa0000;&quot;&gt;support@ratatoullie.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Thank you for using 2D Graphics Modeler.&lt;/p&gt;&lt;p&gt;In case you have any concerns or questions, &lt;/p&gt;&lt;p&gt;you can contact us through &lt;a href=&quot;http://www.contact2d.tk/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;this link&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;or directly e-mail us through &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#aa0000;&quot;&gt;support@ratatoullie.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
