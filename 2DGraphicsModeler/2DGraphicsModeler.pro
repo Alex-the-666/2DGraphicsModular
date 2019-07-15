@@ -26,6 +26,7 @@ CONFIG += c++11
 
 SOURCES += \
         adminlogin.cpp \
+        contact.cpp \
         line.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
 
 HEADERS += \
         adminlogin.h \
+        contact.h \
         line.h \
         mainwindow.h \
         palette.h \
@@ -46,6 +48,7 @@ HEADERS += \
 
 FORMS += \
         adminlogin.ui \
+        contact.ui \
         mainwindow.ui \
         palette.ui
 
