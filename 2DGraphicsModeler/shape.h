@@ -4,6 +4,7 @@
 #include <QFont>
 #include <QPainter>
 #include "vector.h"
+#include <cmath>
 
 using namespace std;
 

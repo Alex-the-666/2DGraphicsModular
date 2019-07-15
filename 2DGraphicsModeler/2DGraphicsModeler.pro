@@ -28,12 +28,16 @@ SOURCES += \
         line.cpp \
         main.cpp \
         mainwindow.cpp \
+        polyline.cpp \
+        rectangle.cpp \
         renderarea.cpp \
         shape.cpp
 
 HEADERS += \
         line.h \
         mainwindow.h \
+        polyline.h \
+        rectangle.h \
         renderarea.h \
         shape.h \
         vector.h
