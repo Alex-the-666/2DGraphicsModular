@@ -17,7 +17,11 @@ public:
 
 private slots:
     void on_horizontalSlider_sliderMoved(int position);
-
+    void on_horizontalSlider_2_sliderMoved(int position);
+    void on_horizontalSlider_3_sliderMoved(int position);
+    void on_plainTextEdit_textChanged();
+    void on_plainTextEdit_2_textChanged();
+    void on_textEdit_3_textChanged();
 private:
     Ui::Palette *ui;
 };
