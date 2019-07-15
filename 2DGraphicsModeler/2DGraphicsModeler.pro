@@ -30,6 +30,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         palette.cpp \
+        polyline.cpp \
         renderarea.cpp \
         shape.cpp \
         shapebuffer.cpp
@@ -39,6 +40,7 @@ HEADERS += \
         line.h \
         mainwindow.h \
         palette.h \
+        polyline.h \
         renderarea.h \
         shape.h \
         shapebuffer.h \
