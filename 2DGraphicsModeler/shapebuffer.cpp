@@ -27,6 +27,7 @@ void ShapeBuffer::defaultStyle()
     //Going to need default QFont
 
 }
+<<<<<<< HEAD
 void ShapeBuffer::readIn(QTextStream&)
 {
     try{
@@ -196,3 +197,5 @@ else
 }
 
 
+=======
+>>>>>>> parent of cc1c7ec... Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular
