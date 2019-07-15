@@ -32,7 +32,6 @@ void RenderArea::addShape(const ShapeBuffer& buffer)
         shapeVector.push_back(temp);
         temp = nullptr;
     }
-
         break;
     case POLYLINE:
         break;
@@ -45,6 +44,10 @@ void RenderArea::addShape(const ShapeBuffer& buffer)
     case TEXT:
         break;
     }
+}
+
+custom::vector<Shape*> RenderArea::getShapeVector(){
+   return shapeVector;
 }
 
 void RenderArea::testAddLines()
