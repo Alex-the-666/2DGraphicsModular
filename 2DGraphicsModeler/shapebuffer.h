@@ -23,7 +23,8 @@ public:
     void defaultStyle();
 
     void readIn(QTextStream&);
-protected:
+
+
     ShapeType setShape(QString&) const;
     //Pen Width
     Qt::PenStyle setPenStyle(QString&)const;
@@ -36,7 +37,7 @@ protected:
     //TextFontFamily
     QFont::Style getTextFontStyle(QString&)const;
     QFont::Weight getTextFontWeight(QString&)const;
-private:
+
     int shapeID=0;
     ShapeType shape;
     custom::vector<QPoint> qPointVector;

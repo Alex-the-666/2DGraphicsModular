@@ -38,19 +38,8 @@ void ShapeBuffer::readIn(QTextStream&)
         QString string2 = "ShapeDimensions: 20, 90, 100, 20";
         QStringList list = string1.split(' ');
         /*
-=======
 
-void ShapeBuffer::readIn(QTextStream&)
-{
-    try{
-    QString path = "D:/test.txt";
-    QString string1 = "ShapeId: 1";
-    QString string3 = "Line";
-    QString string2 = "ShapeDimensions: 20, 90, 100, 20";
-    QStringList list = string1.split(' ');
-/*
->>>>>>> parent of 34d0ab8... Revert "Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular"
-    QFile file(path);
+  QFile file(path);
     file.open(QIODevice::WriteOnly);
 
     QTextStream out(&file);
@@ -61,7 +50,7 @@ void ShapeBuffer::readIn(QTextStream&)
     for (int i= 1; i < list.size(); i++)
     {
         out << list.at(i).toInt();
-<<<<<<< HEAD
+
     }
   */
     switch (shape)
@@ -74,6 +63,7 @@ void ShapeBuffer::readIn(QTextStream&)
     case ELLIPSE: break;
     case CIRCLE: break;
     case TEXT: break;
+    }
     }
    catch(MyException){
 
