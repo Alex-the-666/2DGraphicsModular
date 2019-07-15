@@ -64,7 +64,7 @@ QPoint Line::getQPointTwo() const
  return two;
 }
 
-void Line::draw(const int x, const int y)
+void Line::draw(const int, const int)
 {
     QPainter& painter = getQPainter();
     painter.drawLine(one,two);
