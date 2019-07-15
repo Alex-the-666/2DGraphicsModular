@@ -9,8 +9,8 @@ public:
     Polyline(QPaintDevice * parent,ShapeBuffer );
     void draw(const int x, const int y) override;
     void move(const int x, const int y)override;
-    double area() const;
-    double perimeter() const;
+    double area() const override;
+    double perimeter() const override;
 
 
 private:

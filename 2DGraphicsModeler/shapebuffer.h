@@ -47,6 +47,7 @@ public:
     QBrush brush;
     QPen pen;
     QFont font;
+    QString qStringText;
 };
 
 
