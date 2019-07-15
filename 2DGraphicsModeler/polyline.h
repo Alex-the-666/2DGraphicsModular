@@ -9,13 +9,13 @@ class polyLine: public Shape
 {
 public:
     polyLine() = delete;
-    polyLine (QPaintDevice *parent);
+    //polyLine (QPaintDevice *parent);
 
     polyLine(QPaintDevice* parent, ShapeType arg, Qt::GlobalColor gc1, double width,\
                Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
                Qt::GlobalColor gc2, Qt::BrushStyle bs);
 
-    polyLine(QPaintDevice *parent, ShapeType arg, QPen rhsPen, QBrush rhsBrush);
+    polyLine(QPaintDevice *parent, ShapeType arg, QPen rhsPen, QBrush rhsBrush, QPolygon poly);
 
     virtual ~polyLine()override;
     
@@ -31,6 +31,8 @@ public:
 
 private:
     QPoint *points;
+    int pointsCounter;
+    QPolygon poly;
 
 };
 
@@ -52,6 +54,7 @@ public:
 
 private:
     custom::vector<QPoint> qPointVector;
+
 };
 
 #endif // POLYLINE_H

@@ -35,7 +35,7 @@ void RenderArea::addShape(const ShapeBuffer& buffer)
         break;
     case POLYLINE:
        {
-        polyLine* temp1 = new polyLine(this, POLYLINE, rhs->getPen(), rhs->getBrush());
+      //  polyLine* temp1 = new polyLine(this, POLYLINE, rhs->getPen(), rhs->getBrush());
 
         temp1->set_point(QPoint(2,7));
          temp1->set_point(QPoint(6,38));
@@ -43,7 +43,7 @@ void RenderArea::addShape(const ShapeBuffer& buffer)
            temp1->set_point(QPoint(2,73));
             temp1->set_point(QPoint(21,12));
 
-            temp1->draw(shapeDimensions);
+        //    temp1->draw(shapeDimensions);
 
 
         temp1 = nullptr;
