@@ -73,8 +73,7 @@ void RenderArea::paintEvent(QPaintEvent *event)
     polyLine obj(this);
     asdf.setDimension(10,10,400,400);
    // asdf.draw(100,100);
-    Line* aser = &asdf;
-    addShape(aser);
+
     custom::vector<Shape*>::iterator it = shapeVector.begin();
     Shape* qwer =(*it);
     //qwer->draw(34,34);

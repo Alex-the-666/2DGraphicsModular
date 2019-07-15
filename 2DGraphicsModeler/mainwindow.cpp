@@ -72,19 +72,7 @@ void MainWindow::on_actionOpen_triggered()
     QFile file(path);
     if(file.open(QIODevice::ReadOnly)){
         QTextStream instream(&file);
-        Shape* shape = nullptr;
-        while(!instream.atEnd()){
-            QString line = instream.readLine();
-            if(line.contains("LINE")){
-                if(shape != nullptr){
-                    this->renderArea->getShapeVector().push_back(shape);
-                }
-                shape = new Line(this->renderArea);
-            }
-            if(shape != nullptr){
-                //read in details from stream
-            }
-        }
+       // pass qtextstream object;
     }
 
 }
