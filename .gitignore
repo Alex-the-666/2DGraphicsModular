@@ -47,3 +47,7 @@ compile_commands.json
 
 # QtCreator local machine specific files for imported projects
 *creator.user*
+#pro.user
+*.pro.user
+2DGraphicsModeler/2DGraphicsModeler.pro.user
+*.user

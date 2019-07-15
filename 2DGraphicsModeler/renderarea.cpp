@@ -6,21 +6,32 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     setMinimumSize(minSize);
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
+    move(0, 36);
+
+
 }
 
-void RenderArea::addShape(Shape* rhs)
+void RenderArea::passBuffer(const ShapeBuffer &fromParent)
 {
-    switch(rhs->getShape())
+    buffer = fromParent;
+
+}
+
+void RenderArea::tripFlag()
+{
+ add = true;
+}
+
+void RenderArea::addShape(const ShapeBuffer& buffer)
+{
+    switch(buffer.shape)
     {
     case LINE:
     {
-        Line* temp = new Line(this, LINE, rhs->getPen(), rhs->getBrush());
-        temp->setDimension(dynamic_cast<Line*>(rhs)->getQPointOne(),\
-                           dynamic_cast<Line*>(rhs)->getQPointTwo());
+        Line* temp = new Line(this,buffer);
         shapeVector.push_back(temp);
         temp = nullptr;
     }
-
         break;
     case POLYLINE:
        {
@@ -49,6 +60,23 @@ void RenderArea::addShape(Shape* rhs)
     }
 }
 
+custom::vector<Shape*> RenderArea::getShapeVector(){
+   return shapeVector;
+}
+
+void RenderArea::testAddLines()
+{
+    if(add == true)
+    {
+    Line *line1 = new Line(this);
+    line1->setDimension(10,10,100+offset,40+offset);
+
+    shapeVector.push_back(line1);
+    if(offset<300)
+        offset +=30;
+    }
+}
+
 void RenderArea::paintEvent(QPaintEvent *event)
 {
     Line asdf(this);
@@ -61,4 +89,11 @@ void RenderArea::paintEvent(QPaintEvent *event)
     Shape* qwer =(*it);
     //qwer->draw(34,34);
     //Crashing here.
+  //for(int i =0; i<5;i++)
+  //{}
+    testAddLines();
+    for (custom::vector<Shape*>::iterator it = shapeVector.begin();\
+         it != shapeVector.end(); it++)
+        (*it)->draw(0,0);
+
 }

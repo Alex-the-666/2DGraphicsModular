@@ -68,4 +68,8 @@ double polyLine::area() const
 double polyLine::perimeter() const
 {
 
+
+Polyline::Polyline(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
+{
+    qPointVector = arg.qPointVector;
 }

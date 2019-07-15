@@ -1,6 +1,7 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 #include <stdexcept>
+#include <iostream>
 
 const int STARTSIZE = 8;
 
@@ -34,7 +35,7 @@ public:
 			if (size_v <= rhs.size_v) //if vector is less that rhs
 			{
 				delete[] elem;
-				elem = new T[rhs.size_v];
+				elem = new T[rhs.space];
 				size_v = rhs.size_v;
 				space = rhs.space;
 			}
@@ -61,6 +62,9 @@ public:
 		{
 			delete[] elem;
 			elem = rhs.elem;
+			size_v = rhs.size_v;
+			space = rhs.space;
+
 			rhs.elem = nullptr;
 			rhs.size_v = 0;
 			rhs.space = 0;

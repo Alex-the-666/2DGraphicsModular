@@ -10,14 +10,21 @@ Shape::Shape(QPaintDevice *parent, ShapeType arg,\
     painter(parent),shape {arg},
     pen(gc1,width,ps,pcs,pjs),\
     brush(gc2,bs)
-{}
 
+{}
 Shape::Shape(QPaintDevice *parent, ShapeType arg,\
              QPen rhsPen, QBrush rhsBrush):\
     painter(parent), shape {arg},\
     pen(rhsPen), brush (rhsBrush)
 {
 
+}
+
+Shape::Shape(QPaintDevice *parent, const ShapeBuffer& buffer):painter(parent)
+{
+    shape = buffer.shape;
+    brush = buffer.brush;
+    pen = buffer.pen;
 }
 
 
@@ -71,4 +78,28 @@ QPainter& Shape::getQPainter()
     return painter;
 }
 
+void Shape::write(std::ostream &os){
+    os << shapeId << std::endl;
+    std::string shapeTypeStr;
+    if(shape == LINE){
+        shapeTypeStr = SHAPE_IDENTIFIERS[0];
+    }
+    os << shapeTypeStr << std::endl;
+}
 
+void Shape::read(std::istream &is){
+   std::string readShapeTypeStr;
+   is >> readShapeTypeStr;//ok to use >> operator as shapes are just one word
+   this->shape = getShapeFromString(readShapeTypeStr);
+   is >> this->shapeId;
+
+}
+
+ShapeType Shape::getShapeFromString(std::string name){
+    for(int i = 0; i < 6; i++){
+        if(name.compare(SHAPE_IDENTIFIERS[i]) == 0){
+            return static_cast<ShapeType>(i);
+        }
+    }
+    return LINE;
+}

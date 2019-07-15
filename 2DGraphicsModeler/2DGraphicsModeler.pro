@@ -25,27 +25,43 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        adminlogin.cpp \
+        contact.cpp \
         line.cpp \
         main.cpp \
         mainwindow.cpp \
         polyline.cpp \
         rectangle.cpp \
+        palette.cpp \
+        polyline.cpp \
         renderarea.cpp \
-        shape.cpp
+        shape.cpp \
+        shapebuffer.cpp
 
 HEADERS += \
+        adminlogin.h \
+        contact.h \
         line.h \
         mainwindow.h \
         polyline.h \
         rectangle.h \
+        palette.h \
+        polyline.h \
         renderarea.h \
         shape.h \
+        shapebuffer.h \
         vector.h
 
 FORMS += \
-        mainwindow.ui
+        adminlogin.ui \
+        contact.ui \
+        mainwindow.ui \
+        palette.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc
