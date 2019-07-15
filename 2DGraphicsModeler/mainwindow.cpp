@@ -2,9 +2,6 @@
 #include "ui_mainwindow.h"
 #include <QFileDialog>
 #include <QString>
-#include <QTextStream>
-#include <iostream>
-#include <sstream>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -61,25 +58,10 @@ void MainWindow::on_TestAddShape_released()
 
 void MainWindow::on_actionOpen_triggered()
 {
-    QString path=QFileDialog::getOpenFileName(this, "save.txt");
-    QFile file(path);
-    if(file.open(QIODevice::ReadOnly)){
-        QTextStream instream(&file);
-        Shape* shape = nullptr;
-        while(!instream.atEnd()){
-            QString line = instream.readLine();
-            if(line.contains("LINE")){
-                if(shape != nullptr){
-                    this->renderArea->getShapeVector().push_back(shape);
-                }
-                shape = new Line(this->renderArea);
-            }
-            if(shape != nullptr){
-                //read in details from stream
-            }
-        }
-    }
-
+    QString filePath=QFileDialog::getOpenFileName(this, "save.txt");
+    QDir d = QFileInfo(filePath).absoluteDir();
+    QString absolute=d.absolutePath();
+    //todo implement load all shapes from QFileInfo
 }
 
 void MainWindow::on_actionSave_triggered()
@@ -87,14 +69,8 @@ void MainWindow::on_actionSave_triggered()
     QString path = QFileDialog::getSaveFileName(nullptr, tr("Save"), ".txt");
     QFile file(path);
     file.open(QIODevice::WriteOnly);
-    custom::vector<Shape*> shapeVector = renderArea->getShapeVector();
-    std::stringstream ss;
-    for(Shape* shape : shapeVector){
-        shape->write(ss);
-        ss << std::endl;
-    }
-    std::string str = ss.str();
-    file.write(str.c_str());
+    //todo write entire shape vector to QFile
+    file.write("testing");
 }
 
 void MainWindow::on_actionQuit_triggered()

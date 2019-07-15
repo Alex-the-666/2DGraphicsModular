@@ -79,12 +79,8 @@ QPainter& Shape::getQPainter()
 }
 
 void Shape::write(std::ostream &os){
+    os << SHAPE_IDENTIFIERS[shape] << std::endl;
     os << shapeId << std::endl;
-    std::string shapeTypeStr;
-    if(shape == LINE){
-        shapeTypeStr = SHAPE_IDENTIFIERS[0];
-    }
-    os << shapeTypeStr << std::endl;
 }
 
 void Shape::read(std::istream &is){
