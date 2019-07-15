@@ -7,14 +7,11 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
     move(0, 36);
-
-
 }
 
 void RenderArea::passBuffer(const ShapeBuffer &fromParent)
 {
     buffer = fromParent;
-
 }
 
 void RenderArea::tripFlag()
@@ -23,7 +20,7 @@ void RenderArea::tripFlag()
 }
 
 void RenderArea::addShape(const ShapeBuffer& buffer)
-{
+{//DISCONTINUE THIS FUNCTION FOR NOW
     switch(buffer.shape)
     {
     case LINE:
@@ -38,11 +35,15 @@ void RenderArea::addShape(const ShapeBuffer& buffer)
 
        }
         break;
+    case SQUARE:
+        break;
     case POLYGON:
         break;
     case RECTANGLE:
         break;
     case ELLIPSE:
+        break;
+    case CIRCLE:
         break;
     case TEXT:
         break;

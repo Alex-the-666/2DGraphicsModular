@@ -39,9 +39,17 @@ public:
     QFont::Style getTextFontStyle(QString&)const;
     QFont::Weight getTextFontWeight(QString&)const;
 
+     custom::vector<QPoint> getLineDimensions(QString&)const;
+     QPolygon getPolygonDimensions(QString&)const;
+     QRect getQRect(QString&)const;
+     QRect getEllipseOrSquare(QString&)const;
+     QString getQStringText(QString&)const;
+
     int shapeID=0;
     ShapeType shape;
+    //Discontinue QPoint vector
     custom::vector<QPoint> qPointVector;
+    //Don't use Qpoint vector
     QRect qRect;
     QPolygon qPolygon;
 
