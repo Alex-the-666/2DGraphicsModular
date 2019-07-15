@@ -13,9 +13,9 @@ public:
 
     polyLine(QPaintDevice* parent, ShapeType arg, Qt::GlobalColor gc1, double width,\
                Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
-               Qt::GlobalColor gc2, Qt::BrushStyle bs);
+               Qt::GlobalColor gc2, Qt::BrushStyle bs, QPolygon poly,const ShapeBuffer &buff);
 
-    polyLine(QPaintDevice *parent, ShapeType arg, QPen rhsPen, QBrush rhsBrush, QPolygon poly);
+    polyLine(QPaintDevice *parent, ShapeType arg, QPen rhsPen, QBrush rhsBrush, QPolygon poly,const ShapeBuffer &buff);
 
     virtual ~polyLine()override;
     
@@ -39,23 +39,23 @@ private:
 
 
 
-#include "shape.h"
+//#include "shape.h"
 
-class Polyline : public Shape
-{
-public:
-    Polyline()=delete;
-    Polyline(QPaintDevice * parent,ShapeBuffer );
-    void draw(const int, const int) override;
-    void move(const int x, const int y)override;
-    double area() const override;
-    double perimeter() const override;
+//class Polyline : public Shape
+//{
+//public:
+//    Polyline()=delete;
+//    Polyline(QPaintDevice * parent,ShapeBuffer );
+//    void draw(const int, const int) override;
+//    void move(const int x, const int y)override;
+//    double area() const override;
+//    double perimeter() const override;
 
 
-private:
-    custom::vector<QPoint> qPointVector;
+//private:
+//    custom::vector<QPoint> qPointVector;
 
-    QPoint* qPointArray;
-};
+//    QPoint* qPointArray;
+//};
 
 #endif // POLYLINE_H
