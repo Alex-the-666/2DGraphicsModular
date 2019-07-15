@@ -29,6 +29,7 @@ SOURCES += \
         line.cpp \
         main.cpp \
         mainwindow.cpp \
+        palette.cpp \
         renderarea.cpp \
         shape.cpp \
         shapebuffer.cpp
@@ -37,6 +38,7 @@ HEADERS += \
         adminlogin.h \
         line.h \
         mainwindow.h \
+        palette.h \
         renderarea.h \
         shape.h \
         shapebuffer.h \
@@ -44,7 +46,8 @@ HEADERS += \
 
 FORMS += \
         adminlogin.ui \
-        mainwindow.ui
+        mainwindow.ui \
+        palette.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
