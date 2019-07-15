@@ -27,8 +27,7 @@ void ShapeBuffer::defaultStyle()
     //Going to need default QFont
 
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 void ShapeBuffer::readIn(QTextStream&)
 {
     try{
@@ -65,22 +64,6 @@ void ShapeBuffer::readIn(QTextStream&)
 <<<<<<< HEAD
     }
   */
-        switch (shape)
-        {
-        case LINE:break;
-        case POLYLINE: break;
-        case POLYGON: break;
-        case RECTANGLE: break;
-        case SQUARE: break;
-        case ELLIPSE: break;
-        case CIRCLE: break;
-        case TEXT: break;
-        }
-
-    }
-=======
-   }
-  */
     switch (shape)
     {
     case LINE:break;
@@ -92,20 +75,13 @@ void ShapeBuffer::readIn(QTextStream&)
     case CIRCLE: break;
     case TEXT: break;
     }
+   catch(MyException){
 
     }
-
-
->>>>>>> parent of 34d0ab8... Revert "Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular"
-    catch(MyException){
-
-    }
-
 }
 
 ShapeType ShapeBuffer::setShape(QString& string3)const
 {    if (string3.contains("Line"))
-<<<<<<< HEAD
     return LINE;
 else if (string3.contains("Polyline"))
     return POLYLINE;
@@ -123,45 +99,10 @@ else if (string3.contains("Text"))
     return TEXT;
 else
     throw MyException();
-=======
-        return LINE;
-    else if (string3.contains("Polyline"))
-        return POLYLINE;
-    else if (string3.contains("Polygon"))
-        return POLYGON;
-    else if (string3.contains("Square"))
-        return SQUARE;
-    else if (string3.contains("Rectangle"))
-        return RECTANGLE;
-    else if (string3.contains("Ellipse"))
-        return ELLIPSE;
-    else if (string3.contains("Circle"))
-        return CIRCLE;
-    else if (string3.contains("Text"))
-        return TEXT;
-    else
-        throw MyException();
->>>>>>> parent of 34d0ab8... Revert "Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular"
 }
 
 Qt::PenStyle ShapeBuffer::setPenStyle(QString& x) const
 {
-<<<<<<< HEAD
-if(x.contains("NoPen"))
-    return Qt::NoPen;
-else if(x.contains("SolidLine"))
-    return Qt::SolidLine;
-else if(x.contains("DashLine"))
-    return Qt::DashLine;
-else if(x.contains("DotLine"))
-    return Qt::DotLine;
-else if(x.contains("DashDotLine"))
-    return Qt::DashDotLine;
-else if(x.contains("DashDotDotLine"))
-    return Qt::DashDotDotLine;
-else
-    throw MyException();
-=======
     if(x.contains("NoPen"))
         return Qt::NoPen;
     else if(x.contains("SolidLine"))
@@ -176,21 +117,10 @@ else
         return Qt::DashDotDotLine;
     else
         throw MyException();
->>>>>>> parent of 34d0ab8... Revert "Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular"
 }
 
 Qt::PenCapStyle ShapeBuffer::setPenCapStyle(QString& x) const
 {
-<<<<<<< HEAD
-if(x.contains("FlatCap"))
-    return Qt::FlatCap;
-else if(x.contains("SquareCap"))
-    return Qt::SquareCap;
-else if(x.contains("RoundCap"))
-    return Qt::RoundCap;
-else
-    throw MyException();
-=======
     if(x.contains("FlatCap"))
         return Qt::FlatCap;
     else if(x.contains("SquareCap"))
@@ -199,21 +129,10 @@ else
         return Qt::RoundCap;
     else
         throw MyException();
->>>>>>> parent of 34d0ab8... Revert "Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular"
 }
 
 Qt::PenJoinStyle ShapeBuffer::setPenJoinStyle(QString& x) const
 {
-<<<<<<< HEAD
-if(x.contains("MiterJoin"))
-    return Qt::MiterJoin;
-else if(x.contains("BevelJoin"))
-    return Qt::BevelJoin;
-else if(x.contains("RoundJoin"))
-    return Qt::RoundJoin;
-else
-    throw MyException();
-=======
     if(x.contains("MiterJoin"))
         return Qt::MiterJoin;
     else if(x.contains("BevelJoin"))
@@ -222,33 +141,10 @@ else
         return Qt::RoundJoin;
     else
         throw MyException();
->>>>>>> parent of 34d0ab8... Revert "Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular"
 }
 
 Qt::GlobalColor ShapeBuffer::setColor(QString& x) const
 {
-<<<<<<< HEAD
-if(x.contains("white"))
-    return Qt::white;
-else if(x.contains("black"))
-    return Qt::black;
-else if(x.contains("red"))
-    return Qt::red;
-else if(x.contains("green"))
-    return Qt::green;
-else if(x.contains("blue"))
-    return Qt::blue;
-else if(x.contains("cyan"))
-    return Qt::cyan;
-else if(x.contains("magenta"))
-    return Qt::magenta;
-else if(x.contains("yellow"))
-    return Qt::yellow;
-else if(x.contains("gray"))
-    return Qt::gray;
-else
-    throw MyException();
-=======
     if(x.contains("white"))
         return Qt::white;
     else if(x.contains("black"))
@@ -269,24 +165,10 @@ else
         return Qt::gray;
     else
         throw MyException();
->>>>>>> parent of 34d0ab8... Revert "Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular"
-
 }
 
 Qt::BrushStyle ShapeBuffer::setBrushStyle(QString & x) const
 {
-<<<<<<< HEAD
-if(x.contains("SolidPattern"))
-    return Qt::SolidPattern;
-else if(x.contains("HorPattern"))
-    return Qt::HorPattern;
-else if(x.contains("VerPattern"))
-    return Qt::VerPattern;
-else if(x.contains("NoBrush"))
-    return Qt::NoBrush;
-else
-    throw MyException();
-=======
     if(x.contains("SolidPattern"))
         return Qt::SolidPattern;
     else if(x.contains("HorPattern"))
@@ -297,21 +179,10 @@ else
         return Qt::NoBrush;
     else
         throw MyException();
->>>>>>> parent of 34d0ab8... Revert "Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular"
 }
 
 QFont::Style ShapeBuffer::getTextFontStyle(QString & x) const
 {
-<<<<<<< HEAD
-if(x.contains("StyleNormal"))
-    return QFont::StyleNormal;
-else if(x.contains("StyleItalic"))
-    return QFont::StyleItalic;
-else if(x.contains("StyleOblique"))
-    return QFont::StyleOblique;
-else
-    throw MyException();
-=======
     if(x.contains("StyleNormal"))
         return QFont::StyleNormal;
     else if(x.contains("StyleItalic"))
@@ -320,26 +191,10 @@ else
         return QFont::StyleOblique;
     else
         throw MyException();
->>>>>>> parent of 34d0ab8... Revert "Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular"
 }
 
 QFont::Weight ShapeBuffer::getTextFontWeight(QString & x) const
 {
-<<<<<<< HEAD
-if(x.contains("Thin"))
-    return QFont::Thin;
-else if(x.contains("Normal"))
-    return QFont::Normal;
-else if(x.contains("Bold"))
-    return QFont::Bold;
-else
-    throw MyException();
-}
-
-
-=======
->>>>>>> parent of cc1c7ec... Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular
-=======
     if(x.contains("Thin"))
         return QFont::Thin;
     else if(x.contains("Normal"))
@@ -349,7 +204,3 @@ else
     else
         throw MyException();
 }
-
-
-
->>>>>>> parent of 34d0ab8... Revert "Merge branch 'master' of https://github.com/Alex-the-666/2DGraphicsModular"
