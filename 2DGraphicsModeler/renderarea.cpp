@@ -34,6 +34,9 @@ void RenderArea::addShape(const ShapeBuffer& buffer)
     }
         break;
     case POLYLINE:
+       {
+
+       }
         break;
     case POLYGON:
         break;
@@ -65,6 +68,16 @@ void RenderArea::testAddLines()
 
 void RenderArea::paintEvent(QPaintEvent *event)
 {
+    Line asdf(this);
+    polyLine obj(this);
+    asdf.setDimension(10,10,400,400);
+   // asdf.draw(100,100);
+    Line* aser = &asdf;
+    addShape(aser);
+    custom::vector<Shape*>::iterator it = shapeVector.begin();
+    Shape* qwer =(*it);
+    //qwer->draw(34,34);
+    //Crashing here.
   //for(int i =0; i<5;i++)
   //{}
     testAddLines();

@@ -27,9 +27,12 @@ CONFIG += c++11
 SOURCES += \
         adminlogin.cpp \
         contact.cpp \
+        ellipse.cpp \
         line.cpp \
         main.cpp \
         mainwindow.cpp \
+        polyline.cpp \
+        rectangle.cpp \
         palette.cpp \
         polygon.cpp \
         polyline.cpp \
@@ -40,8 +43,11 @@ SOURCES += \
 HEADERS += \
         adminlogin.h \
         contact.h \
+        ellipse.h \
         line.h \
         mainwindow.h \
+        polyline.h \
+        rectangle.h \
         palette.h \
         polygon.h \
         polyline.h \

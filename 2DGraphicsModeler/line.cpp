@@ -75,7 +75,7 @@ void Line::move(int x, int y)
 {
     if(one.rx()+x<1000 && one.ry()+y< 500 &&\
         two.rx()+x<1000 && two.ry()+y<500 )
-        setDimension(one.rx()+x,one.ry()+y,two.rx()+x,two.ry()+y);
+        setDimension(one.x()+x,one.y()+y,two.x()+x,two.y()+y);
 }
 
 double Line::area() const

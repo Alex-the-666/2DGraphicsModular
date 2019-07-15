@@ -25,6 +25,7 @@ public:
     void readIn(QTextStream&);
 
 
+    int setID(QString&)const;
     ShapeType setShape(QString&) const;
     //Pen Width
     Qt::PenStyle setPenStyle(QString&)const;
@@ -47,6 +48,7 @@ public:
     QBrush brush;
     QPen pen;
     QFont font;
+    QString qStringText;
 };
 
 
