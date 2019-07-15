@@ -91,7 +91,7 @@
     <string>B</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -101,7 +101,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
+  <widget class="QPlainTextEdit" name="plainTextEdit_2">
    <property name="geometry">
     <rect>
      <x>240</x>
