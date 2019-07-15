@@ -26,6 +26,7 @@ CONFIG += c++11
 
 SOURCES += \
         adminlogin.cpp \
+        circle.cpp \
         contact.cpp \
         ellipse.cpp \
         line.cpp \
@@ -41,6 +42,7 @@ SOURCES += \
 
 HEADERS += \
         adminlogin.h \
+        circle.h \
         contact.h \
         ellipse.h \
         line.h \
