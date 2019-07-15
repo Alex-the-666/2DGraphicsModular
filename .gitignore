@@ -51,3 +51,4 @@ compile_commands.json
 *.pro.user
 2DGraphicsModeler/2DGraphicsModeler.pro.user
 *.user
+2DGraphicsModeler/.qmake.stash
