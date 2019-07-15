@@ -12,6 +12,8 @@ Rectangle::Rectangle (QPaintDevice* parent, ShapeBuffer arg) :
     height = arg.qRect.height();
 }
 
+Rectangle::~Rectangle () {}
+
 double Rectangle::area () const
 {
     return height * width;

@@ -33,13 +33,13 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         polyline.cpp \
-        rectangle.cpp \
         palette.cpp \
         polygon.cpp \
         polyline.cpp \
         renderarea.cpp \
         shape.cpp \
-        shapebuffer.cpp
+        shapebuffer.cpp \
+        square.cpp
 
 HEADERS += \
         adminlogin.h \
@@ -49,13 +49,13 @@ HEADERS += \
         line.h \
         mainwindow.h \
         polyline.h \
-        rectangle.h \
         palette.h \
         polygon.h \
         polyline.h \
         renderarea.h \
         shape.h \
         shapebuffer.h \
+        square.h \
         vector.h
 
 FORMS += \
