@@ -14,7 +14,7 @@ public:
     double perimeter() const override;
 
 
-private:
+protected:
     int radius1;
     int radius2;
     int x;
