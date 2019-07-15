@@ -12,7 +12,6 @@ void ShapeBuffer::reset()
     qRect.setRect(0,0,0,0);
     qPolygon.setPoint(0,0,0);
     defaultStyle();
-
 }
 
 void ShapeBuffer::defaultStyle()
