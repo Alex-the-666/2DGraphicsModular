@@ -2,5 +2,29 @@
 
 Polyline::Polyline(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
 {
-    qPointVector = arg.qPointVector;
+
+    qPointArray = new QPoint[3];
 }
+
+void Polyline::draw(const int, const int)
+{
+
+
+}
+
+void Polyline::move(const int, const int)
+{
+
+}
+
+double Polyline::area() const
+{
+
+}
+
+double Polyline::perimeter() const
+{
+
+}
+
+
