@@ -5,22 +5,20 @@
 
 
 
-class polyLine: public Shape
+class PolyLine: public Shape
 {
 public:
-    polyLine() = delete;
-    polyLine (QPaintDevice *parent);
+    PolyLine() = delete;
+    PolyLine (QPaintDevice *parent);
 
-    polyLine(QPaintDevice* parent, ShapeType arg, Qt::GlobalColor gc1, double width,\
+    PolyLine(QPaintDevice* parent, ShapeType arg, Qt::GlobalColor gc1, double width,\
                Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
                Qt::GlobalColor gc2, Qt::BrushStyle bs);
 
-    polyLine(QPaintDevice *parent, ShapeType arg, QPen rhsPen, QBrush rhsBrush);
+    PolyLine(QPaintDevice *parent, ShapeType arg, QPen rhsPen, QBrush rhsBrush);
+    PolyLine(QPaintDevice *parent, ShapeType arg);
 
-    virtual ~polyLine()override;
-    
-
-    void set_point(const QPoint & point);
+    virtual ~PolyLine()override;
 
     void setDimension(int x, int y);
 
@@ -30,8 +28,8 @@ public:
     double perimeter() const override;
 
 private:
-    QPoint *points;
-
+    QPolygon qPolygon;
+    int test;
 };
 
 
