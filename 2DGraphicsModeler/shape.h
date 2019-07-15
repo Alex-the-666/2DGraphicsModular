@@ -4,6 +4,7 @@
 #include <QFont>
 #include <QPainter>
 #include "vector.h"
+#include <cmath>
 #include "shapebuffer.h"
 
 const std::string SHAPE_IDENTIFIERS[] = {"LINE", "POLYLINE", "POLYGON", "RECTANGLE", "ELIPSE", "TEXT"};
