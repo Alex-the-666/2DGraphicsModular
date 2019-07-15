@@ -11,13 +11,17 @@ Shape::Shape(QPaintDevice *parent, ShapeType arg,\
     pen(gc1,width,ps,pcs,pjs),\
     brush(gc2,bs)
 
-{}
+{
+    painter.setPen(pen);
+    painter.setBrush(brush);
+}
 Shape::Shape(QPaintDevice *parent, ShapeType arg,\
              QPen rhsPen, QBrush rhsBrush):\
     painter(parent), shape {arg},\
     pen(rhsPen), brush (rhsBrush)
 {
-
+    painter.setPen(pen);
+    painter.setBrush(brush);
 }
 
 Shape::Shape(QPaintDevice *parent, const ShapeBuffer& buffer):painter(parent)
@@ -25,6 +29,8 @@ Shape::Shape(QPaintDevice *parent, const ShapeBuffer& buffer):painter(parent)
     shape = buffer.shape;
     brush = buffer.brush;
     pen = buffer.pen;
+    painter.setPen(pen);
+    painter.setBrush(brush);
 }
 
 
