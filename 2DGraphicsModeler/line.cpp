@@ -64,7 +64,7 @@ QPoint Line::getQPointTwo() const
  return two;
 }
 
-void Line::draw(const int x, const int y)
+void Line::draw(const int, const int)
 {
     QPainter& painter = getQPainter();
     painter.drawLine(one,two);
@@ -75,7 +75,7 @@ void Line::move(int x, int y)
 {
     if(one.rx()+x<1000 && one.ry()+y< 500 &&\
         two.rx()+x<1000 && two.ry()+y<500 )
-        setDimension(one.rx()+x,one.ry()+y,two.rx()+x,two.ry()+y);
+        setDimension(one.x()+x,one.y()+y,two.x()+x,two.y()+y);
 }
 
 double Line::area() const

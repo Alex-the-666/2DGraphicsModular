@@ -5,6 +5,7 @@
 #include <QWidget>
 #include "shape.h"
 #include "line.h"
+#include "polyline.h"
 #include "vector.h"
 
 class RenderArea : public QWidget
