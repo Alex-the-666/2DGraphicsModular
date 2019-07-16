@@ -1,59 +1,55 @@
 #include "text.h"
 
 // just need the qrect for the constructor: x, y, height, width
-
-Text::Text(QPaintDevice * parent, const ShapeBuffer& arg) : Shape(parent, arg)
-{
-    QRect qRect = arg.getQRect();
-      x = qRect.x();
-      y = qRect.x();
-      wide = qRect.width();
-      tall = qRect.height();
-      font = arg.getQFont();
-      alignFlag = arg.getAlignFlag();
-      qStringText = arg.getQStringText();
+Text::Text(QPaintDevice * parent, const ShapeBuffer& arg) : Shape(parent, arg) {
+      x = arg.qRect.x();
+      y = arg.qRect.y();
+      wide = arg.qRect.width();
+      tall = arg.qRect.height();
 }
 
 void Text::draw(const int x, const int y){
 
       QPainter& painter = getQPainter();
+
       const QRect rectangle = QRect(x, y, wide, tall);
-      painter.setPen(getPen());
-      painter.setBrush(getBrush());
 
-      painter.drawText(rectangle, alignFlag, qStringText);
-      painter.end();
+      QFont font = painter.font();
+          font.setPixelSize(14);
+          font.setFamily("Arial");
+          painter.setFont(font);
+
+      QColor color(0, 0, 255, 1);   //RGBA
+
+      QPen pen = painter.pen();
+          pen.setStyle(Qt::SolidLine);
+          pen.setColor(color);
+          painter.setPen(pen);
+
+      QRect boundingRect;
+
+          painter.drawText(rectangle, Qt::AlignVCenter, QObject::tr("CS1C: Ratatouille Group Project"), &boundingRect);
 }
 
-void Text::draw(QPaintDevice * parent)
-{
-    QPainter& painter = getQPainter();
-    painter.begin(parent);
-    const QRect rectangle = QRect(x, y, wide, tall);
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
+void Text::move(const int x1, const int y1) {
+      const int MAXX = 1000;    //largest x-axis value to remain on screen
+      const int MAXY = 500;     //largest y-axis value to remain on screen
 
-    painter.drawText(rectangle, alignFlag, qStringText);
-    painter.end();
+          if (wide + x1 < MAXX && wide + y1 < MAXY && tall + x1 < MAXX && tall + y1 < MAXY ) {
+              x = x1;
+              y = y1;
+              //draw(x, y)?
+          }
 }
 
-void Text::move(const int x, const int y){
-
-      if(wide + x < 1000 && wide + y < 500 &&\
-         tall + x < 1000 && tall + y < 500 )
-      {
-          this -> x = x;
-          this -> y = y;
-      }
-}
-
-double Text::area () const{
+double Text::area () const {
 
       return (wide * tall);
 }
 
-double Text::perimeter() const{
+double Text::perimeter() const {
 
       return (2 * (wide + tall));
-
 }
+
+Text::~Text(){}
