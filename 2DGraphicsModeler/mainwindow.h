@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "renderarea.h"
-#include "adminlogin.h"
+
 #include "contact.h"
 namespace Ui {
 class MainWindow;
@@ -18,8 +18,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_actionLogin_triggered();
-    void on_actionContact_Us_triggered();
     void on_actionSave_triggered();
     void on_actionOpen_triggered();
     void on_actionQuit_triggered();
@@ -27,8 +25,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;
-    adminLogin *admin;
-    Contact    *contact;
     ShapeBuffer buffer;
 };
 

@@ -20,18 +20,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_actionLogin_triggered()
-{
-    admin = new adminLogin(this);
-    admin -> show();
-}
-
-void MainWindow::on_actionContact_Us_triggered()
-{
-    contact = new Contact(this);
-    contact -> show();
-}
-
 
 
 
@@ -41,6 +29,7 @@ void MainWindow::on_actionOpen_triggered()
     QFile file(path);
     if(file.open(QIODevice::ReadOnly)){
         QTextStream instream(&file);
+        renderArea->createShapeBuffer(instream);
        // pass qtextstream object;
     }
 

@@ -37,13 +37,6 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuHome">
-    <property name="title">
-     <string>Home</string>
-    </property>
-    <addaction name="actionLogin"/>
-    <addaction name="actionContact_Us"/>
-   </widget>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
@@ -52,7 +45,6 @@
     <addaction name="actionSave"/>
     <addaction name="actionQuit"/>
    </widget>
-   <addaction name="menuHome"/>
    <addaction name="menuFile"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">

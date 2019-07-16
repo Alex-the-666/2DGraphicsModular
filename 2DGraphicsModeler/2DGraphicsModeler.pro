@@ -25,15 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        adminlogin.cpp \
         circle.cpp \
-        contact.cpp \
         ellipse.cpp \
         line.cpp \
         main.cpp \
         mainwindow.cpp \
         polyline.cpp \
-        palette.cpp \
         polygon.cpp \
         polyline.cpp \
         rectangle.cpp \
@@ -44,9 +41,7 @@ SOURCES += \
         text.cpp
 
 HEADERS += \
-        adminlogin.h \
         circle.h \
-        contact.h \
         ellipse.h \
         line.h \
         mainwindow.h \
@@ -64,9 +59,7 @@ HEADERS += \
 
 FORMS += \
         adminlogin.ui \
-        contact.ui \
-        mainwindow.ui \
-        palette.ui
+        mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
