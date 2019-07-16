@@ -9,22 +9,15 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     move(0, 36);
 }
 
-void RenderArea::passBuffer(const ShapeBuffer &fromParent)
+void RenderArea::createShapeBuffer(QTextStream)
 {
-    buffer = fromParent;
+
 }
 
-void RenderArea::tripFlag()
-{
- add = true;
-}
+
 
 void RenderArea::addShape(const ShapeBuffer&)
 {
-}
-
-custom::vector<Shape*> RenderArea::getShapeVector(){
-   return shapeVector;
 }
 
 void RenderArea::testAddLines()
@@ -43,7 +36,6 @@ void RenderArea::testAddLines()
 void RenderArea::paintEvent(QPaintEvent*)
 {
     Line asdf(this);
-    PolyLine obj(this);
 
     testAddLines();
     for (custom::vector<Shape*>::iterator it = shapeVector.begin();\

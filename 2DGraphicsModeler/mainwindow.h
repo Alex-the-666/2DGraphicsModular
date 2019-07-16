@@ -15,14 +15,11 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    void pushBufferToRenderArea();
-    bool loadShapes();
     ~MainWindow();
 
 private slots:
     void on_actionLogin_triggered();
     void on_actionContact_Us_triggered();
-    void on_TestAddShape_released();
     void on_actionSave_triggered();
     void on_actionOpen_triggered();
     void on_actionQuit_triggered();

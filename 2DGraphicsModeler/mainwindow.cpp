@@ -33,11 +33,7 @@ void MainWindow::on_actionContact_Us_triggered()
 }
 
 
-void MainWindow::on_TestAddShape_released()
-{
-    renderArea->tripFlag();
-    renderArea->update();
-}
+
 
 void MainWindow::on_actionOpen_triggered()
 {

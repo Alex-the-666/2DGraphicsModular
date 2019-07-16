@@ -17,9 +17,9 @@ class RenderArea : public QWidget
     Q_OBJECT
 public:
     explicit RenderArea(QWidget *parent = nullptr);
-    void passBuffer(const ShapeBuffer& fromParent);
-    custom::vector<Shape*> getShapeVector();
-    void tripFlag();//test function
+    void createShapeBuffer(QTextStream);
+
+
 protected:
     void addShape(const ShapeBuffer& buffer);
     void paintEvent(QPaintEvent *event) override;
@@ -28,7 +28,7 @@ signals:
 
 public slots:
 private:
-    ShapeBuffer buffer;
+    custom::vector <ShapeBuffer> buffer;
     custom::vector<Shape*> shapeVector;
     bool add = false;
     int offset=0;
