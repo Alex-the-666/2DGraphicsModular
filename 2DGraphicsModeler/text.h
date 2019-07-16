@@ -2,7 +2,6 @@
 #define TEXT_H
 
 #include "shape.h"
-#include <cmath>
 
 class Text : public Shape
 {
