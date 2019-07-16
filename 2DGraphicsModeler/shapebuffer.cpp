@@ -151,7 +151,7 @@ void ShapeBuffer::readIn(QTextStream& is)
         qStringText = getQStringText(myString);
         myString = is.readLine();
         brush.setColor(setColor(myString));
-        /*Some variable = */setTextAlignment(myString);
+        /*Some variable =setTextAlignment(myString); */
         myString = is.readLine();
         /*font size*/setID(myString);
         myString = is.readLine();

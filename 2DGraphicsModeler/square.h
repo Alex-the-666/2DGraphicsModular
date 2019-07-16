@@ -11,7 +11,7 @@ public:
 
     Square(QPaintDevice *parent, ShapeBuffer arg);
 
-    virtual ~Square()override;
+    //virtual ~Square() override;
 
     void setDimension(int x, int y);
 
