@@ -61,9 +61,21 @@ void polyLine::draw(const int x, const int y)
 
 }
 
-void Polyline::move(const int, const int)
+void polyLine::move(int x, int y)
 {
+    bool allowMove = true;
+    for (int i = 0; i < poly.size(); i++)
+    {
+        if ((poly.point(i).rx() + x) > 1000 || (poly.point(i).ry() + y > 500))
+        {
+            allowMove = false;
+        }
+    }
 
+    if (allowMove)
+    {
+        poly.translate(x,y);
+    }
 }
 
 double PolyLine::area() const
