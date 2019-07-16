@@ -51,6 +51,7 @@ void MainWindow::on_actionSave_triggered()
     QString path = QFileDialog::getSaveFileName(nullptr, tr("Save"), ".txt");
     QFile file(path);
     file.open(QIODevice::WriteOnly);
+    /*
     custom::vector<Shape*> shapeVector = renderArea->getShapeVector();
     std::stringstream ss;
     for(Shape* shape : shapeVector){
@@ -58,7 +59,7 @@ void MainWindow::on_actionSave_triggered()
         ss << std::endl;
     }
     std::string str = ss.str();
-    file.write(str.c_str());
+    file.write(str.c_str());*/
 }
 
 void MainWindow::on_actionQuit_triggered()
