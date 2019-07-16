@@ -1,11 +1,26 @@
-#ifndef RECTANGLE_H
-#define RECTANGLE_H
+#ifndef SQUARE_H
+#define SQUARE_H
+
+#include "shape.h"
 
 
-class square
+class Square: public Shape
 {
-public:
-    square();
+public:   
+    Square() = delete;
+
+    Square(QPaintDevice *parent, ShapeBuffer arg);
+
+    virtual ~Square()override;
+
+    void setDimension(int x, int y);
+
+    void draw (const int x, const int y)override;
+    void move(int x, int y) override;
+    double area() const override;
+    double perimeter() const override;
+
+private:
 };
 
-#endif // RECTANGLE_H
+#endif // SQUARE_H

@@ -1,16 +1,8 @@
 #include "polyline.h"
-#include "vector.h"
-
 
 PolyLine::PolyLine(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
 {
     qPolygon = arg.qPolygon;
-
-}
-
-
-PolyLine::~PolyLine()
-{
 
 }
 
