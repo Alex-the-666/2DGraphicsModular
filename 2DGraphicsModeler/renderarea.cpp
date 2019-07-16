@@ -69,4 +69,6 @@ void RenderArea::paintEvent(QPaintEvent*)
          it != shapeVector.end(); it++)
         (*it)->draw(0,0);
 
+    shapeBufferReady=false;
+
 }

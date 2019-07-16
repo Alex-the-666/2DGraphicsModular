@@ -10,9 +10,6 @@ public:
     Line(QPaintDevice *parent, const ShapeBuffer& buffer);
     virtual ~Line()override;
 
-    void setDimension(int x,int y,int x2,int y2);
-    void setDimension(QPoint one,QPoint two);
-
     QPoint getQPointOne()const;
     QPoint getQPointTwo()const;
 
@@ -20,8 +17,6 @@ public:
     void move(const int x,const int y) override;
     double area() const override;
     double perimeter() const override;
-    void write(std::ostream& os) override;
-    void read(std::istream& is) override;
 
 private:
     QPoint one,two;

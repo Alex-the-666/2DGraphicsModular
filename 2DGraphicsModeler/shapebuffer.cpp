@@ -15,8 +15,8 @@ void ShapeBuffer::reset()
 
 void ShapeBuffer::defaultStyle()
 {
-    pen.setColor(Qt::black);
-    pen.setWidth(0);
+    pen.setColor(Qt::red);
+    pen.setWidth(5);
     pen.setCapStyle(Qt::SquareCap);
     pen.setJoinStyle(Qt::RoundJoin);
     brush.setColor(Qt::black);
@@ -50,6 +50,7 @@ void ShapeBuffer::readIn(QTextStream& is)
         pen.setCapStyle(setPenCapStyle(myString));
         myString = is.readLine();
         pen.setJoinStyle(setPenJoinStyle(myString));
+        brush.setStyle(Qt::NoBrush);
     }
         break;
     case POLYLINE:{
@@ -65,6 +66,7 @@ void ShapeBuffer::readIn(QTextStream& is)
        pen.setCapStyle(setPenCapStyle(myString));
        myString = is.readLine();
        pen.setJoinStyle(setPenJoinStyle(myString));
+       brush.setStyle(Qt::NoBrush);
 
 
     } break;
