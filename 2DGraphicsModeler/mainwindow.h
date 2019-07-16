@@ -22,6 +22,8 @@ private slots:
     void on_actionOpen_triggered();
     void on_actionQuit_triggered();
 
+    void on_TestAddShape_released();
+
 private:
     Ui::MainWindow *ui;
     RenderArea *renderArea;

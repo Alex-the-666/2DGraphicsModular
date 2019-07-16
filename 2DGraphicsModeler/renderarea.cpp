@@ -62,13 +62,26 @@ void RenderArea::transferToShapes()
 
 void RenderArea::paintEvent(QPaintEvent*)
 {
-    if(shapeBufferReady == true)
-        transferToShapes();
+    Line temp(this);
+    temp.setPen(Qt::red,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
 
-    for (custom::vector<Shape*>::iterator it = shapeVector.begin();\
+    temp.setPointOne(10,10);
+    temp.setPointTwo(900,900);
+    temp.draw(0,0);
+    if(shapeBufferReady == true)
+
+    {
+
+        //  transferToShapes();
+    }
+
+
+    for (auto it = shapeVector.begin();\
          it != shapeVector.end(); it++)
         (*it)->draw(0,0);
 
     shapeBufferReady=false;
+
+
 
 }

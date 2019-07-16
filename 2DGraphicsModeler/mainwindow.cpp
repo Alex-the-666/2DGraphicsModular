@@ -55,3 +55,9 @@ void MainWindow::on_actionQuit_triggered()
 {
     QApplication::quit();
 }
+
+void MainWindow::on_TestAddShape_released()
+{
+    renderArea->update();
+
+}

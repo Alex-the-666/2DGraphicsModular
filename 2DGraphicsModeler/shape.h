@@ -14,6 +14,8 @@ class Shape
 public:
     Shape() = delete;
 
+    Shape(QPaintDevice *parent): painter(parent) {}
+
     Shape(QPaintDevice *parent, const ShapeBuffer& buffer);
 
     Shape(Shape&) = delete;

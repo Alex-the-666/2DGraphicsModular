@@ -13,6 +13,7 @@
 #include "square.h"
 #include "vector.h"
 #include "text.h"
+#include <vector>
 
 class RenderArea : public QWidget
 {
@@ -30,8 +31,8 @@ signals:
 
 public slots:
 private:
-    custom::vector <ShapeBuffer> buffer;
-    custom::vector<Shape*> shapeVector;
+    std::vector<ShapeBuffer> buffer;
+    std::vector<Shape*> shapeVector;
     bool shapeBufferReady = false;
     int offset=0;
 
