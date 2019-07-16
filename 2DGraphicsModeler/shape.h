@@ -13,12 +13,7 @@ class Shape
 {
 public:
     Shape() = delete;
-    Shape(QPaintDevice* parent);
-    Shape(QPaintDevice* parent, ShapeType arg, Qt::GlobalColor gc1, double width,\
-          Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
-          Qt::GlobalColor gc2, Qt::BrushStyle bs);
-    Shape(QPaintDevice *parent, ShapeType arg,\
-          QPen rhsPen, QBrush rhsBrush);
+
     Shape(QPaintDevice *parent, const ShapeBuffer& buffer);
 
     Shape(Shape&) = delete;
@@ -38,9 +33,6 @@ public:
 
     void defaultStyle();
 
-    virtual void write(std::ostream& os);
-    virtual void read(std::istream& is);
-
     virtual void draw(const int x, const int y) = 0;
     virtual void move(const int x,const int y) = 0;
     virtual double area() const = 0;
@@ -50,7 +42,7 @@ protected:
 
 
 private:
-    ShapeType getShapeFromString(std::string str);
+
     QPainter painter;
     int shapeId;
     ShapeType shape;

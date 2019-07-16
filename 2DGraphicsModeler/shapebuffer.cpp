@@ -29,9 +29,11 @@ void ShapeBuffer::readIn(QTextStream& is)
 {
     try{
         QString myString = is.readLine();
-        shapeID = setID(myString);
+        shapeID = setInt(myString);
         myString = is.readLine();
         shape = setShape(myString);
+        if(!is.atEnd())
+        {
     switch (shape)
     {
     case LINE:
@@ -41,7 +43,7 @@ void ShapeBuffer::readIn(QTextStream& is)
         myString = is.readLine();
         pen.setColor(setColor(myString));
         myString = is.readLine();
-        pen.setWidth(setID(myString));
+        pen.setWidth(setInt(myString));
         myString = is.readLine();
         pen.setStyle(setPenStyle(myString));
         myString = is.readLine();
@@ -56,7 +58,7 @@ void ShapeBuffer::readIn(QTextStream& is)
        myString = is.readLine();
        pen.setColor(setColor(myString));
        myString = is.readLine();
-       pen.setWidth(setID(myString));
+       pen.setWidth(setInt(myString));
        myString = is.readLine();
        pen.setStyle(setPenStyle(myString));
        myString = is.readLine();
@@ -72,7 +74,7 @@ void ShapeBuffer::readIn(QTextStream& is)
         myString = is.readLine();
         pen.setColor(setColor(myString));
         myString = is.readLine();
-        pen.setWidth(setID(myString));
+        pen.setWidth(setInt(myString));
         myString = is.readLine();
         pen.setStyle(setPenStyle(myString));
         myString = is.readLine();
@@ -93,7 +95,7 @@ void ShapeBuffer::readIn(QTextStream& is)
         myString = is.readLine();
         pen.setColor(setColor(myString));
         myString = is.readLine();
-        pen.setWidth(setID(myString));
+        pen.setWidth(setInt(myString));
         myString = is.readLine();
         pen.setStyle(setPenStyle(myString));
         myString = is.readLine();
@@ -114,7 +116,7 @@ void ShapeBuffer::readIn(QTextStream& is)
         myString = is.readLine();
         pen.setColor(setColor(myString));
         myString = is.readLine();
-        pen.setWidth(setID(myString));
+        pen.setWidth(setInt(myString));
         myString = is.readLine();
         pen.setStyle(setPenStyle(myString));
         myString = is.readLine();
@@ -136,11 +138,12 @@ void ShapeBuffer::readIn(QTextStream& is)
         qStringText = getQStringText(myString);
         myString = is.readLine();
         brush.setColor(setColor(myString));
-        /*Some variable = */setTextAlignment(myString);
         myString = is.readLine();
-        /*font size*/setID(myString);
+        alignFlag = setTextAlignment(myString);
         myString = is.readLine();
-        /*font family*/getQStringText(myString);
+        font.setPointSize(setInt(myString));
+        myString = is.readLine();
+        font.setFamily(getQStringText(myString));
         myString = is.readLine();
         font.setStyle(getTextFontStyle(myString));
         myString = is.readLine();
@@ -148,6 +151,7 @@ void ShapeBuffer::readIn(QTextStream& is)
     }
         break;
     }//end switch block
+    }//end if block
 }//end try block
    catch(MyException){
 
@@ -158,7 +162,7 @@ void ShapeBuffer::readIn(QTextStream& is)
     }
 }
 
-int ShapeBuffer::setID(QString& arg)const
+int ShapeBuffer::setInt(QString& arg)const
 {
     QStringList myList = arg.split(' ');
     return myList[1].toInt();

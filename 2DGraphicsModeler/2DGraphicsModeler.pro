@@ -32,7 +32,6 @@ SOURCES += \
         mainwindow.cpp \
         polyline.cpp \
         polygon.cpp \
-        polyline.cpp \
         rectangle.cpp \
         renderarea.cpp \
         shape.cpp \
@@ -46,7 +45,6 @@ HEADERS += \
         line.h \
         mainwindow.h \
         polyline.h \
-        palette.h \
         polygon.h \
         polyline.h \
         rectangle.h \

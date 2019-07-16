@@ -8,6 +8,8 @@ Text::Text(QPaintDevice * parent, const ShapeBuffer& arg) : Shape(parent, arg)
       y = arg.qRect.x();
       wide = arg.qRect.width();
       tall = arg.qRect.height();
+      font = arg.font;
+      alignFlag = arg.alignFlag;
 }
 
 void Text::draw(const int x, const int y){

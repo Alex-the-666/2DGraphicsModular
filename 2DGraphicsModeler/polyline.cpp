@@ -3,7 +3,6 @@
 PolyLine::PolyLine(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
 {
     qPolygon = arg.qPolygon;
-
 }
 
 void PolyLine::draw(const int, const int)
@@ -37,8 +36,7 @@ void PolyLine::move(int x, int y)
 
 double PolyLine::perimeter() const
 {
-    double perimeter;
-    perimeter = 0;
+    double perimeter = 0;
     for (int i = 0; i < qPolygon.size(); i++)
     {
         perimeter += sqrt((((qPolygon.point((i + 1) % qPolygon.size()).rx()) - qPolygon.point(i).rx())

@@ -16,10 +16,13 @@ void RenderArea::createShapeBuffer(QTextStream& is)
     {
         ShapeBuffer x;
         x.readIn(is);
-        buffer.push_back(x);
+        if(!is.atEnd())
+            buffer.push_back(x);
 
         is.readLine();//get rid of the space
+        is.flush();
     }
+   shapeBufferReady=true;
 }
 
 void RenderArea::transferToShapes()

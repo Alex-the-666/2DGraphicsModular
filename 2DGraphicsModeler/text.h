@@ -19,6 +19,10 @@ private:
     int y;
     int wide;
     int tall;
+    QFont font;
+    Qt::AlignmentFlag alignFlag;
+
+
 
 };
 

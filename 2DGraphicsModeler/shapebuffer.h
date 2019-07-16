@@ -28,26 +28,26 @@ public:
     ShapeType shape;
 
     QPoint one,two;
-
     QRect qRect;
     QPolygon qPolygon;
 
     QBrush brush;
     QPen pen;
+
     QFont font;
     QString qStringText;
+    Qt::AlignmentFlag alignFlag;
 protected:
-    int setID(QString&)const;
+    int setInt(QString&)const;
     ShapeType setShape(QString&) const;
-    //Pen Width
+
     Qt::PenStyle setPenStyle(QString&)const;
     Qt::PenCapStyle setPenCapStyle(QString&)const;
     Qt::PenJoinStyle setPenJoinStyle(QString&)const;
     Qt::GlobalColor setColor(QString&)const;
     Qt::BrushStyle setBrushStyle(QString&)const;
     Qt::AlignmentFlag setTextAlignment(QString&)const;
-    //Textpoint size
-    //TextFontFamily
+
     QFont::Style getTextFontStyle(QString&)const;
     QFont::Weight getTextFontWeight(QString&)const;
 
