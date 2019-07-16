@@ -16,7 +16,7 @@ void Text::draw(const int x, const int y){
       QRect *boundingRect = nullptr;
       const QRect rectangle = QRect(x, y, wide, tall);
 
-      //painter.drawText(rectangle, Qt::AlignCenter, tr("Test"), &boundingRect);       // working on the tr() function- not sure why it's not working
+      //painter.drawText(rectangle, Qt::AlignVCenter, tr("Test"), &boundingRect);       // working on the tr() function- not sure why it's not working
 }
 
 void Text::move(const int x, const int y){
