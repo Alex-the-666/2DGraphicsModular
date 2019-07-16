@@ -5,7 +5,7 @@
 Text::Text(QPaintDevice * parent, const ShapeBuffer& arg) : Shape(parent, arg)
 {
       x = arg.qRect.x();
-      y = arg.qRect.x();
+      y = arg.qRect.y();
       wide = arg.qRect.width();
       tall = arg.qRect.height();
 }
@@ -13,20 +13,21 @@ Text::Text(QPaintDevice * parent, const ShapeBuffer& arg) : Shape(parent, arg)
 void Text::draw(const int x, const int y){
 
       QPainter& painter = getQPainter();
+
       const QRect rectangle = QRect(x, y, wide, tall);
 
      painter.drawText(rectangle, Qt::AlignVCenter, QString("Test"));
 }
 
-void Text::move(const int x, const int y){
+void Text::move(const int x1, const int y1){
       const int MAXX = 1000;
       const int MAXY = 500;
 
-      if(wide + x < MAXX && wide + y < MAXY &&\
-         tall + x < MAXX && tall + y < MAXY )
+      if(wide + x1 < MAXX && wide + y1 < MAXY &&\
+         tall + x1 < MAXX && tall + y1 < MAXY )
       {
-          this -> x = x;
-          this -> y = y;
+          x = x1;
+          y = y1;
       }
 }
 
@@ -41,4 +42,4 @@ double Text::perimeter() const{
 
 }
 
-Text::~Text () {}
+Text::~Text(){}
