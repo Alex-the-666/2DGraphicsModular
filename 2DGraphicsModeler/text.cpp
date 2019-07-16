@@ -1,5 +1,4 @@
 #include "text.h"
-#include <QPainter>
 
 // just need the qrect for the constructor: x, y, height, width
 
