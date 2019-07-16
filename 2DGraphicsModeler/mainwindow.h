@@ -7,6 +7,7 @@
 #include "renderarea.h"
 #include "adminlogin.h"
 #include "contact.h"
+#include "palette.h"
 
 namespace Ui {
 class MainWindow;
@@ -37,6 +38,7 @@ private:
     RenderArea *renderArea;
     adminLogin *admin;
     Contact    *contact;
+    Palette    *palette;
     ShapeBuffer buffer;
     QTime initialTime;
 };

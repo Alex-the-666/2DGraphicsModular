@@ -17,6 +17,9 @@ MainWindow::MainWindow(QWidget *parent) :
     startTimer (1000);
         
     renderArea = new RenderArea(this);
+
+    palette = new Palette(this);
+    palette->show();
 }
 
 
