@@ -16,12 +16,24 @@ void Text::draw(const int x, const int y){
 
       const QRect rectangle = QRect(x, y, wide, tall);
 
-     painter.drawText(rectangle, Qt::AlignVCenter, QString("Test"));
+      QFont font = painter.font();
+      font.setPixelSize(14);
+      font.setFamily("Arial");
+      painter.setFont(font);
+
+      QColor color(0, 0, 255, 1);
+
+      QPen pen = painter.pen();
+      pen.setStyle(Qt::SolidLine);
+      pen.setColor(color);
+      painter.setPen(pen);
+
+      painter.drawText(rectangle, Qt::AlignVCenter, QString("CS1C Ratatouille"));
 }
 
 void Text::move(const int x1, const int y1){
-      const int MAXX = 1000;
-      const int MAXY = 500;
+      const int MAXX = 1000;    //largest x-axis value to remain on screen
+      const int MAXY = 500;     //largest y-axis value to remain on screen
 
       if(wide + x1 < MAXX && wide + y1 < MAXY &&\
          tall + x1 < MAXX && tall + y1 < MAXY )
