@@ -1,4 +1,7 @@
 #include "text.h"
+#include <QString>
+#include <QPainter> 
+#include <QTranslator>
 
 // just need the qrect for the constructor: x, y, height, width
 
@@ -13,10 +16,9 @@ Text::Text(QPaintDevice * parent, const ShapeBuffer& arg) : Shape(parent, arg)
 void Text::draw(const int x, const int y){
 
       QPainter& painter = getQPainter();
-      QRect *boundingRect = nullptr;
       const QRect rectangle = QRect(x, y, wide, tall);
 
-      //painter.drawText(rectangle, Qt::AlignVCenter, tr("Test"), &boundingRect);       // working on the tr() function- not sure why it's not working
+     painter.drawText(rectangle, Qt::AlignVCenter, QString("Test"));
 }
 
 void Text::move(const int x, const int y){
