@@ -11,6 +11,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+        
+    initialTime = QTime::currentTime ();
+        
+    startTimer (1000);
+        
     renderArea = new RenderArea(this);
 }
 
@@ -19,6 +24,41 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+QTime MainWindow::timeDifference (const QTime& begin, const QTime& end)
+{
+    int tempHour = 0;
+    int tempMinute = 0;
+    int tempSecond = 0;
+
+    tempHour = end.hour() - begin.hour();
+    if (tempHour < 0)
+        tempHour = 24 + tempHour;
+
+    tempMinute = end.minute() - begin.minute();
+    if (tempMinute < 0)
+    {
+        tempMinute = 60 + tempMinute;
+        tempHour--;
+    }
+
+    tempSecond = end.second() - begin.second();
+    if (tempSecond < 0)
+    {
+        tempSecond = 60 + tempSecond;
+        tempMinute--;
+    }
+
+    return QTime (tempHour, tempMinute, tempSecond);
+}
+
+void MainWindow::timerEvent (QTimerEvent* event)
+{
+    /*CONTINUOUS TIME COUNT IN WINDOW TITLE*/
+    QString temp = "2D-SHAPE MODELER : [" + QTime::currentTime ().toString ("hh:mm:ss") + "]";
+    setWindowTitle (temp);
+}
+
 
 void MainWindow::on_actionLogin_triggered()
 {
@@ -63,5 +103,17 @@ void MainWindow::on_actionSave_triggered()
 
 void MainWindow::on_actionQuit_triggered()
 {
+    /*GET CURRENT LOGOUT TIME*/
+    QTime endTime = QTime::currentTime ();
+    
+    /*PERTINENT TIME INFO TO TRANSLATE TO STRING*/
+    QString temp = "LOGIN TIME     : [" + initialTime.toString ("hh:mm:ss") + "]\nLOGOUT TIME : [" + endTime.toString ("hh:mm:ss") + "]";
+    QString temp2 = "\nElapsed time: " + timeDifference(initialTime,endTime).toString("hh:mm:ss");
+    
+    /*SETTING MESSAGE BOX INFO*/
+    QMessageBox msgbox;
+    msgbox.setText(temp + '\n' + temp2);
+    msgbox.exec ();
+    
     QApplication::quit();
 }
