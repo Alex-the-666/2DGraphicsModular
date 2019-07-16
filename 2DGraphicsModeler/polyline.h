@@ -10,16 +10,9 @@ class PolyLine: public Shape
 public:
     PolyLine() = delete;
     PolyLine (QPaintDevice *parent);
-    polyLine() = delete;
-    //polyLine (QPaintDevice *parent);
-
-    PolyLine(QPaintDevice* parent, ShapeType arg, Qt::GlobalColor gc1, double width,\
-               Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
-               Qt::GlobalColor gc2, Qt::BrushStyle bs, QPolygon poly,const ShapeBuffer &buff);
 
     PolyLine(QPaintDevice *parent, ShapeType arg, QPen rhsPen, QBrush rhsBrush);
     PolyLine(QPaintDevice *parent, ShapeType arg);
-    polyLine(QPaintDevice *parent, ShapeType arg, QPen rhsPen, QBrush rhsBrush, QPolygon poly,const ShapeBuffer &buff);
 
     virtual ~PolyLine()override;
 

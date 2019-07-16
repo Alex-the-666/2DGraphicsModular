@@ -11,16 +11,6 @@ PolyLine::PolyLine(QPaintDevice *parent): Shape(parent)
 //{
 //    poly = arg.qPolygon;
 //}
-
-
-PolyLine::PolyLine(QPaintDevice* parent, ShapeType arg, Qt::GlobalColor gc1, double width,\
-           Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
-           Qt::GlobalColor gc2, Qt::BrushStyle bs, QPolygon poly,const ShapeBuffer &buff):
-    Shape(parent, arg, gc1, width,
-          ps, pcs, pjs,
-          gc2, bs)
-{
-poly = buff.qPolygon;
 }
 
 
@@ -29,13 +19,6 @@ PolyLine::PolyLine(QPaintDevice *parent, ShapeType arg,\
         Shape(parent,arg,rhsPen,rhsBrush)
 
 {
-polyLine::polyLine(QPaintDevice *parent, ShapeType arg,\
-           QPen rhsPen, QBrush rhsBrush, QPolygon poly,const ShapeBuffer &buff):\
-        Shape(parent,arg,rhsPen,rhsBrush)
-
-{
-  poly = buff.qPolygon;
-}
 
 
 
