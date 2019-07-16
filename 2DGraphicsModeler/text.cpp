@@ -36,6 +36,6 @@ double Text::area () const{
 
 double Text::perimeter() const{
 
-      return (2 * wide * tall);
+      return (2 * (wide + tall));
 
 }
