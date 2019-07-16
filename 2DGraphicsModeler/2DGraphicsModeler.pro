@@ -58,7 +58,6 @@ HEADERS += \
         vector.h
 
 FORMS += \
-        adminlogin.ui \
         mainwindow.ui
 
 # Default rules for deployment.

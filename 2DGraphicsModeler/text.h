@@ -12,7 +12,7 @@ public:
     void move(const int x, const int y) override;
     double area() const override;
     double perimeter()const override;
-    ~Text() override;
+    ~Text() override{}
 
 private:
     int x;
