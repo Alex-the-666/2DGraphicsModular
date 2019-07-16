@@ -4,48 +4,50 @@
 
 
 
+PolyLine::PolyLine(QPaintDevice *parent): Shape(parent)
+{
 
 //Polyline::Polyline(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
 //{
 //    poly = arg.qPolygon;
 //}
-
-
-polyLine::polyLine(QPaintDevice* parent, ShapeType arg, Qt::GlobalColor gc1, double width,\
-           Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
-           Qt::GlobalColor gc2, Qt::BrushStyle bs, QPolygon poly,const ShapeBuffer &buff):
-    Shape(parent, arg, gc1, width,
-          ps, pcs, pjs,
-          gc2, bs)
-{
-poly = buff.qPolygon;
 }
 
 
-polyLine::polyLine(QPaintDevice *parent, ShapeType arg,\
-           QPen rhsPen, QBrush rhsBrush, QPolygon poly,const ShapeBuffer &buff):\
+PolyLine::PolyLine(QPaintDevice *parent, ShapeType arg,\
+           QPen rhsPen, QBrush rhsBrush):\
         Shape(parent,arg,rhsPen,rhsBrush)
 
 {
-  poly = buff.qPolygon;
-}
-void polyLine::set_point(const QPoint& point)
-{
 
+
+
+Polyline::Polyline(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
+{
+ //   qPolygon = arg.qPolygon;
+test=4;
  //QPolygonpush_back(point);
 }
 
-polyLine::~polyLine()
+
+PolyLine::~PolyLine()
 
 {
 
 }
 
-void polyLine::setDimension(int x, int y)
+void PolyLine::setDimension(int, int)
 {
    // shapeDimensions.push_back(QPoint(x,y));
 }
 
+ void PolyLine::draw(const int, const int)
+{
+    QPainter& painter = getQPainter();
+    painter.drawPolyline(qPolygon);
+}
+
+void PolyLine::move(const int x, const int y)
 void polyLine::draw(const int x, const int y)
 {
     QPainter& painter = getQPainter();
@@ -76,10 +78,25 @@ void polyLine::move(int x, int y)
     }
 }
 
-double polyLine::area() const
+double PolyLine::area() const
 {
     return 0;
 }
+
+double PolyLine::perimeter() const
+{
+    return 0;
+
+}
+
+void Polyline::draw(const int, const int)
+{
+
+
+}
+
+void Polyline::move(const int, const int)
+{
 
 double polyLine::perimeter() const
 {

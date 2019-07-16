@@ -6,6 +6,10 @@
 #include "shape.h"
 #include "line.h"
 #include "polyline.h"
+#include "polygon.h"
+#include "rectangle.h"
+#include "circle.h"
+#include "ellipse.h"
 #include "vector.h"
 
 class RenderArea : public QWidget
