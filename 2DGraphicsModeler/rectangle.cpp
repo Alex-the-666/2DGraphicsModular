@@ -1,6 +1,6 @@
 #include "rectangle.h"
 
-Rectangle::Rectangle (QPaintDevice* parent, ShapeBuffer arg) :
+Rectangle::Rectangle (QPaintDevice* parent, const ShapeBuffer& arg) :
     Shape (parent, arg)
 {
     QRect qRect= arg.getQRect();

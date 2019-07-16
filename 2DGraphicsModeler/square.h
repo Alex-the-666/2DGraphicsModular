@@ -9,7 +9,7 @@ class Square: public Shape
 public:   
     Square() = delete;
 
-    Square(QPaintDevice *parent, ShapeBuffer arg);
+    Square(QPaintDevice *parent, const ShapeBuffer& arg);
 
     virtual ~Square()override{}
 

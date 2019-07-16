@@ -2,7 +2,7 @@
 #include <QtMath>
 
 // Arthur: For the constructor, I only need a qRect
-Ellipse::Ellipse(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
+Ellipse::Ellipse(QPaintDevice *parent, const ShapeBuffer& arg): Shape(parent, arg)
 {
     QRect qRect = arg.getQRect();
     x = qRect.x();

@@ -1,6 +1,6 @@
 #include "square.h"
 
-Square::Square(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
+Square::Square(QPaintDevice *parent, const ShapeBuffer& arg): Shape(parent, arg)
 {
     QRect qRect = arg.getQRect();
     side = qRect.width();

@@ -9,7 +9,7 @@ class PolyLine: public Shape
 public:
     PolyLine() = delete;
 
-    PolyLine(QPaintDevice *parent, ShapeBuffer arg);
+    PolyLine(QPaintDevice *parent, const ShapeBuffer& arg);
 
      ~PolyLine() override {}
 

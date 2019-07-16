@@ -6,7 +6,7 @@ class Ellipse : public Shape
 {
 public:
     Ellipse()=delete;
-    Ellipse(QPaintDevice * parent,ShapeBuffer );
+    Ellipse(QPaintDevice * parent,const ShapeBuffer& );
     ~Ellipse() override {}
     void setDimension(int x, int y, int r1, int r2);
     void draw(const int x, const int y) override;

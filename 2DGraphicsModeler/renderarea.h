@@ -33,6 +33,7 @@ public slots:
 private:
     std::vector<ShapeBuffer> buffer;
     std::vector<Shape*> shapeVector;
+
     bool shapeBufferReady = false;
 };
 

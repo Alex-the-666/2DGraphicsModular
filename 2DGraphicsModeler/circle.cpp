@@ -1,7 +1,7 @@
 #include "circle.h"
 #include <QtMath>
 
-Circle::Circle(QPaintDevice *parent, ShapeBuffer arg): Ellipse(parent, arg)
+Circle::Circle(QPaintDevice *parent,const ShapeBuffer& arg): Ellipse(parent, arg)
 {
     radius2 = radius1;
 }

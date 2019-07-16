@@ -14,7 +14,7 @@ private:
 public:
     /*CONSTRUCTORS*/
     Rectangle () = delete;
-    Rectangle (QPaintDevice* parent, ShapeBuffer arg);
+    Rectangle (QPaintDevice* parent, const ShapeBuffer& arg);
 
     /*DESTRUCTOR*/
     ~Rectangle ()override;

@@ -57,7 +57,6 @@ void RenderArea::transferToShapes()
 
 void RenderArea::paintEvent(QPaintEvent*)
 {
-
     if(shapeBufferReady == true)
 
     {
@@ -65,16 +64,18 @@ void RenderArea::paintEvent(QPaintEvent*)
 
           for (auto it = shapeVector.begin(); it != shapeVector.end(); it++)
           {
-              //it= it+3;
-              (*it)->draw(this);
-              break;
+              //(*it)->draw(this);
           }
           shapeBufferReady= false;
+
+
     }
     else {
         for (auto it = shapeVector.begin(); it != shapeVector.end(); it++)
         {
                 //it= it+5;
+
+
             (*it)->draw(this);
             break;
 
