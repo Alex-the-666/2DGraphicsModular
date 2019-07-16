@@ -17,7 +17,7 @@ class RenderArea : public QWidget
     Q_OBJECT
 public:
     explicit RenderArea(QWidget *parent = nullptr);
-    void createShapeBuffer(QTextStream&);
+    void createShapeBuffer(QTextStream);
 
 
 protected:

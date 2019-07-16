@@ -5,7 +5,6 @@ Square::Square(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
     side = arg.qRect.width();
     side = arg.qRect.height();
 
-
     _x = arg.qRect.x();
     _y = arg.qRect.y();
 }

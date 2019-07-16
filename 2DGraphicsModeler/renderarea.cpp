@@ -9,17 +9,9 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     move(0, 36);
 }
 
-void RenderArea::createShapeBuffer(QTextStream& is)
+void RenderArea::createShapeBuffer(QTextStream)
 {
-   buffer.resize(0);
-    while(!is.atEnd())
-    {
-        ShapeBuffer x;
-        x.readIn(is);
-        buffer.push_back(x);
 
-        is.readLine();//get rid of the space
-    }
 }
 
 
