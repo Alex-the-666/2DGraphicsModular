@@ -34,6 +34,7 @@ private:
     std::vector<ShapeBuffer> buffer;
     std::vector<Shape*> shapeVector;
     bool shapeBufferReady = false;
+    bool testValue = true;
     int offset=0;
 
 };

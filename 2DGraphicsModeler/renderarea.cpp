@@ -52,35 +52,42 @@ void RenderArea::transferToShapes()
        }//end of switch
 
    }// end of for loop
-    buffer.resize(0);//reset the shape buffer
+
 }
-
-
-
-
-
 
 void RenderArea::paintEvent(QPaintEvent*)
 {
-    Line temp(this);
-    temp.setPen(Qt::red,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
 
-    temp.setPointOne(10,10);
-    temp.setPointTwo(900,900);
-    temp.draw(0,0);
     if(shapeBufferReady == true)
 
     {
 
-        //  transferToShapes();
+          transferToShapes();
     }
+
+/*
+    Shape* temp = new Line(this);
+    temp->setPen(Qt::red,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
+
+    dynamic_cast<Line*>(temp)->setPointOne(10,10);
+    dynamic_cast<Line*>(temp)->setPointTwo(900,900);
+    temp->setShape(LINE);
+    shapeVector.push_back(temp);
+    temp->draw(0,0);
+
+    testValue= false;
+    temp = nullptr;
+*/
 
 
     for (auto it = shapeVector.begin();\
          it != shapeVector.end(); it++)
+    {
+        (*it)->setPen(Qt::blue,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
         (*it)->draw(0,0);
+    }
 
-    shapeBufferReady=false;
+    shapeVector.resize(0);
 
 
 

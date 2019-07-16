@@ -8,6 +8,9 @@ PolyLine::PolyLine(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
 void PolyLine::draw(const int, const int)
 {
     QPainter& painter = getQPainter();
+        setPen(Qt::blue,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
     painter.drawPolyline(qPolygon);
 }
 

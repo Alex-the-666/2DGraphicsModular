@@ -10,14 +10,17 @@ Text::Text(QPaintDevice * parent, const ShapeBuffer& arg) : Shape(parent, arg)
       tall = arg.qRect.height();
       font = arg.font;
       alignFlag = arg.alignFlag;
+      qStringText = arg.qStringText;
 }
 
 void Text::draw(const int x, const int y){
 
       QPainter& painter = getQPainter();
       const QRect rectangle = QRect(x, y, wide, tall);
+      painter.setPen(getPen());
+      painter.setBrush(getBrush());
 
-     painter.drawText(rectangle, Qt::AlignVCenter, QString("Test"));
+     painter.drawText(rectangle, alignFlag, qStringText);
 }
 
 void Text::move(const int x, const int y){

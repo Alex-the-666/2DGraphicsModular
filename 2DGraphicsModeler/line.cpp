@@ -33,6 +33,7 @@ QPoint Line::getQPointTwo() const
 void Line::draw(const int, const int)
 {
     QPainter& painter = getQPainter();
+    //setPen(Qt::blue,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
     painter.setPen(getPen());
     painter.setBrush(getBrush());
     painter.drawLine(one,two);

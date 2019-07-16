@@ -3,10 +3,9 @@
 Shape::Shape(QPaintDevice *parent, const ShapeBuffer& buffer):painter(parent)
 {
     shape = buffer.shape;
+    shapeId= buffer.shapeID;
     brush = buffer.brush;
     pen = buffer.pen;
-    painter.setPen(pen);
-    painter.setBrush(brush);
 }
 
 
@@ -37,11 +36,18 @@ void Shape::setPen(Qt::GlobalColor gc, int width,\
    pen.setJoinStyle(pjs);
 }
 
-
 void Shape::setBrush(Qt::GlobalColor gc, Qt::BrushStyle bs)
 {
     brush.setColor(gc);
     brush.setStyle(bs);
+}
+
+
+void Shape::setBrush(QBrush arg)
+{
+    brush.setColor(arg.color());
+    brush.setStyle(arg.style());
+
 }
 
 void Shape::defaultStyle()

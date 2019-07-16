@@ -12,6 +12,9 @@ Square::Square(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
 void Square::draw(const int, const int)
 {
     QPainter& painter = getQPainter();
+        setPen(Qt::black,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
     painter.drawRect(_x,_y,side,side);
 }
 

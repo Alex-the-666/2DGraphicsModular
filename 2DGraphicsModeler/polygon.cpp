@@ -9,6 +9,8 @@ Polygon::Polygon(QPaintDevice * parent, const ShapeBuffer& buffer)
 void Polygon::draw(const int, const int)
 {
     QPainter& painter = getQPainter();
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
     painter.drawPolygon(polygon);
 }
 

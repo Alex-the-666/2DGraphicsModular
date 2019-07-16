@@ -21,6 +21,7 @@ private:
     int tall;
     QFont font;
     Qt::AlignmentFlag alignFlag;
+    QString qStringText;
 
 
 

@@ -14,7 +14,7 @@ class Shape
 public:
     Shape() = delete;
 
-    Shape(QPaintDevice *parent): painter(parent) {}
+    Shape(QPaintDevice *parent): painter(parent), shapeId {0} {}
 
     Shape(QPaintDevice *parent, const ShapeBuffer& buffer);
 
@@ -32,6 +32,7 @@ public:
     void setPen(Qt::GlobalColor gc1, int width,\
                  Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs);
     void setBrush(Qt::GlobalColor gc2, Qt::BrushStyle bs);
+    void setBrush(QBrush);
 
     void defaultStyle();
 

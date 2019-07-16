@@ -170,10 +170,10 @@ int ShapeBuffer::setInt(QString& arg)const
     return myList[1].toInt();
 }
 ShapeType ShapeBuffer::setShape(QString& string3)const
-{    if (string3.contains("Line"))
-    return LINE;
-else if (string3.contains("Polyline"))
+{    if (string3.contains("Polyline"))
     return POLYLINE;
+else if (string3.contains("Line"))
+    return LINE;
 else if (string3.contains("Polygon"))
     return POLYGON;
 else if (string3.contains("Square"))
@@ -196,14 +196,14 @@ Qt::PenStyle ShapeBuffer::setPenStyle(QString& x) const
         return Qt::NoPen;
     else if(x.contains("SolidLine"))
         return Qt::SolidLine;
-    else if(x.contains("DashLine"))
-        return Qt::DashLine;
-    else if(x.contains("DotLine"))
-        return Qt::DotLine;
-    else if(x.contains("DashDotLine"))
-        return Qt::DashDotLine;
     else if(x.contains("DashDotDotLine"))
         return Qt::DashDotDotLine;
+    else if(x.contains("DashDotLine"))
+        return Qt::DashDotLine;
+    else if(x.contains("DotLine"))
+        return Qt::DotLine;
+    else if(x.contains("DashLine"))
+        return Qt::DashLine;
     else
         throw MyException();
 }

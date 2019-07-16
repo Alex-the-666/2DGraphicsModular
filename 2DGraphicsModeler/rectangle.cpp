@@ -27,6 +27,8 @@ double Rectangle::perimeter () const
 void Rectangle::draw (int x, int y)
 {
     QPainter& painter = getQPainter();
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
 
     /* DRAW SHAPE BASED ON INTERNAL PRIVATE VARIABLES */
     painter.drawRect (x,y,width,height);
