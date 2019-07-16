@@ -28,6 +28,7 @@ void Text::move(const int x1, const int y1){
       {
           x = x1;
           y = y1;
+          //draw(x, y)?
       }
 }
 
