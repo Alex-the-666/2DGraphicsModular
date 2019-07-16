@@ -1,33 +1,13 @@
 #include "line.h"
 #include <cmath>
 
-Line::Line(QPaintDevice *parent): Shape(parent),\
-    one(0,0), two(100,100)
-{
-
-}
-
-Line::Line(QPaintDevice* parent, Qt::GlobalColor gc1, double width,\
-           Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
-           Qt::GlobalColor gc2, Qt::BrushStyle bs):\
-    Shape(parent, LINE, gc1, width,\
-          ps, pcs, pjs,\
-          gc2, bs),\
-    one(0,0), two(100,100)
-{}
-
 Line::Line(QPaintDevice *parent,\
-           QPen rhsPen, QBrush rhsBrush):\
-        Shape(parent,LINE,rhsPen,rhsBrush),\
-        one(0,0), two(100,100)
-{}
-
-Line::Line(QPaintDevice *parent, const ShapeBuffer& buffer): Shape(parent, buffer)
+           const ShapeBuffer& buffer): Shape(parent, buffer)
 {
     if(buffer.shape==LINE)
     {
-    custom::vector<QPoint>::const_iterator it = buffer.qPointVector.begin();
-    setDimension(*it, *(it+1));
+        one = buffer.one;
+        two = buffer.two;
     }
     else {
         //should throw an exception here

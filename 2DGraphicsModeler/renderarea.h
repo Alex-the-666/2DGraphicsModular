@@ -10,7 +10,9 @@
 #include "rectangle.h"
 #include "circle.h"
 #include "ellipse.h"
+#include "square.h"
 #include "vector.h"
+#include "text.h"
 
 class RenderArea : public QWidget
 {
@@ -21,16 +23,16 @@ public:
 
 
 protected:
-    void addShape(const ShapeBuffer& buffer);
+    void transferToShapes();
     void paintEvent(QPaintEvent *event) override;
-    void testAddLines();
+
 signals:
 
 public slots:
 private:
     custom::vector <ShapeBuffer> buffer;
     custom::vector<Shape*> shapeVector;
-    bool add = false;
+    bool shapeBufferReady = false;
     int offset=0;
 
 };

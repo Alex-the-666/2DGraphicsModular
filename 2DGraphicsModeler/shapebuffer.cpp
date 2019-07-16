@@ -8,7 +8,6 @@ ShapeBuffer::ShapeBuffer()
 void ShapeBuffer::reset()
 {
     shape=LINE;
-    qPointVector.resize(0);
     qRect.setRect(0,0,0,0);
     qPolygon.setPoint(0,0,0);
     defaultStyle();
@@ -53,7 +52,7 @@ void ShapeBuffer::readIn(QTextStream& is)
     case LINE:
     {
         myString = is.readLine();
-        qPointVector = getLineDimensions(myString);
+        getLineDimensions(myString,one,two);
         myString = is.readLine();
         pen.setColor(setColor(myString));
         myString = is.readLine();
@@ -304,14 +303,15 @@ QFont::Weight ShapeBuffer::getTextFontWeight(QString & x) const
         throw MyException();
 }
 
-custom::vector<QPoint> ShapeBuffer::getLineDimensions(QString & x) const
+void ShapeBuffer::getLineDimensions\
+(QString & x, QPoint& one, QPoint& two)
 {
     x.remove(',');
     QStringList myList = x.split(' ');
-    custom::vector<QPoint> temp;
-    temp.push_back(QPoint(myList[1].toInt(),myList[2].toInt()));
-    temp.push_back(QPoint(myList[3].toInt(),myList[4].toInt()));
-    return temp;
+    one.setX(myList[1].toInt());
+    one.setY(myList[2].toInt());
+    two.setX(myList[3].toInt());
+    two.setY(myList[4].toInt());
 }
 
 QPolygon ShapeBuffer::getPolygonDimensions(QString & x) const

@@ -14,30 +14,46 @@ void RenderArea::createShapeBuffer(QTextStream)
 
 }
 
-
-
-void RenderArea::addShape(const ShapeBuffer&)
+void RenderArea::transferToShapes()
 {
+   for(auto sbIt = buffer.begin();\
+       sbIt != buffer.end(); sbIt++)
+   {
+       ShapeType shapeType = sbIt->shape;
+       switch(shapeType)
+       {
+       case LINE: shapeVector.push_back(new Line(this,*sbIt));
+           break;
+       case POLYLINE: shapeVector.push_back(new PolyLine(this,*sbIt));
+           break;
+       case POLYGON: shapeVector.push_back(new Polygon(this,*sbIt));
+           break;
+       case RECTANGLE: shapeVector.push_back(new Rectangle(this,*sbIt));
+           break;
+       case SQUARE: shapeVector.push_back(new Square(this,*sbIt));
+           break;
+       case ELLIPSE: shapeVector.push_back(new Ellipse(this,*sbIt));
+           break;
+       case CIRCLE:shapeVector.push_back(new Circle(this,*sbIt));
+           break;
+       case TEXT: shapeVector.push_back(new Text(this,*sbIt));
+           break;
+       }//end of switch
+
+   }// end of for loop
+    buffer.resize(0);//reset the shape buffer
 }
 
-void RenderArea::testAddLines()
-{
-    if(add == true)
-    {
-    Line *line1 = new Line(this);
-    line1->setDimension(10,10,100+offset,40+offset);
 
-    shapeVector.push_back(line1);
-    if(offset<300)
-        offset +=30;
-    }
-}
+
+
+
 
 void RenderArea::paintEvent(QPaintEvent*)
 {
-    Line asdf(this);
+    if(shapeBufferReady == true)
+        transferToShapes();
 
-    testAddLines();
     for (custom::vector<Shape*>::iterator it = shapeVector.begin();\
          it != shapeVector.end(); it++)
         (*it)->draw(0,0);
