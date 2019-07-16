@@ -2,42 +2,39 @@
 
 Square::Square(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
 {
+    side = arg.qRect.width();
+    side = arg.qRect.height();
 
 
+    _x = arg.qRect.x();
+    _y = arg.qRect.y();
 }
-
 void Square::draw(const int, const int)
 {
     QPainter& painter = getQPainter();
-    //painter.draw
+    painter.drawRect(_x,_y,side,side);
 }
 
 double Square::area() const
 {
-    return 0;
+    return side*side;
 }
 
 void Square::move(int x, int y)
 {
-    bool allowMove = true;
-
-//        if ((qPolygon.point(i).x() + x) > 1000 || (qPolygon.point(i).y() + y > 500))
-//        {
-//            allowMove = false;
-//        }
-
-
-    if (allowMove)
+    if ((0.5*side + x) > 1000 || (0.5*side + y) > 500 )
     {
-        //qPolygon.translate(x,y);
+       _x = x;
+       _y = y;
     }
 }
-
 
 double Square::perimeter() const
 {
     double perimeter;
     perimeter = 0;
+
+    perimeter =  side + side + side +side;
 
     return perimeter;
 }
