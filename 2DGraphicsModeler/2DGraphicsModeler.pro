@@ -40,7 +40,8 @@ SOURCES += \
         renderarea.cpp \
         shape.cpp \
         shapebuffer.cpp \
-        square.cpp
+        square.cpp \
+        text.cpp
 
 HEADERS += \
         adminlogin.h \
@@ -58,6 +59,7 @@ HEADERS += \
         shape.h \
         shapebuffer.h \
         square.h \
+        text.h \
         vector.h
 
 FORMS += \
