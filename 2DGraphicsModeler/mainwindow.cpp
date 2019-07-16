@@ -91,7 +91,7 @@ void MainWindow::on_actionSave_triggered()
     QString path = QFileDialog::getSaveFileName(nullptr, tr("Save"), ".txt");
     QFile file(path);
     file.open(QIODevice::WriteOnly);
-    custom::vector<Shape*> shapeVector = renderArea->getShapeVector();
+    custom::vector<Shape*> shapeVector = renderArea->shapeVector;
     std::stringstream ss;
     for(Shape* shape : shapeVector){
         shape->write(ss);

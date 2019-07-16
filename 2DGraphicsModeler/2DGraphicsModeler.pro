@@ -50,6 +50,7 @@ HEADERS += \
         ellipse.h \
         line.h \
         mainwindow.h \
+        palette.h \
         polyline.h \
         palette.h \
         polygon.h \
