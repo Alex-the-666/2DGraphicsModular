@@ -36,6 +36,7 @@ SOURCES += \
         palette.cpp \
         polygon.cpp \
         polyline.cpp \
+        rectangle.cpp \
         renderarea.cpp \
         shape.cpp \
         shapebuffer.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
         palette.h \
         polygon.h \
         polyline.h \
+        rectangle.h \
         renderarea.h \
         shape.h \
         shapebuffer.h \
