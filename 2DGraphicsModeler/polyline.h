@@ -14,6 +14,7 @@ public:
      ~PolyLine() override {}
 
     void draw (const int x, const int y)override;
+    void draw (QPaintDevice*) override;
     void move(int x, int y) override;
     double area() const override;
     double perimeter() const override;

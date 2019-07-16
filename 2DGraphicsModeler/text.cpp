@@ -4,13 +4,14 @@
 
 Text::Text(QPaintDevice * parent, const ShapeBuffer& arg) : Shape(parent, arg)
 {
-      x = arg.qRect.x();
-      y = arg.qRect.x();
-      wide = arg.qRect.width();
-      tall = arg.qRect.height();
-      font = arg.font;
-      alignFlag = arg.alignFlag;
-      qStringText = arg.qStringText;
+    QRect qRect = arg.getQRect();
+      x = qRect.x();
+      y = qRect.x();
+      wide = qRect.width();
+      tall = qRect.height();
+      font = arg.getQFont();
+      alignFlag = arg.getAlignFlag();
+      qStringText = arg.getQStringText();
 }
 
 void Text::draw(const int x, const int y){
@@ -20,7 +21,20 @@ void Text::draw(const int x, const int y){
       painter.setPen(getPen());
       painter.setBrush(getBrush());
 
-     painter.drawText(rectangle, alignFlag, qStringText);
+      painter.drawText(rectangle, alignFlag, qStringText);
+      painter.end();
+}
+
+void Text::draw(QPaintDevice * parent)
+{
+    QPainter& painter = getQPainter();
+    painter.begin(parent);
+    const QRect rectangle = QRect(x, y, wide, tall);
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
+
+    painter.drawText(rectangle, alignFlag, qStringText);
+    painter.end();
 }
 
 void Text::move(const int x, const int y){

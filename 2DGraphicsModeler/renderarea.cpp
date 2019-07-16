@@ -30,7 +30,7 @@ void RenderArea::transferToShapes()
    for(auto sbIt = buffer.begin();\
        sbIt != buffer.end(); sbIt++)
    {
-       ShapeType shapeType = sbIt->shape;
+       ShapeType shapeType = sbIt->getShape();
        switch(shapeType)
        {
        case LINE: shapeVector.push_back(new Line(this,*sbIt));
@@ -61,33 +61,27 @@ void RenderArea::paintEvent(QPaintEvent*)
     if(shapeBufferReady == true)
 
     {
-
           transferToShapes();
+
+          for (auto it = shapeVector.begin(); it != shapeVector.end(); it++)
+          {
+              //it= it+3;
+              (*it)->draw(this);
+              break;
+          }
+          shapeBufferReady= false;
+    }
+    else {
+        for (auto it = shapeVector.begin(); it != shapeVector.end(); it++)
+        {
+                //it= it+5;
+            (*it)->draw(this);
+            break;
+
+        }
     }
 
-/*
-    Shape* temp = new Line(this);
-    temp->setPen(Qt::red,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
-
-    dynamic_cast<Line*>(temp)->setPointOne(10,10);
-    dynamic_cast<Line*>(temp)->setPointTwo(900,900);
-    temp->setShape(LINE);
-    shapeVector.push_back(temp);
-    temp->draw(0,0);
-
-    testValue= false;
-    temp = nullptr;
-*/
-
-
-    for (auto it = shapeVector.begin();\
-         it != shapeVector.end(); it++)
-    {
-        (*it)->setPen(Qt::blue,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
-        (*it)->draw(0,0);
-    }
-
-    shapeVector.resize(0);
+    //shapeVector.resize(0);
 
 
 

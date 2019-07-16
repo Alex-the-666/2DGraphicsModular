@@ -2,16 +2,28 @@
 
 PolyLine::PolyLine(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
 {
-    qPolygon = arg.qPolygon;
+    qPolygon = arg.getQPolygon();
 }
 
 void PolyLine::draw(const int, const int)
 {
     QPainter& painter = getQPainter();
-        setPen(Qt::blue,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
     painter.setPen(getPen());
     painter.setBrush(getBrush());
     painter.drawPolyline(qPolygon);
+    painter.end();
+}
+
+void PolyLine::draw(QPaintDevice * x)
+{
+    QPainter& painter = getQPainter();
+    painter.begin(x);
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
+    painter.drawPolyline(qPolygon);
+    painter.end();
+
+
 }
 
 double PolyLine::area() const

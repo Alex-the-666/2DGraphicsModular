@@ -30,8 +30,8 @@ void MainWindow::on_actionOpen_triggered()
     if(file.open(QIODevice::ReadOnly)){
         QTextStream instream(&file);
         renderArea->createShapeBuffer(instream);
-       // pass qtextstream object;
     }
+    file.close();
 
 }
 
@@ -58,6 +58,7 @@ void MainWindow::on_actionQuit_triggered()
 
 void MainWindow::on_TestAddShape_released()
 {
+    //renderArea->testValue=(!renderArea->testValue);
     renderArea->update();
 
 }

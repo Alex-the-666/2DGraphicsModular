@@ -4,10 +4,11 @@
 Line::Line(QPaintDevice *parent,\
            const ShapeBuffer& buffer): Shape(parent, buffer)
 {
-    if(buffer.shape==LINE)
+    //Sanity Check here
+    if(buffer.getShape()==LINE)
     {
-        one = buffer.one;
-        two = buffer.two;
+        one = buffer.getQPointOne();
+        two = buffer.getQPointTwo();
     }
     else {
         //should throw an exception here
@@ -33,10 +34,20 @@ QPoint Line::getQPointTwo() const
 void Line::draw(const int, const int)
 {
     QPainter& painter = getQPainter();
-    //setPen(Qt::blue,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
     painter.setPen(getPen());
     painter.setBrush(getBrush());
     painter.drawLine(one,two);
+    painter.end();
+}
+
+void Line::draw(QPaintDevice * parent)
+{
+    QPainter& painter = getQPainter();
+    painter.begin(parent);
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
+    painter.drawLine(one,two);
+    painter.end();
 }
 
 void Line::move(int x, int y)

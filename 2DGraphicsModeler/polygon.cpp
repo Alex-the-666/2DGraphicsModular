@@ -3,7 +3,7 @@
 Polygon::Polygon(QPaintDevice * parent, const ShapeBuffer& buffer)
         : Shape(parent, buffer)
 {
-    polygon = buffer.qPolygon;
+    polygon = buffer.getQPolygon();
 }
 
 void Polygon::draw(const int, const int)
@@ -12,6 +12,18 @@ void Polygon::draw(const int, const int)
     painter.setPen(getPen());
     painter.setBrush(getBrush());
     painter.drawPolygon(polygon);
+    painter.end();
+}
+
+void Polygon::draw(QPaintDevice* x)
+{
+    QPainter& painter = getQPainter();
+    painter.begin(x);
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
+    painter.drawPolygon(polygon);
+    painter.end();
+
 }
 
 void Polygon::move(int x, int y)

@@ -4,10 +4,11 @@
 // Arthur: For the constructor, I only need a qRect
 Ellipse::Ellipse(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
 {
-    x = arg.qRect.x();
-    y = arg.qRect.x();
-    radius1 = arg.qRect.width();
-    radius2 = arg.qRect.height();
+    QRect qRect = arg.getQRect();
+    x = qRect.x();
+    y = qRect.x();
+    radius1 = qRect.width();
+    radius2 = qRect.height();
 }
 
 void Ellipse::draw(const int x, const int y)
@@ -16,8 +17,17 @@ void Ellipse::draw(const int x, const int y)
     painter.setPen(getPen());
     painter.setBrush(getBrush());
     painter.drawEllipse(x, y, radius1, radius2);
+    painter.end();
 }
-
+void Ellipse::draw(QPaintDevice * parent)
+{
+    QPainter& painter = getQPainter();
+    painter.begin(parent);
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
+    painter.drawEllipse(x, y, radius1, radius2);
+    painter.end();
+}
 void Ellipse::move(const int x, const int y)
 {
     if(radius1 + x < 1000 && radius1 + y < 500 &&\

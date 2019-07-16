@@ -7,8 +7,6 @@
 #include <cmath>
 #include "shapebuffer.h"
 
-const std::string SHAPE_IDENTIFIERS[] = {"LINE", "POLYLINE", "POLYGON", "RECTANGLE", "ELIPSE", "TEXT"};
-
 class Shape
 {
 public:
@@ -32,11 +30,9 @@ public:
     void setPen(Qt::GlobalColor gc1, int width,\
                  Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs);
     void setBrush(Qt::GlobalColor gc2, Qt::BrushStyle bs);
-    void setBrush(QBrush);
-
-    void defaultStyle();
 
     virtual void draw(const int x, const int y) = 0;
+    virtual void draw(QPaintDevice*)=0;
     virtual void move(const int x,const int y) = 0;
     virtual double area() const = 0;
     virtual double perimeter() const =0;

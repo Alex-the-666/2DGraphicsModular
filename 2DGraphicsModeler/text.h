@@ -9,6 +9,7 @@ public:
     Text() = delete;
     Text(QPaintDevice * parent, const ShapeBuffer& arg);
     void draw(const int x, const int y) override;
+    void draw(QPaintDevice*)override;
     void move(const int x, const int y) override;
     double area() const override;
     double perimeter()const override;

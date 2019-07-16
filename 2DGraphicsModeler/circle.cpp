@@ -8,7 +8,15 @@ Circle::Circle(QPaintDevice *parent, ShapeBuffer arg): Ellipse(parent, arg)
 
 void Circle::draw(const int x, const int y)
 {
+    QPainter& painter = getQPainter();
+    painter.end();
+}
 
+void Circle::draw(QPaintDevice * parent)
+{
+    QPainter& painter = getQPainter();
+    painter.begin(parent);
+    painter.end();
 }
 
 void Circle::move(const int x, const int y)

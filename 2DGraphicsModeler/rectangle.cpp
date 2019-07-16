@@ -3,13 +3,14 @@
 Rectangle::Rectangle (QPaintDevice* parent, ShapeBuffer arg) :
     Shape (parent, arg)
 {
+    QRect qRect= arg.getQRect();
     /*SETTING CENTER COORDINATES FROM 'SHAPEBUFFER' ARG*/
-    x = arg.qRect.x();
-    y = arg.qRect.y();
+    x = qRect.x();
+    y = qRect.y();
 
     /*SETTING DIMENSIONS FROM 'SHAPEBUFFER' ARG*/
-    width = arg.qRect.width();
-    height = arg.qRect.height();
+    width = qRect.width();
+    height = qRect.height();
 }
 
 Rectangle::~Rectangle () {}
@@ -32,6 +33,19 @@ void Rectangle::draw (int x, int y)
 
     /* DRAW SHAPE BASED ON INTERNAL PRIVATE VARIABLES */
     painter.drawRect (x,y,width,height);
+    painter.end();
+}
+
+void Rectangle::draw(QPaintDevice * parent)
+{
+    QPainter& painter = getQPainter();
+    painter.begin(parent);
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
+
+    /* DRAW SHAPE BASED ON INTERNAL PRIVATE VARIABLES */
+    painter.drawRect(x,y,width,height);
+    painter.end();
 }
 
 void Rectangle::move (int px, int py)

@@ -22,7 +22,7 @@ public:
     explicit RenderArea(QWidget *parent = nullptr);
     void createShapeBuffer(QTextStream&);
 
-
+    bool testValue = true;
 protected:
     void transferToShapes();
     void paintEvent(QPaintEvent *event) override;
@@ -34,9 +34,6 @@ private:
     std::vector<ShapeBuffer> buffer;
     std::vector<Shape*> shapeVector;
     bool shapeBufferReady = false;
-    bool testValue = true;
-    int offset=0;
-
 };
 
 #endif // RENDERAREA_H
