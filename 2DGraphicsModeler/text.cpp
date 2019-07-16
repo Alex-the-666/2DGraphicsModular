@@ -1,7 +1,4 @@
 #include "text.h"
-#include <QString>
-#include <QPainter> 
-#include <QTranslator>
 
 // just need the qrect for the constructor: x, y, height, width
 
