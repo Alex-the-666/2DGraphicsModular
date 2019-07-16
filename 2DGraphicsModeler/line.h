@@ -7,12 +7,6 @@ class Line: public Shape
 {
 public:
     Line() = delete;
-    Line (QPaintDevice *parent);
-    Line(QPaintDevice* parent, Qt::GlobalColor gc1, double width,\
-               Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs,\
-               Qt::GlobalColor gc2, Qt::BrushStyle bs);
-    Line(QPaintDevice *parent,\
-         QPen rhsPen, QBrush rhsBrush);
     Line(QPaintDevice *parent, const ShapeBuffer& buffer);
     virtual ~Line()override;
 
