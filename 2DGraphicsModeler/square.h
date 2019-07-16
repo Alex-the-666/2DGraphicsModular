@@ -21,6 +21,9 @@ public:
     double perimeter() const override;
 
 private:
+    int side;
+    int _x;
+    int _y;
 };
 
-#endif // SQUARE_H
+#endif //SQUARE_H
