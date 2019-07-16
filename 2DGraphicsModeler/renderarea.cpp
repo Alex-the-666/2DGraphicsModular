@@ -64,7 +64,10 @@ void RenderArea::paintEvent(QPaintEvent*)
 
           for (auto it = shapeVector.begin(); it != shapeVector.end(); it++)
           {
-              //(*it)->draw(this);
+              it=it+3;
+              (*it)->draw(0,0);
+              (*it)->draw(this);
+              break;
           }
           shapeBufferReady= false;
 
@@ -73,7 +76,7 @@ void RenderArea::paintEvent(QPaintEvent*)
     else {
         for (auto it = shapeVector.begin(); it != shapeVector.end(); it++)
         {
-                //it= it+5;
+                it= it+3;
 
 
             (*it)->draw(this);
