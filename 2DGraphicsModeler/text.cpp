@@ -2,7 +2,6 @@
 
 // just need the qrect for the constructor: x, y, height, width
 
-
 Text::Text(QPaintDevice * parent, const ShapeBuffer& arg) : Shape(parent, arg)
 {
       x = arg.qRect.x();
@@ -41,3 +40,5 @@ double Text::perimeter() const{
       return (2 * (wide + tall));
 
 }
+
+Text::~Text () {}
