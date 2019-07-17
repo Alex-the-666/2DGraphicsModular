@@ -1,6 +1,5 @@
 #ifndef PALETTE_H
 #define PALETTE_H
-
 #include <QDialog>
 
 namespace Ui {
