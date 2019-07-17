@@ -14,13 +14,13 @@ private:
 public:
     /*CONSTRUCTORS*/
     Rectangle () = delete;
-    Rectangle (QPaintDevice* parent, const ShapeBuffer& arg);
+    Rectangle (const ShapeBuffer& arg);
 
     /*DESTRUCTOR*/
     ~Rectangle ()override;
 
     void draw (int, int)override;
-    void draw(QPaintDevice*)override;
+    void draw()override;
 
     void move (int, int)override;
     double area () const override;

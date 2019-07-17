@@ -1,22 +1,19 @@
 #include "circle.h"
 #include <QtMath>
 
-Circle::Circle(QPaintDevice *parent,const ShapeBuffer& arg): Ellipse(parent, arg)
+Circle::Circle(const ShapeBuffer& arg): Ellipse(arg)
 {
     radius2 = radius1;
 }
 
-void Circle::draw(const int x, const int y)
+void Circle::draw(const int, const int)
 {
-   // QPainter& painter = getQPainter();
-    //painter.end();
+    passQPainter(nullptr);
 }
 
-void Circle::draw(QPaintDevice * parent)
+void Circle::draw()
 {
-    QPainter painter(parent);
-    passQPainter(&painter);
-
+    passQPainter(nullptr);
 }
 
 void Circle::move(const int x, const int y)

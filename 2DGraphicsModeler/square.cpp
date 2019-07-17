@@ -1,34 +1,28 @@
 #include "square.h"
 
-Square::Square(QPaintDevice *parent, const ShapeBuffer& arg): Shape(parent, arg)
+Square::Square(const ShapeBuffer& arg): Shape(arg)
 {
     QRect qRect = arg.getQRect();
     side = qRect.width();
     side = qRect.height();
-
 
     _x = qRect.x();
     _y = qRect.y();
 }
 void Square::draw(const int, const int)
 {
-    QPainter& painter = getQPainter();
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawRect(_x,_y,side,side);
-    painter.end();
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->drawRect(_x,_y,side,side);
+    getQPainter()->end();
 }
 
-void Square::draw(QPaintDevice * parent)
+void Square::draw()
 {
-    QPainter& painter = getQPainter();
-    painter.begin(parent);
-    setPen(Qt::red,4,Qt::SolidLine,Qt::FlatCap,Qt::MiterJoin);
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawRect(_x,_y,side,side);
-    painter.end();
-
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->drawRect(_x,_y,side,side);
+    getQPainter()->end();
 }
 
 double Square::area() const

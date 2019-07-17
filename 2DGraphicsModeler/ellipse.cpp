@@ -2,7 +2,7 @@
 #include <QtMath>
 
 // Arthur: For the constructor, I only need a qRect
-Ellipse::Ellipse(QPaintDevice *parent, const ShapeBuffer& arg): Shape(parent, arg)
+Ellipse::Ellipse(const ShapeBuffer& arg): Shape(arg)
 {
     QRect qRect = arg.getQRect();
     x = qRect.x();
@@ -20,14 +20,12 @@ void Ellipse::draw(const int x, const int y)
     painter.drawEllipse(x, y, radius1, radius2);
     painter.end();*/
 }
-void Ellipse::draw(QPaintDevice * parent)
+void Ellipse::draw()
 {
-    QPainter asdf(parent);
-    //passQPainter(&painter);
-    asdf.setPen(getPen());
-    asdf.setBrush(getBrush());
-    asdf.drawEllipse(x, y, radius1, radius2);
-    painterasdfend();
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->drawEllipse(x, y, radius1, radius2);
+    passQPainter(nullptr);
 }
 void Ellipse::move(const int x, const int y)
 {

@@ -1,6 +1,6 @@
 #include "shape.h"
 
-Shape::Shape(QPaintDevice *, const ShapeBuffer& buffer)
+Shape::Shape(const ShapeBuffer & buffer)
 {
     painter=  nullptr;
     shape = buffer.getShape();
@@ -8,7 +8,6 @@ Shape::Shape(QPaintDevice *, const ShapeBuffer& buffer)
     brush = buffer.getBrush();
     pen = buffer.getPen();
 }
-
 
 Shape::~Shape(){}
 
@@ -41,4 +40,9 @@ void Shape::setBrush(Qt::GlobalColor gc, Qt::BrushStyle bs)
 {
     brush.setColor(gc);
     brush.setStyle(bs);
+}
+
+QPainter *Shape::getQPainter()
+{
+    return painter;
 }

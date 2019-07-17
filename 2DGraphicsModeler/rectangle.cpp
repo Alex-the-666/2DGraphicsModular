@@ -1,7 +1,7 @@
 #include "rectangle.h"
 
-Rectangle::Rectangle (QPaintDevice* parent, const ShapeBuffer& arg) :
-    Shape (parent, arg)
+Rectangle::Rectangle (const ShapeBuffer& arg) :
+    Shape (arg)
 {
     QRect qRect= arg.getQRect();
     /*SETTING CENTER COORDINATES FROM 'SHAPEBUFFER' ARG*/
@@ -27,25 +27,20 @@ double Rectangle::perimeter () const
 
 void Rectangle::draw (int x, int y)
 {
-    QPainter& painter = getQPainter();
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
 
     /* DRAW SHAPE BASED ON INTERNAL PRIVATE VARIABLES */
-    painter.drawRect (x,y,width,height);
-    //painter.end();
+    getQPainter()->drawRect (x,y,width,height);
 }
 
-void Rectangle::draw(QPaintDevice * parent)
+void Rectangle::draw()
 {
-    QPainter& painter = getQPainter();
-    //painter.begin(parent);
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
 
     /* DRAW SHAPE BASED ON INTERNAL PRIVATE VARIABLES */
-    painter.drawRect(x,y,width,height);
-    //painter.end();
+    getQPainter()->drawRect (x,y,width,height);
 }
 
 void Rectangle::move (int px, int py)

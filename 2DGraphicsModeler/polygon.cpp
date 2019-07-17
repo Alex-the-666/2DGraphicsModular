@@ -1,28 +1,25 @@
 #include "polygon.h"
 
-Polygon::Polygon(QPaintDevice * parent, const ShapeBuffer& buffer)
-        : Shape(parent, buffer)
+Polygon::Polygon(const ShapeBuffer& buffer)
+        : Shape(buffer)
 {
     polygon = buffer.getQPolygon();
 }
 
 void Polygon::draw(const int, const int)
 {
-    QPainter& painter = getQPainter();
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawPolygon(polygon);
-    painter.end();
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->drawPolygon(polygon);
+    passQPainter(nullptr);
 }
 
-void Polygon::draw(QPaintDevice* x)
+void Polygon::draw()
 {
-    QPainter& painter = getQPainter();
-    painter.begin(x);
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawPolygon(polygon);
-    painter.end();
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->drawPolygon(polygon);
+    passQPainter(nullptr);
 
 }
 

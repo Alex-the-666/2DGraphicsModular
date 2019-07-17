@@ -1,8 +1,7 @@
 #include "line.h"
 #include <cmath>
 
-Line::Line(QPaintDevice *parent,\
-           const ShapeBuffer& buffer): Shape(parent, buffer)
+Line::Line(const ShapeBuffer& buffer): Shape(buffer)
 {
     //Sanity Check here
     if(buffer.getShape()==LINE)
@@ -33,21 +32,17 @@ QPoint Line::getQPointTwo() const
 
 void Line::draw(const int, const int)
 {
-    QPainter& painter = getQPainter();
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawLine(one,two);
-    painter.end();
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->drawLine(one,two);
 }
 
-void Line::draw(QPaintDevice * parent)
+void Line::draw()
 {
-    QPainter& painter = getQPainter();
-    painter.begin(parent);
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawLine(one,two);
-    painter.end();
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->drawLine(one,two);
+    passQPainter(nullptr);
 }
 
 void Line::move(int x, int y)

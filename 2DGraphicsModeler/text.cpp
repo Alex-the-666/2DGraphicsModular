@@ -1,37 +1,49 @@
 #include "text.h"
 
 // just need the qrect for the constructor: x, y, height, width
-Text::Text(QPaintDevice * parent, const ShapeBuffer& arg) : Shape(parent, arg) {
+Text::Text(const ShapeBuffer& arg) : Shape(arg) {
       
       QRect qRect = arg.getQRect();
-      
-      x = arg.qRect.x();
-      y = arg.qRect.y();
-      wide = arg.qRect.width();
-      tall = arg.qRect.height();
+
+      x = qRect.x();
+      y = qRect.y();
+      wide = qRect.width();
+      tall = qRect.height();
+      alignFlag = arg.getAlignFlag();
+      myQString = arg.getQStringText();
+      font = arg.getQFont();
+
 }
 
 void Text::draw(const int x, const int y){
 
-      QPainter& painter = getQPainter();
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->setFont(font);
+    const QRect rectangle = QRect(x, y, wide, tall);
 
-      const QRect rectangle = QRect(x, y, wide, tall);
-
-      QFont font = painter.font();
+/*     QFont font = painter.font();
           font.setPixelSize(14);
           font.setFamily("Arial");
           painter.setFont(font);
-
-      QColor color(0, 0, 255, 1);   //RGBA
-
-      QPen pen = painter.pen();
-          pen.setStyle(Qt::SolidLine);
-          pen.setColor(color);
-          painter.setPen(pen);
+  QColor color(0, 0, 255, 1);   //RGBA*/
 
       QRect boundingRect;
+      getQPainter()->drawText(rectangle,alignFlag,\
+                              myQString, &boundingRect);
+      passQPainter(nullptr);
+}
 
-          painter.drawText(rectangle, Qt::AlignVCenter, QObject::tr("CS1C: Ratatouille Group Project"), &boundingRect);
+void Text::draw(){
+
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->setFont(font);
+    const QRect rectangle = QRect(x, y, wide, tall);
+    QRect boundingRect;
+    getQPainter()->drawText(rectangle,alignFlag,\
+                            myQString, &boundingRect);
+    passQPainter(nullptr);
 }
 
 void Text::move(const int x1, const int y1) {

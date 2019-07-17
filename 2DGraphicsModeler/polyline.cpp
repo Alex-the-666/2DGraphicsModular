@@ -1,29 +1,24 @@
 #include "polyline.h"
 
-PolyLine::PolyLine(QPaintDevice *parent, const ShapeBuffer& arg): Shape(parent, arg)
+PolyLine::PolyLine(const ShapeBuffer& arg): Shape(arg)
 {
     qPolygon = arg.getQPolygon();
 }
 
 void PolyLine::draw(const int, const int)
 {
-    QPainter& painter = getQPainter();
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawPolyline(qPolygon);
-    painter.end();
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->drawPolyline(qPolygon);
+    passQPainter(nullptr);
 }
 
-void PolyLine::draw(QPaintDevice * x)
+void PolyLine::draw()
 {
-    QPainter& painter = getQPainter();
-    painter.begin(x);
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawPolyline(qPolygon);
-    painter.end();
-
-
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->drawPolyline(qPolygon);
+    passQPainter(nullptr);
 }
 
 double PolyLine::area() const

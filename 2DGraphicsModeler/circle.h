@@ -7,11 +7,11 @@ class Circle : public Ellipse
 {
 public:
     Circle()=delete;
-    Circle(QPaintDevice * parent,const ShapeBuffer&);
+    Circle(const ShapeBuffer&);
     ~Circle() override {}
     void setDimension(int x, int y, int r1, int r2);
     void draw(const int x, const int y) override;
-    void draw(QPaintDevice*)override;
+    void draw()override;
     void move(const int x, const int y) override;
     double area() const override;
     double perimeter() const override;

@@ -7,8 +7,7 @@ class Line: public Shape
 {
 public:
     Line() = delete;
-    Line(QPaintDevice *parent):Shape(parent){}
-    Line(QPaintDevice *parent, const ShapeBuffer& buffer);
+    Line(const ShapeBuffer& buffer);
     virtual ~Line()override;
 
     QPoint getQPointOne()const;
@@ -18,7 +17,7 @@ public:
     void setPointTwo(int x,int y){two.setX(x); two.setY(y);}
 
     void draw (const int x, const int y)override;
-    void draw(QPaintDevice*)override;
+    void draw()override;
     void move(const int x,const int y) override;
     double area() const override;
     double perimeter() const override;

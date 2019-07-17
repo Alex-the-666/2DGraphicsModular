@@ -33,21 +33,21 @@ void RenderArea::transferToShapes()
        ShapeType shapeType = sbIt->getShape();
        switch(shapeType)
        {
-       case LINE: shapeVector.push_back(new Line(&dummy,*sbIt));
+       case LINE: shapeVector.push_back(new Line(*sbIt));
            break;
-       case POLYLINE: shapeVector.push_back(new PolyLine(&dummy,*sbIt));
+       case POLYLINE: shapeVector.push_back(new PolyLine(*sbIt));
            break;
-       case POLYGON: shapeVector.push_back(new Polygon(&dummy,*sbIt));
+       case POLYGON: shapeVector.push_back(new Polygon(*sbIt));
            break;
-       case RECTANGLE: shapeVector.push_back(new Rectangle(&dummy,*sbIt));
+       case RECTANGLE: shapeVector.push_back(new Rectangle(*sbIt));
            break;
-       case SQUARE: shapeVector.push_back(new Square(&dummy,*sbIt));
+       case SQUARE: shapeVector.push_back(new Square(*sbIt));
            break;
-       case ELLIPSE: shapeVector.push_back(new Ellipse(&dummy,*sbIt));
+       case ELLIPSE: shapeVector.push_back(new Ellipse(*sbIt));
            break;
-       case CIRCLE:shapeVector.push_back(new Circle(&dummy,*sbIt));
+       case CIRCLE:shapeVector.push_back(new Circle(*sbIt));
            break;
-       case TEXT: shapeVector.push_back(new Text(&dummy,*sbIt));
+       case TEXT: shapeVector.push_back(new Text(*sbIt));
            break;
        }//end of switch
 
@@ -57,35 +57,18 @@ void RenderArea::transferToShapes()
 
 void RenderArea::paintEvent(QPaintEvent*)
 {
+    QPainter painter(this);
     if(shapeBufferReady == true)
-
     {
           transferToShapes();
-
-          for (auto it = shapeVector.begin(); it != shapeVector.end(); it++)
-          {
-              it=it+3;
-              (*it)->draw(0,0);
-              (*it)->draw(this);
-
-          }
-          shapeBufferReady= false;
-
-
+          shapeBufferReady=false;
     }
     else {
         for (auto it = shapeVector.begin(); it != shapeVector.end(); it++)
         {
-                it= it+3;
-
-
-            (*it)->draw(this);
-
+            (*it)->passQPainter(&painter);
+            (*it)->draw();
         }
     }
-
-    //shapeVector.resize(0);
-
-
 
 }
