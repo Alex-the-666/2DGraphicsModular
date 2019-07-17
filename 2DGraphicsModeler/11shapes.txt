@@ -73,7 +73,7 @@ BrushStyle: SolidPattern
 
 ShapeId: 8
 ShapeType: Text
-ShapeDimensions: 250, 425, 500, 50
+ShapeDimensions: 100, 425, 500, 50
 TextString: Class Project 2 - 2D Graphics Modeler
 TextColor: blue
 TextAlignment: AlignCenter

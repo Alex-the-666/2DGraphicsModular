@@ -119,7 +119,7 @@ void ShapeBuffer::readIn(QTextStream& is)
         myString = is.readLine();
         qStringText = setQStringText(myString);
         myString = is.readLine();
-        brush.setColor(setColor(myString));
+        pen.setColor(setColor(myString));
         myString = is.readLine();
         alignFlag = setTextAlignment(myString);
         myString = is.readLine();
