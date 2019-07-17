@@ -91,25 +91,6 @@ void ShapeBuffer::readIn(QTextStream& is)
 
     }break;
     case SQUARE:
-    {
-        myString = is.readLine();
-        qRect = setQRect(myString);
-        myString = is.readLine();
-        pen.setColor(setColor(myString));
-        myString = is.readLine();
-        pen.setWidth(setInt(myString));
-        myString = is.readLine();
-        pen.setStyle(setPenStyle(myString));
-        myString = is.readLine();
-        pen.setCapStyle(setPenCapStyle(myString));
-        myString = is.readLine();
-        pen.setJoinStyle(setPenJoinStyle(myString));
-        myString = is.readLine();
-        brush.setColor(setColor(myString));
-        myString = is.readLine();
-        brush.setStyle(setBrushStyle(myString));
-
-    }break;
     case CIRCLE:
     {
         myString = is.readLine();
