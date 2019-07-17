@@ -120,3 +120,9 @@ void MainWindow::on_actionQuit_triggered()
     
     QApplication::quit();
 }
+
+void MainWindow::on_actionOpen_palette_triggered()
+{
+    palette = new Palette(this);
+    palette -> show();
+}
