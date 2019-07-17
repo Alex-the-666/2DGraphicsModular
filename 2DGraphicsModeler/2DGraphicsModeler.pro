@@ -32,9 +32,9 @@ SOURCES += \
         line.cpp \
         main.cpp \
         mainwindow.cpp \
-        polyline.cpp \
         palette.cpp \
         polygon.cpp \
+        polyline.cpp \
         rectangle.cpp \
         renderarea.cpp \
         shape.cpp \
@@ -50,12 +50,11 @@ HEADERS += \
         line.h \
         mainwindow.h \
         palette.h \
-        polyline.h \
+        palette.h \
         polygon.h \
         polyline.h \
         rectangle.h \
         renderarea.h \
-        selection_sort.h \
         shape.h \
         shapebuffer.h \
         square.h \
