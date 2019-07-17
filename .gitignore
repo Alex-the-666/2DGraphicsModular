@@ -52,3 +52,7 @@ compile_commands.json
 2DGraphicsModeler/2DGraphicsModeler.pro.user
 *.user
 2DGraphicsModeler/.qmake.stash
+*.exe
+*.obj
+*.pdb
+*.ilk
