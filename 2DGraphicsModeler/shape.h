@@ -11,8 +11,6 @@ class Shape
 {
 public:
     Shape() = delete;
-
-    Shape(QPaintDevice *): shapeId {0} {}
     Shape(const ShapeBuffer&);
 
     Shape(Shape&) = delete;

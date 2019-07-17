@@ -20,8 +20,6 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    ShapeBuffer buffer;
-    RenderArea *renderArea;
     QTime timeDifference (const QTime&, const QTime&);
 
 private slots:
