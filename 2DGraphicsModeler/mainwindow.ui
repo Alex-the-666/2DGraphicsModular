@@ -99,7 +99,7 @@
      <x>0</x>
      <y>0</y>
      <width>1300</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuHome">
@@ -117,8 +117,15 @@
     <addaction name="actionSave"/>
     <addaction name="actionQuit"/>
    </widget>
+   <widget class="QMenu" name="menuPalette">
+    <property name="title">
+     <string>Palette</string>
+    </property>
+    <addaction name="actionOpen_palette"/>
+   </widget>
    <addaction name="menuHome"/>
    <addaction name="menuFile"/>
+   <addaction name="menuPalette"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -161,6 +168,11 @@
   <action name="actionContact_Us">
    <property name="text">
     <string>Contact Us</string>
+   </property>
+  </action>
+  <action name="actionOpen_palette">
+   <property name="text">
+    <string>Open palette</string>
    </property>
   </action>
  </widget>
