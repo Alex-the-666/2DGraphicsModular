@@ -20,9 +20,11 @@ Palette::~Palette()
 void Palette::on_pushButton_clicked()
 {
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
-    //Line* shape = new Line(w->renderArea, w->buffer);
-    //shape->setDimension(0, 0, 100, 100);
-    //w->renderArea->shapeVector.push_back(shape);
+    ShapeBuffer buffer;
+    Line* shape = new Line(buffer);
+    shape->setPointOne(10, 10);
+    shape->setPointOne(100, 100);
+    w->renderArea->getShapeVector().push_back(shape);
 }
 
 //Polyline

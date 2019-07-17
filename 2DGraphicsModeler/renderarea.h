@@ -22,6 +22,8 @@ public:
     explicit RenderArea(QWidget *parent = nullptr);
     void createShapeBuffer(QTextStream&);
     bool testValue = true;
+    custom::vector<Shape*>& getShapeVector();
+
 protected:
     void transferToShapes();
     void paintEvent(QPaintEvent *event) override;

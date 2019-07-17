@@ -25,6 +25,10 @@ void RenderArea::createShapeBuffer(QTextStream& is)
    shapeBufferReady=true;
 }
 
+custom::vector<Shape*>& RenderArea::getShapeVector(){
+    return shapeVector;
+}
+
 void RenderArea::transferToShapes()
 {
    for(auto sbIt = buffer.begin();\
