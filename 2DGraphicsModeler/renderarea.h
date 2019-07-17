@@ -34,6 +34,8 @@ private:
     std::vector<ShapeBuffer> buffer;
     std::vector<Shape*> shapeVector;
 
+    QWidget dummy;
+
     bool shapeBufferReady = false;
 };
 

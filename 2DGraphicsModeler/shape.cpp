@@ -1,7 +1,8 @@
 #include "shape.h"
 
-Shape::Shape(QPaintDevice *parent, const ShapeBuffer& buffer):painter(parent)
+Shape::Shape(QPaintDevice *, const ShapeBuffer& buffer)
 {
+    painter=  nullptr;
     shape = buffer.getShape();
     shapeId= buffer.getShapeID();
     brush = buffer.getBrush();
@@ -41,10 +42,3 @@ void Shape::setBrush(Qt::GlobalColor gc, Qt::BrushStyle bs)
     brush.setColor(gc);
     brush.setStyle(bs);
 }
-
-
-QPainter& Shape::getQPainter()
-{
-    return painter;
-}
-
