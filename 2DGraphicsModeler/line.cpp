@@ -50,6 +50,15 @@ void Line::draw(const int, const int)
     painter.drawLine(one,two);
 
 }
+void Line::draw(QPaintDevice * parent)
+{
+    QPainter& painter = getQPainter();
+    painter.begin(parent);
+    painter.setPen(getPen());
+    painter.setBrush(getBrush());
+    painter.drawLine(one,two);
+    painter.end();
+}
 
 void Line::move(int x, int y)
 {

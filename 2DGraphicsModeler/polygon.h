@@ -9,6 +9,7 @@ class Polygon : public Shape
 public:
     Polygon() = delete;
     Polygon(QPaintDevice * parent, const ShapeBuffer& buffer );
+
     void draw(const int x, const int y) override;
     void move(const int x, const int y)override;
     double area() const override;

@@ -42,6 +42,8 @@ public:
     virtual void read(std::istream& is);
 
     virtual void draw(const int x, const int y) = 0;
+   // virtual void draw(QPaintDevice*)=0;
+
     virtual void move(const int x,const int y) = 0;
     virtual double area() const = 0;
     virtual double perimeter() const =0;

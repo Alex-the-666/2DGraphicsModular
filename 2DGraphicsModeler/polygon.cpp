@@ -6,6 +6,8 @@ Polygon::Polygon(QPaintDevice * parent, const ShapeBuffer& buffer)
     polygon = buffer.qPolygon;
 }
 
+
+
 void Polygon::draw(const int, const int)
 {
     QPainter& painter = getQPainter();

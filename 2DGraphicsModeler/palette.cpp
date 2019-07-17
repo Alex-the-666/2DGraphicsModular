@@ -1,4 +1,5 @@
 #include "palette.h"
+#include "shape.h"
 #include "mainwindow.h"
 #include "ui_palette.h"
 
@@ -27,7 +28,11 @@ void Palette::on_pushButton_clicked()
 //Polyline
 void Palette::on_pushButton_2_clicked()
 {
-
+    MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
+    PolyLine* shape = new PolyLine(w->renderArea, w->buffer);
+    //shape->setPoints(int nPoints, int firstx, int firsty, ...)
+    //shape->move(10,10); //,200,200,300,440,223,345);//shape->setDimension(0, 0, 100, 100);
+    w->renderArea->shapeVector.push_back(shape);
 }
 
 //Polygon

@@ -17,6 +17,7 @@ public:
     QPoint getQPointTwo()const;
 
     void draw (const int x, const int y)override;
+    void draw(QPaintDevice * parent);
     void move(const int x,const int y) override;
     double area() const override;
     double perimeter() const override;
