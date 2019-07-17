@@ -46,15 +46,6 @@ void Line::draw()
     getQPainter()->drawLine(one,two);
     passQPainter(nullptr);
 }
-void Line::draw(QPaintDevice * parent)
-{
-    QPainter& painter = getQPainter();
-    painter.begin(parent);
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawLine(one,two);
-    painter.end();
-}
 
 void Line::move(int x, int y)
 {

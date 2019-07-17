@@ -32,6 +32,9 @@ public slots:
 private:
     custom::vector<ShapeBuffer> buffer;
     custom::vector<Shape*> shapeVector;
+
+    QWidget dummy;
+
     bool shapeBufferReady = false;
 };
 

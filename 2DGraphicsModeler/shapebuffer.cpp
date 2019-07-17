@@ -7,22 +7,7 @@ ShapeBuffer::ShapeBuffer()
 
 void ShapeBuffer::readIn(QTextStream& is)
 {
-    try{   /*
-
-  QFile file(path);
-    file.open(QIODevice::WriteOnly);
-
-    QTextStream out(&file);
-    out << list.at(1).toInt();
-
-    string2.remove(',');
-    list = string2.split(' ');
-    for (int i= 1; i < list.size(); i++)
-    {
-        out << list.at(i).toInt();
-
-    }
-  */
+    try{
         QString myString = is.readLine();
         shapeID = setInt(myString);
         myString = is.readLine();
@@ -265,7 +250,6 @@ Qt::BrushStyle ShapeBuffer::setBrushStyle(QString & x) const
         throw MyException();
 }
 
-
 Qt::AlignmentFlag ShapeBuffer::setTextAlignment(QString & x) const
 {
     if(x.contains("AlignLeft"))
@@ -280,6 +264,7 @@ Qt::AlignmentFlag ShapeBuffer::setTextAlignment(QString & x) const
         return Qt::AlignCenter;
     else
         throw MyException();
+
 }
 
 QFont::Style ShapeBuffer::setTextFontStyle(QString & x) const

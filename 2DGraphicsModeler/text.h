@@ -10,7 +10,6 @@ public:
     Text(const ShapeBuffer& arg);
     void draw(const int x, const int y) override;
     void draw()override;
-
     void move(const int x1, const int y1) override;
     double area() const override;
     double perimeter()const override;

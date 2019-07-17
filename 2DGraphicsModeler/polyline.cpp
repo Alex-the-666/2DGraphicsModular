@@ -4,14 +4,6 @@ PolyLine::PolyLine(const ShapeBuffer& arg): Shape(arg)
 {
     qPolygon = arg.getQPolygon();
     stringID = QString::number(arg.getShapeID());
-
-    qPolygon = arg.qPolygon;
-    qPolygon << QPoint(0, 85) << QPoint(75, 75)
-            << QPoint(100, 10) << QPoint(125, 75)
-            << QPoint(200, 85) << QPoint(150, 125)
-            << QPoint(160, 190) << QPoint(100, 150)
-            << QPoint(40, 190) << QPoint(50, 125)\
-            << QPoint(0, 85);
 }
 
 void PolyLine::draw(const int, const int)
@@ -36,22 +28,6 @@ double PolyLine::area() const
     return 0;
 }
 
-//void PolyLine::setDimensions(int x, int y)
-//{
-// qPolygon.putPoints(;
-void PolyLine::draw(QPaintDevice * x)
-{
-    QPainter& painter = getQPainter();
-    painter.begin(x);
-
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawPolyline(qPolygon);
-    painter.end();
-
-
-}
-//}
 void PolyLine::move(int x, int y)
 {
     bool allowMove = true;

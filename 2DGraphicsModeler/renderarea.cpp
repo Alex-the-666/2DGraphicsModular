@@ -9,7 +9,7 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     move(0, 36);
 }
 
-void RenderArea::createShapeBuffer(QTextStream)
+void RenderArea::createShapeBuffer(QTextStream& is)
 {
    buffer.resize(0);
     while(!is.atEnd())

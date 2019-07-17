@@ -7,8 +7,6 @@ Polygon::Polygon(const ShapeBuffer& buffer)
     stringID = QString::number(buffer.getShapeID());
 }
 
-
-
 void Polygon::draw(const int, const int)
 {
     getQPainter()->setPen(getPen());

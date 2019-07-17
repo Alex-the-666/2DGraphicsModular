@@ -13,8 +13,6 @@ public:
 
      ~PolyLine() override {}
 
-   // void setDimension(qpo);
-  void draw (QPaintDevice*);
     void draw (const int x, const int y)override;
     void draw () override;
     void move(int x, int y) override;

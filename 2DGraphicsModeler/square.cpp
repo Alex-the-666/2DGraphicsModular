@@ -9,7 +9,6 @@ Square::Square(const ShapeBuffer& arg): Shape(arg)
     _x = qRect.x();
     _y = qRect.y();
     stringID = QString::number(arg.getShapeID());
-
 }
 void Square::draw(const int, const int)
 {
