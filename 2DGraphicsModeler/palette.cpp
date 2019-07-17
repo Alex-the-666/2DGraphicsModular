@@ -32,7 +32,7 @@ void Palette::on_pushButton_2_clicked()
     //PolyLine* shape = new PolyLine(w->renderArea, w->buffer);
     //shape->setPoints(int nPoints, int firstx, int firsty, ...)
     //shape->move(10,10); //,200,200,300,440,223,345);//shape->setDimension(0, 0, 100, 100);
-    w->renderArea->shapeVector.push_back(shape);
+    //w->renderArea->shapeVector.push_back(shape);
 }
 
 //Polygon
