@@ -86,8 +86,9 @@ void MainWindow::on_actionOpen_triggered()
     QFile file(path);
     if(file.open(QIODevice::ReadOnly)){
         QTextStream instream(&file);
-       // pass qtextstream object;
+       renderArea->createShapeBuffer(instream);
     }
+    renderArea->update();
 
 }
 
