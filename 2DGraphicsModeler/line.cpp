@@ -8,6 +8,7 @@ Line::Line(const ShapeBuffer& buffer): Shape(buffer)
     {
         one = buffer.getQPointOne();
         two = buffer.getQPointTwo();
+        stringID = QString::number(buffer.getShapeID());
     }
     else {
         //should throw an exception here
@@ -41,6 +42,7 @@ void Line::draw()
 {
     getQPainter()->setPen(getPen());
     getQPainter()->setBrush(getBrush());
+    drawID();
     getQPainter()->drawLine(one,two);
     passQPainter(nullptr);
 }
@@ -65,4 +67,13 @@ double Line::area() const
 double Line::perimeter() const
 {
     return sqrt(QPoint::dotProduct(one,two));
+}
+
+void Line::drawID()
+{
+    int leftmostPoint;
+    int upmostPoint;
+    one.rx() < two.rx()? leftmostPoint = one.rx() : leftmostPoint = two.rx();
+    one.ry() < two.ry()? upmostPoint = one.ry() : upmostPoint = two.ry();
+    getQPainter()->drawText(leftmostPoint, upmostPoint - 5, stringID);
 }

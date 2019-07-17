@@ -15,10 +15,12 @@ public:
     void move(const int x, const int y)override;
     double area() const override;
     double perimeter() const override;
+    void drawID();
 
 
 private:
     QPolygon polygon;
+    QString stringID;
 };
 
 

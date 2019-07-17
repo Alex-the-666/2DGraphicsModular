@@ -22,8 +22,11 @@ public:
     double area() const override;
     double perimeter() const override;
 
+    void drawID();
+
 private:
     QPoint one,two;
+    QString stringID;
 };
 
 #endif // LINE_H

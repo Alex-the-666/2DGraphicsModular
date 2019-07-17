@@ -4,6 +4,7 @@ Polygon::Polygon(const ShapeBuffer& buffer)
         : Shape(buffer)
 {
     polygon = buffer.getQPolygon();
+    stringID = QString::number(buffer.getShapeID());
 }
 
 void Polygon::draw(const int, const int)
@@ -18,6 +19,7 @@ void Polygon::draw()
 {
     getQPainter()->setPen(getPen());
     getQPainter()->setBrush(getBrush());
+    drawID();
     getQPainter()->drawPolygon(polygon);
     passQPainter(nullptr);
 
@@ -68,4 +70,25 @@ double Polygon::perimeter() const
 
     return 0;
 
+}
+
+void Polygon::drawID()
+{
+    int leftmostPoint = polygon.point(0).rx();
+    int upmostPoint = polygon.point(0).ry();
+
+    for (int i = 1; i < polygon.size(); i++)
+    {
+        if (polygon.point(i).rx() < leftmostPoint)
+        {
+            leftmostPoint = polygon.point(i).rx();
+        }
+
+        if (polygon.point(i).ry() < upmostPoint)
+        {
+            upmostPoint = polygon.point(i).ry();
+        }
+
+    }
+    getQPainter()->drawText(leftmostPoint, upmostPoint - 5, stringID);
 }

@@ -10,6 +10,7 @@ private:
     int height;
     int x;
     int y;
+    QString stringID;
 
 public:
     /*CONSTRUCTORS*/
@@ -25,6 +26,8 @@ public:
     void move (int, int)override;
     double area () const override;
     double perimeter () const override;
+
+    void drawID();
 };
 
 #endif // RECTANGLE_H

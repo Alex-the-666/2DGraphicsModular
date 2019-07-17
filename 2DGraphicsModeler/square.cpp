@@ -8,21 +8,24 @@ Square::Square(const ShapeBuffer& arg): Shape(arg)
 
     _x = qRect.x();
     _y = qRect.y();
+    stringID = QString::number(arg.getShapeID());
 }
 void Square::draw(const int, const int)
 {
     getQPainter()->setPen(getPen());
     getQPainter()->setBrush(getBrush());
     getQPainter()->drawRect(_x,_y,side,side);
-    passQPainter(nullptr);
+    getQPainter()->end();
 }
 
 void Square::draw()
 {
     getQPainter()->setPen(getPen());
     getQPainter()->setBrush(getBrush());
+
+    drawID();
     getQPainter()->drawRect(_x,_y,side,side);
-    passQPainter(nullptr);
+    getQPainter()->end();
 }
 
 double Square::area() const
@@ -47,6 +50,11 @@ double Square::perimeter() const
     perimeter =  side + side + side +side;
 
     return perimeter;
+}
+
+void Square::drawID()
+{
+    getQPainter()->drawText(_x, _y - 5, stringID);
 }
 
 

@@ -18,9 +18,11 @@ public:
     void move(int x, int y) override;
     double area() const override;
     double perimeter() const override;
+    void drawID();
 
 private:
     QPolygon qPolygon;
+    QString stringID;
 };
 
 

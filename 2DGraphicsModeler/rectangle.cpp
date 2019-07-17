@@ -11,6 +11,8 @@ Rectangle::Rectangle (const ShapeBuffer& arg) :
     /*SETTING DIMENSIONS FROM 'SHAPEBUFFER' ARG*/
     width = qRect.width();
     height = qRect.height();
+
+    stringID = QString::number(arg.getShapeID());
 }
 
 Rectangle::~Rectangle () {}
@@ -40,7 +42,9 @@ void Rectangle::draw()
     getQPainter()->setBrush(getBrush());
 
     /* DRAW SHAPE BASED ON INTERNAL PRIVATE VARIABLES */
-    getQPainter()->drawRect (x,y,width,height);
+     drawID();
+     getQPainter()->drawRect (x,y,width,height);
+
 }
 
 void Rectangle::move (int px, int py)
@@ -52,4 +56,9 @@ void Rectangle::move (int px, int py)
         x = px;
         y = py;
     }
+}
+
+void Rectangle::drawID()
+{
+    getQPainter()->drawText(x, y - 5, stringID);
 }
