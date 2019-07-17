@@ -4,6 +4,7 @@
 // Arthur: For the constructor, I only need a qRect
 Ellipse::Ellipse(const ShapeBuffer& arg): Shape(arg)
 {
+    myRect = arg.getQRect();
     QRect qRect = arg.getQRect();
     x = qRect.x();
     y = qRect.x();
@@ -11,20 +12,20 @@ Ellipse::Ellipse(const ShapeBuffer& arg): Shape(arg)
     radius2 = qRect.height();
 }
 
-void Ellipse::draw(const int x, const int y)
+void Ellipse::draw(const int, const int)
 {
-    /*
-    QPainter& painter = getQPainter();
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawEllipse(x, y, radius1, radius2);
-    painter.end();*/
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    //getQPainter()->drawEllipse(x, y, radius1, radius2);
+    getQPainter()->drawEllipse(myRect);
+    passQPainter(nullptr);
 }
 void Ellipse::draw()
 {
     getQPainter()->setPen(getPen());
     getQPainter()->setBrush(getBrush());
-    getQPainter()->drawEllipse(x, y, radius1, radius2);
+    //getQPainter()->drawEllipse(x, y, radius1, radius2);
+    getQPainter()->drawEllipse(myRect);
     passQPainter(nullptr);
 }
 void Ellipse::move(const int x, const int y)

@@ -21,6 +21,7 @@ protected:
     int radius2;
     int x;
     int y;
+    QRect myRect;
 };
 
 #endif // ELLIPSE_H

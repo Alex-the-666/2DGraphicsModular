@@ -6,19 +6,19 @@ Circle::Circle(const ShapeBuffer& arg): Ellipse(arg)
     radius2 = radius1;
 }
 
-void Circle::draw(const int, const int)
+void Circle::draw(const int x, const int y)
 {
-    passQPainter(nullptr);
+    Ellipse::draw(x,y);
 }
 
 void Circle::draw()
 {
-    passQPainter(nullptr);
+    Ellipse::draw();
 }
 
 void Circle::move(const int x, const int y)
 {
-
+    Ellipse::move(x,y);
 }
 
 double Circle::perimeter() const
