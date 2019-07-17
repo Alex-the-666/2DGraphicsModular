@@ -33,21 +33,21 @@ void RenderArea::transferToShapes()
        ShapeType shapeType = sbIt->getShape();
        switch(shapeType)
        {
-       case LINE: shapeVector.push_back(new Line(this,*sbIt));
+       case LINE: shapeVector.push_back(new Line(&dummy,*sbIt));
            break;
-       case POLYLINE: shapeVector.push_back(new PolyLine(this,*sbIt));
+       case POLYLINE: shapeVector.push_back(new PolyLine(&dummy,*sbIt));
            break;
-       case POLYGON: shapeVector.push_back(new Polygon(this,*sbIt));
+       case POLYGON: shapeVector.push_back(new Polygon(&dummy,*sbIt));
            break;
-       case RECTANGLE: shapeVector.push_back(new Rectangle(this,*sbIt));
+       case RECTANGLE: shapeVector.push_back(new Rectangle(&dummy,*sbIt));
            break;
-       case SQUARE: shapeVector.push_back(new Square(this,*sbIt));
+       case SQUARE: shapeVector.push_back(new Square(&dummy,*sbIt));
            break;
-       case ELLIPSE: shapeVector.push_back(new Ellipse(this,*sbIt));
+       case ELLIPSE: shapeVector.push_back(new Ellipse(&dummy,*sbIt));
            break;
-       case CIRCLE:shapeVector.push_back(new Circle(this,*sbIt));
+       case CIRCLE:shapeVector.push_back(new Circle(&dummy,*sbIt));
            break;
-       case TEXT: shapeVector.push_back(new Text(this,*sbIt));
+       case TEXT: shapeVector.push_back(new Text(&dummy,*sbIt));
            break;
        }//end of switch
 
@@ -67,7 +67,7 @@ void RenderArea::paintEvent(QPaintEvent*)
               it=it+3;
               (*it)->draw(0,0);
               (*it)->draw(this);
-              break;
+
           }
           shapeBufferReady= false;
 
@@ -80,7 +80,6 @@ void RenderArea::paintEvent(QPaintEvent*)
 
 
             (*it)->draw(this);
-            break;
 
         }
     }

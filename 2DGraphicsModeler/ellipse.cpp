@@ -13,20 +13,21 @@ Ellipse::Ellipse(QPaintDevice *parent, const ShapeBuffer& arg): Shape(parent, ar
 
 void Ellipse::draw(const int x, const int y)
 {
+    /*
     QPainter& painter = getQPainter();
     painter.setPen(getPen());
     painter.setBrush(getBrush());
     painter.drawEllipse(x, y, radius1, radius2);
-    painter.end();
+    painter.end();*/
 }
 void Ellipse::draw(QPaintDevice * parent)
 {
-    QPainter& painter = getQPainter();
-    painter.begin(parent);
-    painter.setPen(getPen());
-    painter.setBrush(getBrush());
-    painter.drawEllipse(x, y, radius1, radius2);
-    painter.end();
+    QPainter asdf(parent);
+    //passQPainter(&painter);
+    asdf.setPen(getPen());
+    asdf.setBrush(getBrush());
+    asdf.drawEllipse(x, y, radius1, radius2);
+    painterasdfend();
 }
 void Ellipse::move(const int x, const int y)
 {

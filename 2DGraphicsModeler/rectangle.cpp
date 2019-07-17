@@ -33,19 +33,19 @@ void Rectangle::draw (int x, int y)
 
     /* DRAW SHAPE BASED ON INTERNAL PRIVATE VARIABLES */
     painter.drawRect (x,y,width,height);
-    painter.end();
+    //painter.end();
 }
 
 void Rectangle::draw(QPaintDevice * parent)
 {
     QPainter& painter = getQPainter();
-    painter.begin(parent);
+    //painter.begin(parent);
     painter.setPen(getPen());
     painter.setBrush(getBrush());
 
     /* DRAW SHAPE BASED ON INTERNAL PRIVATE VARIABLES */
     painter.drawRect(x,y,width,height);
-    painter.end();
+    //painter.end();
 }
 
 void Rectangle::move (int px, int py)
