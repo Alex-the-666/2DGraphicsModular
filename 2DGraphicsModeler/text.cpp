@@ -2,6 +2,9 @@
 
 // just need the qrect for the constructor: x, y, height, width
 Text::Text(QPaintDevice * parent, const ShapeBuffer& arg) : Shape(parent, arg) {
+      
+      QRect qRect = arg.getQRect();
+      
       x = arg.qRect.x();
       y = arg.qRect.y();
       wide = arg.qRect.width();
