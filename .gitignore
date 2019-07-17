@@ -54,5 +54,5 @@ compile_commands.json
 2DGraphicsModeler/.qmake.stash
 *.exe
 *.obj
-*.ilk
 *.pdb
+*.ilk
