@@ -25,6 +25,7 @@ void Palette::on_pushButton_clicked()
     shape->setPointOne(10, 10);
     shape->setPointOne(100, 100);
     w->renderArea->getShapeVector().push_back(shape);
+    w->renderArea->repaint();
 }
 
 //Polyline
