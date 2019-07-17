@@ -167,7 +167,7 @@ public:
 	}
 	const_iterator end() const
 	{
-		return elem + size_v;
+		return (elem + size_v);
 	}
 	iterator insert(iterator p, const T& v)// insert a new element v before p
 	{

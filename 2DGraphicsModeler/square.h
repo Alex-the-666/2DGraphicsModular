@@ -8,9 +8,7 @@ class Square: public Shape
 {
 public:   
     Square() = delete;
-
     Square(const ShapeBuffer& arg);
-
     virtual ~Square()override{}
 
     void setDimension(int x, int y);

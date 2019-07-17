@@ -10,6 +10,7 @@ public:
     Polygon() = delete;
     Polygon(const ShapeBuffer& buffer);
     ~Polygon()override{}
+    
     void draw(const int x, const int y) override;
     void draw()override;
     void move(const int x, const int y)override;
