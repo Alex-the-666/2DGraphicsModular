@@ -23,6 +23,7 @@ private:
     Qt::AlignmentFlag alignFlag;
     QString myQString;
     QFont font;
+    QRect myRect;
 
 };
 
