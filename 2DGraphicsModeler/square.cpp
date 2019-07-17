@@ -25,7 +25,7 @@ void Square::draw()
 
     drawID();
     getQPainter()->drawRect(_x,_y,side,side);
-    getQPainter()->end();
+    passQPainter(nullptr);
 }
 
 double Square::area() const
