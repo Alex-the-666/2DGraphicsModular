@@ -8,6 +8,7 @@ adminLogin::adminLogin(QWidget *parent) :
     ui(new Ui::adminLogin)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     QPixmap logo(":/img/img/logo.png");
     ui -> Logo -> setPixmap(logo.scaled(ui -> Logo -> width(), ui -> Logo -> height(), Qt::KeepAspectRatio));
     ui -> Username -> setEnabled(false);

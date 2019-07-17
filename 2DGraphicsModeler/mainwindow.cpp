@@ -29,6 +29,8 @@ void MainWindow::on_actionLogin_triggered()
 void MainWindow::on_actionContact_Us_triggered()
 {
     contact = new Contact(this);
+   // contact -> adjustSize();
+   // contact -> setFixedSize(contact -> sizeHint());
     contact -> show();
 }
 
