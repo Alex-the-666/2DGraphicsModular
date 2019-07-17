@@ -10,19 +10,24 @@ private:
     int height;
     int x;
     int y;
+    QString stringID;
 
 public:
     /*CONSTRUCTORS*/
     Rectangle () = delete;
-    Rectangle (QPaintDevice* parent, ShapeBuffer arg);
+    Rectangle (const ShapeBuffer& arg);
 
     /*DESTRUCTOR*/
-    ~Rectangle ();
+    ~Rectangle ()override;
 
-    void draw (int, int);
-    void move (int, int);
-    double area () const;
-    double perimeter () const;
+    void draw (int, int)override;
+    void draw()override;
+
+    void move (int, int)override;
+    double area () const override;
+    double perimeter () const override;
+
+    void drawID();
 };
 
 #endif // RECTANGLE_H

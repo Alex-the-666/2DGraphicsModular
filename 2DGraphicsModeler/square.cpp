@@ -1,17 +1,31 @@
 #include "square.h"
 
-Square::Square(QPaintDevice *parent, ShapeBuffer arg): Shape(parent, arg)
+Square::Square(const ShapeBuffer& arg): Shape(arg)
 {
-    side = arg.qRect.width();
-    side = arg.qRect.height();
+    QRect qRect = arg.getQRect();
+    side = qRect.width();
+    side = qRect.height();
 
-    _x = arg.qRect.x();
-    _y = arg.qRect.y();
+    _x = qRect.x();
+    _y = qRect.y();
+    stringID = QString::number(arg.getShapeID());
 }
 void Square::draw(const int, const int)
 {
-    QPainter& painter = getQPainter();
-    painter.drawRect(_x,_y,side,side);
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+    getQPainter()->drawRect(_x,_y,side,side);
+    getQPainter()->end();
+}
+
+void Square::draw()
+{
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+
+    drawID();
+    getQPainter()->drawRect(_x,_y,side,side);
+    passQPainter(nullptr);
 }
 
 double Square::area() const
@@ -36,6 +50,11 @@ double Square::perimeter() const
     perimeter =  side + side + side +side;
 
     return perimeter;
+}
+
+void Square::drawID()
+{
+    getQPainter()->drawText(_x, _y - 5, stringID);
 }
 
 

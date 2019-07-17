@@ -1,15 +1,18 @@
 #include "rectangle.h"
 
-Rectangle::Rectangle (QPaintDevice* parent, ShapeBuffer arg) :
-    Shape (parent, arg)
+Rectangle::Rectangle (const ShapeBuffer& arg) :
+    Shape (arg)
 {
+    QRect qRect= arg.getQRect();
     /*SETTING CENTER COORDINATES FROM 'SHAPEBUFFER' ARG*/
-    x = arg.qRect.x();
-    y = arg.qRect.y();
+    x = qRect.x();
+    y = qRect.y();
 
     /*SETTING DIMENSIONS FROM 'SHAPEBUFFER' ARG*/
-    width = arg.qRect.width();
-    height = arg.qRect.height();
+    width = qRect.width();
+    height = qRect.height();
+
+    stringID = QString::number(arg.getShapeID());
 }
 
 Rectangle::~Rectangle () {}
@@ -26,10 +29,22 @@ double Rectangle::perimeter () const
 
 void Rectangle::draw (int x, int y)
 {
-    QPainter& painter = getQPainter();
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
 
     /* DRAW SHAPE BASED ON INTERNAL PRIVATE VARIABLES */
-    painter.drawRect (x,y,width,height);
+    getQPainter()->drawRect (x,y,width,height);
+}
+
+void Rectangle::draw()
+{
+    getQPainter()->setPen(getPen());
+    getQPainter()->setBrush(getBrush());
+
+    /* DRAW SHAPE BASED ON INTERNAL PRIVATE VARIABLES */
+     drawID();
+     getQPainter()->drawRect (x,y,width,height);
+
 }
 
 void Rectangle::move (int px, int py)
@@ -41,4 +56,9 @@ void Rectangle::move (int px, int py)
         x = px;
         y = py;
     }
+}
+
+void Rectangle::drawID()
+{
+    getQPainter()->drawText(x, y - 5, stringID);
 }

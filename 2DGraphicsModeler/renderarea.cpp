@@ -9,9 +9,20 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     move(0, 36);
 }
 
-void RenderArea::createShapeBuffer(QTextStream)
+void RenderArea::createShapeBuffer(QTextStream& is)
 {
+   buffer.resize(0);
+    while(!is.atEnd())
+    {
+        ShapeBuffer x;
+        x.readIn(is);
+        if(!is.atEnd())
+            buffer.push_back(x);
 
+        is.readLine();//get rid of the space
+        is.flush();
+    }
+   shapeBufferReady=true;
 }
 
 void RenderArea::transferToShapes()
@@ -19,43 +30,43 @@ void RenderArea::transferToShapes()
    for(auto sbIt = buffer.begin();\
        sbIt != buffer.end(); sbIt++)
    {
-       ShapeType shapeType = sbIt->shape;
+       ShapeType shapeType = sbIt->getShape();
        switch(shapeType)
        {
-       case LINE: shapeVector.push_back(new Line(this,*sbIt));
+       case LINE: shapeVector.push_back(new Line(*sbIt));
            break;
-       case POLYLINE: shapeVector.push_back(new PolyLine(this,*sbIt));
+       case POLYLINE: shapeVector.push_back(new PolyLine(*sbIt));
            break;
-       case POLYGON: shapeVector.push_back(new Polygon(this,*sbIt));
+       case POLYGON: shapeVector.push_back(new Polygon(*sbIt));
            break;
-       case RECTANGLE: shapeVector.push_back(new Rectangle(this,*sbIt));
+       case RECTANGLE: shapeVector.push_back(new Rectangle(*sbIt));
            break;
-       case SQUARE: shapeVector.push_back(new Square(this,*sbIt));
+       case SQUARE: shapeVector.push_back(new Square(*sbIt));
            break;
-       case ELLIPSE: shapeVector.push_back(new Ellipse(this,*sbIt));
+       case ELLIPSE: shapeVector.push_back(new Ellipse(*sbIt));
            break;
-       case CIRCLE:shapeVector.push_back(new Circle(this,*sbIt));
+       case CIRCLE:shapeVector.push_back(new Circle(*sbIt));
            break;
-       case TEXT: shapeVector.push_back(new Text(this,*sbIt));
+       case TEXT: shapeVector.push_back(new Text(*sbIt));
            break;
        }//end of switch
 
    }// end of for loop
-    buffer.resize(0);//reset the shape buffer
+
 }
-
-
-
-
-
 
 void RenderArea::paintEvent(QPaintEvent*)
 {
+    QPainter painter(this);
     if(shapeBufferReady == true)
-        transferToShapes();
-
-    for (custom::vector<Shape*>::iterator it = shapeVector.begin();\
-         it != shapeVector.end(); it++)
-        (*it)->draw(0,0);
+    {
+          transferToShapes();
+          shapeBufferReady=false;
+    }
+        for (auto it = shapeVector.begin(); it != shapeVector.end(); it++)
+        {
+            (*it)->passQPainter(&painter);
+            (*it)->draw();
+        }
 
 }

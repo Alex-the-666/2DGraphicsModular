@@ -9,20 +9,20 @@ class PolyLine: public Shape
 public:
     PolyLine() = delete;
 
-    PolyLine(QPaintDevice *parent, ShapeBuffer arg);
+    PolyLine(const ShapeBuffer& arg);
 
      ~PolyLine() override {}
 
-   // void setDimension(qpo);
-  void draw (QPaintDevice*);
     void draw (const int x, const int y)override;
+    void draw () override;
     void move(int x, int y) override;
     double area() const override;
     double perimeter() const override;
+    void drawID();
 
 private:
     QPolygon qPolygon;
-
+    QString stringID;
 };
 
 

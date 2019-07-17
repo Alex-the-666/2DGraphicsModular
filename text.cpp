@@ -15,13 +15,22 @@ Text::Text(const ShapeBuffer& arg) : Shape(arg) {
 
 }
 
-void Text::draw(const int, const int){
-
+void Text::draw(const int x, const int y){
+/*
     getQPainter()->setPen(getPen());
     getQPainter()->setBrush(getBrush());
-    getQPainter()->setFont(font);
-    getQPainter()->drawText(myRect,alignFlag,myQString);
-    passQPainter(nullptr);
+    getQPainter()->setFont(font); */
+    const QRect rectangle = QRect(x, y, wide, tall);
+
+/*     QFont font = painter.font();
+          font.setPixelSize(14);
+          font.setFamily("Arial");
+          painter.setFont(font);
+  QColor color(0, 0, 255, 1);   //RGsBA*/
+
+      //QRect boundingRect;
+      getQPainter()->drawText(myRect,alignFlag,myQString);
+     passQPainter(nullptr);
 }
 
 void Text::draw(){
@@ -29,6 +38,8 @@ void Text::draw(){
     getQPainter()->setPen(getPen());
     getQPainter()->setBrush(getBrush());
     getQPainter()->setFont(font);
+    //const QRect rectangle = QRect(x, y, wide, tall);
+    //QRect boundingRect;
     getQPainter()->drawText(myRect,alignFlag,myQString);
     passQPainter(nullptr);
 }
