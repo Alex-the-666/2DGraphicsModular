@@ -12,11 +12,9 @@ Text::Text(const ShapeBuffer& arg) : Shape(arg) {
       alignFlag = arg.getAlignFlag();
       myQString = arg.getQStringText();
       font = arg.getQFont();
-
 }
 
 void Text::draw(const int, const int){
-
     getQPainter()->setPen(getPen());
     getQPainter()->setBrush(getBrush());
     getQPainter()->setFont(font);
@@ -25,7 +23,6 @@ void Text::draw(const int, const int){
 }
 
 void Text::draw(){
-
     getQPainter()->setPen(getPen());
     getQPainter()->setBrush(getBrush());
     getQPainter()->setFont(font);

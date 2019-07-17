@@ -32,6 +32,7 @@ public:
 
     virtual void draw(const int x, const int y) = 0;
     virtual void draw()=0;
+
     virtual void move(const int x,const int y) = 0;
     virtual double area() const = 0;
     virtual double perimeter() const =0;
