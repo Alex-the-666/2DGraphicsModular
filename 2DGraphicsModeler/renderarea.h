@@ -21,7 +21,6 @@ class RenderArea : public QWidget
 public:
     explicit RenderArea(QWidget *parent = nullptr);
     void createShapeBuffer(QTextStream&);
-
     bool testValue = true;
 protected:
     void transferToShapes();
@@ -31,8 +30,8 @@ signals:
 
 public slots:
 private:
-    std::vector<ShapeBuffer> buffer;
-    std::vector<Shape*> shapeVector;
+    custom::vector<ShapeBuffer> buffer;
+    custom::vector<Shape*> shapeVector;
 
     QWidget dummy;
 

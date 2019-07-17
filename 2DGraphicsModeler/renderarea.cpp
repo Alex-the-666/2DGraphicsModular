@@ -63,12 +63,10 @@ void RenderArea::paintEvent(QPaintEvent*)
           transferToShapes();
           shapeBufferReady=false;
     }
-    else {
         for (auto it = shapeVector.begin(); it != shapeVector.end(); it++)
         {
             (*it)->passQPainter(&painter);
             (*it)->draw();
         }
-    }
 
 }
