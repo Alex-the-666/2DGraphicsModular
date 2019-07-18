@@ -21,9 +21,9 @@ class RenderArea : public QWidget
 public:
     explicit RenderArea(QWidget *parent = nullptr);
     void createShapeBuffer(QTextStream&);
-    bool testValue = true;
     custom::vector<Shape*>& getShapeVector();
     void readOut(QTextStream&);
+    void setIndex(int);
 protected:
     void transferToShapes();
     void paintEvent(QPaintEvent *event) override;
@@ -34,8 +34,9 @@ public slots:
 private:
     custom::vector<ShapeBuffer> buffer;
     custom::vector<Shape*> shapeVector;
-
+    bool isAdmin = false;
     bool shapeBufferReady = false;
+    int indexToChange = 0;
 };
 
 #endif // RENDERAREA_H
