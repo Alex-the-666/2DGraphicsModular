@@ -96,8 +96,11 @@ void RenderArea::paintEvent(QPaintEvent* event)
 
 void RenderArea::readOut(QTextStream& textStream)
 {
+    int count;
+    count = 0;
     for (auto it = buffer.begin(); it != buffer.end(); it++)
     {
+        ++count;
         textStream << "ShapeId: " << (*it).getShapeID() << endl
                    << "ShapeType: ";
         if (it->getShape() == 0)
@@ -465,7 +468,10 @@ void RenderArea::readOut(QTextStream& textStream)
             }
 
         }
-        textStream << endl << endl;
+        if (count < buffer.size())
+        {
+            textStream << endl << endl;
+        }
     }
 }
 
