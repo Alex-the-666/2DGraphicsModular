@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>ShapeInfo</class>
- <widget class="QDialog" name="Dialog">
+ <widget class="QDialog" name="ShapeInfo">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,144 +13,43 @@
   <property name="windowTitle">
    <string>ShapeInfo</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>120</y>
-     <width>160</width>
-     <height>231</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>Line Info</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="text">
-       <string>Polline Info </string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="text">
-       <string>Square Info</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_6">
-      <property name="text">
-       <string>Ellipse Info</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>Circle Info</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Polygon Info</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QTreeWidget" name="treeWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>161</width>
-     <height>301</height>
+     <x>30</x>
+     <y>0</y>
+     <width>421</width>
+     <height>381</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="allColumnsShowFocus">
+    <bool>false</bool>
+   </property>
+   <property name="expandsOnDoubleClick">
+    <bool>true</bool>
+   </property>
+   <attribute name="headerMinimumSectionSize">
+    <number>18</number>
+   </attribute>
    <column>
     <property name="text">
-     <string>Shapes</string>
+     <string>Shapes                                                    </string>
     </property>
    </column>
-   <item>
+   <column>
     <property name="text">
-     <string>Line Info</string>
+     <string>Information</string>
     </property>
-    <item>
-     <property name="text">
-      <string>New Subitem</string>
-     </property>
-    </item>
-   </item>
-   <item>
-    <property name="text">
-     <string>Polyline Info</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>New Subitem</string>
-     </property>
-    </item>
-   </item>
-   <item>
-    <property name="text">
-     <string>Rectangle Info</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>New Subitem</string>
-     </property>
-    </item>
-   </item>
-   <item>
-    <property name="text">
-     <string>Square Info</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>New Subitem</string>
-     </property>
-    </item>
-   </item>
-   <item>
-    <property name="text">
-     <string>Ellipse Info</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>New Subitem</string>
-     </property>
-    </item>
-   </item>
-   <item>
-    <property name="text">
-     <string>Circle Info</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>New Subitem</string>
-     </property>
-    </item>
-   </item>
-   <item>
-    <property name="text">
-     <string>Polygon Info</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>New Subitem</string>
-     </property>
-    </item>
-   </item>
+   </column>
   </widget>
  </widget>
  <resources/>
