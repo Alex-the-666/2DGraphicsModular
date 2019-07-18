@@ -16,7 +16,7 @@
 class Shape
 {
 public:
-    Shape(): painter{nullptr}{}
+    Shape(): painter{nullptr}, shapeId {getCount()}{}
 
      //!Delete the object created by the default copy constructor
     Shape(Shape&) = delete;
@@ -25,9 +25,6 @@ public:
     /*!Allows for operator overloading in derived classes
     */
     Shape& operator =(Shape&)= delete;
-
-    //!Pure virtual function
-    Shape(QPaintDevice *): shapeId {0} {}
 
     //!   Shape Class Constructor
     /*!   Constructor for the shape object
@@ -167,6 +164,8 @@ private:
     QPen pen;
     //! QBrush object to set the brush styles
     QBrush brush;
+    static int getCount();
+
 };
 
 #endif // SHAPE_H

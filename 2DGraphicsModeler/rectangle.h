@@ -14,7 +14,7 @@ private:
 
 public:
     /*CONSTRUCTORS*/
-    Rectangle(): Shape(),{setShape(RECTANGLE);}
+    Rectangle(): Shape(){setShape(RECTANGLE);}
     Rectangle(const ShapeBuffer& arg);
 
     /*DESTRUCTOR*/

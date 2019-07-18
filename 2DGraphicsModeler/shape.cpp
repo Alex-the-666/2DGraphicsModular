@@ -8,6 +8,7 @@ Shape::Shape(const ShapeBuffer & buffer)
     shapeId= buffer.getShapeID();
     brush = buffer.getBrush();
     pen = buffer.getPen();
+    getCount();
 }
 
 Shape::~Shape(){}
@@ -44,6 +45,14 @@ void Shape::setBrush(Qt::GlobalColor gc, Qt::BrushStyle bs)
 }
 
 QPainter *Shape::getQPainter()
+{   
+   return painter;
+}
+
+int Shape::getCount()
+
 {
-    return painter;
+    int static count = 0;
+    count ++;
+    return count;
 }
