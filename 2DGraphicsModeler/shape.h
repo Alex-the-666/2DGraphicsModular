@@ -16,6 +16,10 @@
 class Shape
 {
 public:
+      //!Default constructor.
+      /*!\param painter is assigned a nullptr.
+      *\param shapeId is assigned integer value returned by getCount()
+      */
     Shape(): painter{nullptr}, shapeId {getCount()}{}
 
      //!Delete the object created by the default copy constructor
@@ -26,7 +30,7 @@ public:
     */
     Shape& operator =(Shape&)= delete;
 
-    //!   Shape Class Constructor
+    //!   Shape Class Copy Constructor
     /*!   Constructor for the shape object
     *     \param &buffer is a ShapeBuffer object
     *     passed by const ref.
@@ -106,6 +110,11 @@ public:
 
     //!    Get function to return a pen object
     const QPen& getPen()const;
+
+    //!Function to receive a QPaint pointer
+    /*!A QPainter pointer is passed to the function.
+    *\param painter is assigned the value of the passed QPainer pointer
+    */
     void passQPainter(QPainter* arg ){painter=arg;}
 
     //!    Set function to assign a shape object
@@ -124,6 +133,11 @@ public:
     */
     void setPen(Qt::GlobalColor gc1, int width,\
                  Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs);
+
+      //!    Set function to assign a pen object
+      /*!    Takes QPen object and assigns it to the pen object
+      *     \param qP is a QPen object to set the pen style
+      */
     void setPen(QPen qP){pen= qP;}
 
       //!    Set function to assign to a brush object
@@ -132,6 +146,11 @@ public:
       *     \param bs is a QT style to set the brush style
       */
     void setBrush(Qt::GlobalColor gc2, Qt::BrushStyle bs);
+
+    //!    Set function to assign to a brush object
+    /*!   Takes QBrush object as paramater and assigns it to the brush object
+    *     \param qB is a QBrush object - sets the brush color
+    */
     void setBrush(QBrush qB){brush = qB;}
 
     //!Pure virtual function- allows for operator overloading of derived classes
@@ -164,6 +183,7 @@ private:
     QPen pen;
     //! QBrush object to set the brush styles
     QBrush brush;
+    //! Static member function, returns integer value referred to as count
     static int getCount();
 
 };
