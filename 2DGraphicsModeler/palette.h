@@ -28,8 +28,28 @@ private slots:
     //Text
     void on_pushButton_6_clicked();
 
+    //Background R
+    void on_horizontalSlider_actionTriggered(int action);
+    //Background G
+    void on_horizontalSlider_2_actionTriggered(int action);
+    //Background B
+    void on_horizontalSlider_3_actionTriggered(int action);
+    //Shape R
+    void on_horizontalSlider_6_actionTriggered(int action);
+    //Shape G
+    void on_horizontalSlider_5_actionTriggered(int action);
+    //Shape B
+    void on_horizontalSlider_4_actionTriggered(int action);
+
 private:
     Ui::Palette *ui;
+    int backgroundR;
+    int backgroundG;
+    int backgroundB;
+    int shapeR;
+    int shapeG;
+    int shapeB;
+    void updateBackground();
 };
 
 #endif // PALETTE_H

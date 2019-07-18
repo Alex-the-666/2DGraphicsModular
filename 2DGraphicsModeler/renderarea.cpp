@@ -1,12 +1,13 @@
 #include "renderarea.h"
+#include <QStyleOption>
 const QSize minSize(1000,500);
 
 RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
 {
     setMinimumSize(minSize);
     setBackgroundRole(QPalette::Base);
-    setAutoFillBackground(true);
     move(0, 36);
+    setStyleSheet("background-color:white;");
 }
 
 void RenderArea::createShapeBuffer(QTextStream& is)
@@ -59,9 +60,14 @@ void RenderArea::transferToShapes()
 
 }
 
-void RenderArea::paintEvent(QPaintEvent*)
+void RenderArea::paintEvent(QPaintEvent* event)
 {
-    QPainter painter(this);
+    QStyleOption opt;
+    opt.init(this);
+    QPainter p(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+    QWidget::paintEvent(event);
+     QPainter painter(this);
     if(shapeBufferReady == true)
     {
           transferToShapes();
