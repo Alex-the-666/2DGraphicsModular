@@ -9,6 +9,9 @@ Palette::Palette(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle(tr("Palette"));
+    backgroundR = 0;
+    backgroundG = 0;
+    backgroundB = 0;
 }
 
 Palette::~Palette()
@@ -63,26 +66,9 @@ void Palette::on_pushButton_6_clicked()
 void Palette::updateBackground(){
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
     w->renderArea->setStyleSheet(QString("background:rgb(%1,%2,%3);").arg(backgroundR).arg(backgroundG).arg(backgroundB));
-}
-
-//Background R
-void Palette::on_horizontalSlider_actionTriggered(int action)
-{
-    backgroundR = action;
-    updateBackground();
-}
-
-//Background G
-void Palette::on_horizontalSlider_2_actionTriggered(int action)
-{
-    backgroundG = action;
-    updateBackground();
-}
-//Background B
-void Palette::on_horizontalSlider_3_actionTriggered(int action)
-{
-    backgroundB = action;
-    updateBackground();
+    ui->plainTextEdit->setPlainText(QString().setNum(backgroundR));
+    ui->plainTextEdit_2->setPlainText(QString().setNum(backgroundG));
+    ui->plainTextEdit_3->setPlainText(QString().setNum(backgroundB));
 }
 
 //Shape R
@@ -101,4 +87,25 @@ void Palette::on_horizontalSlider_5_actionTriggered(int action)
 void Palette::on_horizontalSlider_4_actionTriggered(int action)
 {
     shapeB = action;
+}
+
+//Background R
+void Palette::on_horizontalSlider_valueChanged(int value)
+{
+    backgroundR = value;
+    updateBackground();
+}
+
+//Background G
+void Palette::on_horizontalSlider_2_valueChanged(int value)
+{
+    backgroundG = value;
+    updateBackground();
+}
+
+//Background B
+void Palette::on_horizontalSlider_3_valueChanged(int value)
+{
+    backgroundB = value;
+    updateBackground();
 }
