@@ -7,7 +7,7 @@
 class Square: public Shape
 {
 public:   
-    Square() = delete;
+    Square():Shape(){setShape(SQUARE);}
 
     Square(const ShapeBuffer& arg);
 

@@ -6,7 +6,7 @@
 class Text : public Shape
 {
 public:
-    Text() = delete;
+    Text():Shape(){setShape(TEXT);}
     Text(const ShapeBuffer& arg);
     void draw(const int x, const int y) override;
     void draw()override;
