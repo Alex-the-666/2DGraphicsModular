@@ -74,5 +74,6 @@ private:
      Qt::AlignmentFlag alignFlag;
 };
 
+const QRect G_DEFAULTQRECT(100,100,200,200);
 
 #endif // SHAPEBUFFER_H

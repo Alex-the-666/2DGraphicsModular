@@ -21,12 +21,10 @@
 class PolyLine: public Shape
 {
 public:
-    PolyLine():Shape(){setShape(POLYLINE);}
+    PolyLine();
     PolyLine(const ShapeBuffer& arg);
 
      ~PolyLine() override {}
-
-
     void draw (const int x, const int y)override;
     void draw () override;
     void move(int x, int y) override;

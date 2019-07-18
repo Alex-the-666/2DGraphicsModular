@@ -1,5 +1,10 @@
 #include "polyline.h"
 
+PolyLine::PolyLine():Shape(), qPolygon(G_DEFAULTQRECT)
+{
+    setShape(POLYLINE);
+
+}
 PolyLine::PolyLine(const ShapeBuffer& arg): Shape(arg)
 {
     qPolygon = arg.getQPolygon();

@@ -20,23 +20,23 @@ Palette::~Palette()
 void Palette::on_pushButton_clicked()
 {
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
-    ShapeBuffer buffer;
-    Line* shape = new Line(buffer);
-    shape->setPointOne(10, 10);
-    shape->setPointOne(100, 100);
+
+    Shape* shape = new Line();
+    dynamic_cast<Line*>(shape)->setPointOne(10, 10);
+    dynamic_cast<Line*>(shape)->setPointOne(100, 100);
     w->renderArea->getShapeVector().push_back(shape);
-    w->renderArea->repaint();
+    w->renderArea->update();
 }
 
 //Polyline
 void Palette::on_pushButton_2_clicked()
 {
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
-    ShapeBuffer buffer;
-    PolyLine* shape = new PolyLine(buffer);
+
+    Shape* shape = new PolyLine();
 
     w->renderArea->getShapeVector().push_back(shape);
-    w->renderArea->repaint();
+    w->renderArea->update();
 }
 
 //Polygon

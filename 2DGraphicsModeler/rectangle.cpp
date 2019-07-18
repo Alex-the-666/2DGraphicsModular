@@ -1,6 +1,6 @@
 #include "rectangle.h"
 
-Rectangle::Rectangle (const ShapeBuffer& arg) :
+Rectangle::Rectangle (const ShapeBuffer& arg) :\
     Shape (arg)
 {
     QRect qRect= arg.getQRect();
