@@ -35,27 +35,24 @@ double Square::area() const
 
 void Square::move(int x, int y)
 {
-    if ((0.5*side + x) > 1000 || (0.5*side + y) > 500 )
-    {
-       _x = x;
-       _y = y;
-    }
+  /* BOUNDARY CHECKING */
+  if (!(x + side > 1000 || y + side > 500))
+  {
+     _x = x;
+     _y = y;
+  }
 }
 
 double Square::perimeter() const
 {
-    double perimeter;
-    perimeter = 0;
-
-    perimeter =  side + side + side +side;
-
-    return perimeter;
+  return 4*side;
 }
 
 void Square::drawID()
 {
+  /* testing purposes */
+  QString temp = QString::number (_x) + " " + QString::number (_y);
+
     const int VERTICAL_BUFFER = 5;
     getQPainter()->drawText(_x, _y - VERTICAL_BUFFER, stringID);
 }
-
-
