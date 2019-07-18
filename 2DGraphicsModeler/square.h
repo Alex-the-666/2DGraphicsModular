@@ -3,7 +3,7 @@
 
 #include "shape.h"
 
-
+//Hello world
 class Square: public Shape
 {
 public:   
