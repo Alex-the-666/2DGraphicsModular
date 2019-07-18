@@ -6,9 +6,9 @@
 *
 * \section intro_sec Introduction
 *
-* This is the introduction.
-*
-* \section install_sec Installation
+* This product is a 2D Graphic Modeller that can create a variety of shapes and text objects.
+* This program can read in from a text file, and save to a text file.
+* The objects that appear on screen can have their: location, color, border, and text modified.
 *
 * \subsection step1 Step 1: Opening the box
 *     This comment block is saved in polyline.h for modification purposes
