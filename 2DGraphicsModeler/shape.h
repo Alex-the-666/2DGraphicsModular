@@ -23,7 +23,8 @@ public:
     Shape(Shape&) = delete;
 
     //!Delete the object created by the default assignment operator
-    //!Allows for operator overloading in derived classes
+    /*!Allows for operator overloading in derived classes
+    */
     Shape& operator =(Shape&)= delete;
 
     //!Pure virtual function
@@ -36,24 +37,28 @@ public:
     */
     Shape(const ShapeBuffer&);
 
+    //!   Overloaded Equality Operator for Shape objects
     /*!    Overloaded equality operator: returns true if
     *       shapeId == the shapeId of the passed paramater
     *       \param rhs is a shape object passed by reference
     */
     bool operator ==(Shape& rhs){return (shapeId==rhs.shapeId);}
 
-    /*!    Overloaded less than operator: returns true if
+    //!   Overloaded Less-Than/Equal To Operator for Shape objects
+    /*!    Overloaded less than/equal to operator: returns true if
     *      shapeId <= the shapeId of the passed paramater
     *      \param rhs is a shape object passed by reference
     */
     bool operator <(Shape& rhs){return (shapeId<=rhs.shapeId);}
 
+    //!   Overloaded Greater-Than Operator for Shape objects
     /*!    Overloaded greater than operator: returns true if
     *      shapeId > the shapeId of the passed paramater
     *      \param rhs is a shape object passed by reference
     */
     bool operator >(Shape& rhs) {return (area()>rhs.area());}
 
+    //!   Get functions returns a string of the QT pen style
     /*!    Get function returns a string, depending on the pen.style
     *      function verifies that the style is a valid QT style,
     *      and returns a string of the style
@@ -159,7 +164,7 @@ private:
     ShapeType shape;
     //! QPen object to set the pen styles
     QPen pen;
-    //! QBrush object to set the brush styles     
+    //! QBrush object to set the brush styles
     QBrush brush;
 };
 
