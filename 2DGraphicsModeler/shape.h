@@ -58,47 +58,6 @@ public:
     */
     bool operator >(Shape& rhs) {return (area()>rhs.area());}
 
-    //!   Get functions returns a string of the QT pen style
-    /*!    Get function returns a string, depending on the pen.style
-    *      function verifies that the style is a valid QT style,
-    *      and returns a string of the style
-    */
-    QString getPenStyle()
-    {
-        if(pen.style()==Qt::SolidLine)
-            return "Solid  Line";
-        else if(pen.style()==Qt::DashDotDotLine)
-            return "DashDotDotLine";
-        else if(pen.style()==Qt::DashDotLine)
-            return "DashDotLine";
-        else if(pen.style()==Qt::DotLine)
-            return "DotLine";
-        else if(pen.style()==Qt::DashLine)
-            return "DashLine";
-
-    }
-//        QString getPenColor()
-//        {
-//            if(pen.color()==Qt::blue)
-//                return "blue";
-//            else if(getPen().color()==Qt::green)
-//                return "green";
-//        }
-//        QString getPenCapStyle()
-//        {
-//            if(pen.capStyle()==Qt::FlatCap)
-//                return "FlatCap";
-//            else if(getPen().capStyle()==Qt::RoundCap)
-//                return "RoundCap";
-//        }
-//        QString getPenJoint()
-//        {
-//            if(getPen().joinStyle()==Qt::MiterJoin)
-//                return "MiterJoin";
-//            else if(getPen().joinStyle()==Qt::RoundJoin)
-//                return "RoundJoin";
-//        }
-
     //!   Shape Class Destructor
     virtual ~Shape();
 
