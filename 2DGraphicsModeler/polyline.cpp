@@ -11,6 +11,12 @@ PolyLine::PolyLine(const ShapeBuffer& arg): Shape(arg)
     stringID = QString::number(arg.getShapeID());
 }
 
+void PolyLine::setShapeBuffer(ShapeBuffer &temp)
+{
+    Shape::setShapeBuffer(temp);
+    temp.qPolygon = qPolygon;
+}
+
 void PolyLine::draw(const int, const int)
 {
     getQPainter()->setPen(getPen());

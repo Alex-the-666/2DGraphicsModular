@@ -19,8 +19,9 @@ void Text::setShapeBuffer(ShapeBuffer &temp)
 {
     Shape::setShapeBuffer(temp);
     temp.alignFlag=alignFlag;
-
-
+    temp.qStringText=myQString;
+    temp.font = font;
+    temp.qRect = myRect;
 }
 
 void Text::draw(const int, const int){

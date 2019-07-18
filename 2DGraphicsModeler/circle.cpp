@@ -6,6 +6,11 @@ Circle::Circle(const ShapeBuffer& arg): Ellipse(arg)
     radius2 = radius1;
 }
 
+void Circle::setShapeBuffer(ShapeBuffer &temp)
+{
+   Ellipse::setShapeBuffer(temp);
+}
+
 void Circle::draw(const int x, const int y)
 {
     Ellipse::draw(x,y);
