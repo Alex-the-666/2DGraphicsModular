@@ -80,3 +80,28 @@ void RenderArea::paintEvent(QPaintEvent* event)
         }
 
 }
+
+void RenderArea::readOut(QTextStream& textStream)
+{
+    for (auto it = buffer.begin(); it != buffer.end(); it++)
+    {
+        textStream << "ShapeId: " << (*it).getShapeID() << endl
+                   << "ShapeType: " << (*it).getShape() << endl
+                   << "Shape Dimensions: ";
+        switch ((*it).getShape())
+        {
+            case LINE: textStream << (*it).getQPointOne().rx() << ", "
+                                  << (*it).getQPointOne().rx() << ", "
+                                  << (*it).getQPointTwo().rx() << ", "
+                                  << (*it).getQPointTwo().ry();
+                       break;
+
+            case POLYLINE:  for (int i = 0; i < it->getQPolygon().size(); i++)
+                            {
+                                textStream << (*it).getQPolygon().point(i).rx();
+
+                            }
+        }
+    }
+}
+
