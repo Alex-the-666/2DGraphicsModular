@@ -7,7 +7,7 @@
 class Polygon : public Shape
 {
 public:
-    Polygon() = delete;
+    Polygon():Shape() {setShape(POLYGON);};
     Polygon(const ShapeBuffer& buffer);
     ~Polygon()override{}
     void draw(const int x, const int y) override;

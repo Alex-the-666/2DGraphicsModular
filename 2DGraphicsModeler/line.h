@@ -6,7 +6,7 @@
 class Line: public Shape
 {
 public:
-    Line() = delete;
+    Line():Shape(){setShape(LINE);}
     Line(const ShapeBuffer& buffer);
     virtual ~Line()override;
 

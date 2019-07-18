@@ -6,7 +6,7 @@
 class Circle : public Ellipse
 {
 public:
-    Circle()=delete;
+    Circle():Ellipse(){setShape(CIRCLE);}
     Circle(const ShapeBuffer&);
     ~Circle() override {}
     void setDimension(int x, int y, int r1, int r2);

@@ -10,7 +10,7 @@
 class Shape
 {
 public:
-    Shape() = delete;
+    Shape(): painter{nullptr}{}
     Shape(Shape&) = delete;
     Shape& operator =(Shape&)= delete;
 
@@ -32,7 +32,9 @@ public:
     void setShape(ShapeType arg);
     void setPen(Qt::GlobalColor gc1, int width,\
                  Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs);
+    void setPen(QPen qP){pen= qP;}
     void setBrush(Qt::GlobalColor gc2, Qt::BrushStyle bs);
+    void setBrush(QBrush qB){brush = qB;}
 
     virtual void draw(const int x, const int y) = 0;
     virtual void draw()=0;

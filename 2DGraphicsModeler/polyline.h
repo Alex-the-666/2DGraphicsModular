@@ -7,8 +7,7 @@
 class PolyLine: public Shape
 {
 public:
-    PolyLine() = delete;
-
+    PolyLine():Shape(){setShape(POLYLINE);}
     PolyLine(const ShapeBuffer& arg);
 
      ~PolyLine() override {}

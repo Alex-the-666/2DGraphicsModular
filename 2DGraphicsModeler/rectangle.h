@@ -14,18 +14,18 @@ private:
 
 public:
     /*CONSTRUCTORS*/
-    Rectangle () = delete;
-    Rectangle (const ShapeBuffer& arg);
+    Rectangle(): Shape(),{setShape(RECTANGLE);}
+    Rectangle(const ShapeBuffer& arg);
 
     /*DESTRUCTOR*/
-    ~Rectangle ()override;
+    ~Rectangle()override;
 
-    void draw (int, int)override;
+    void draw(int, int)override;
     void draw()override;
 
-    void move (int, int)override;
-    double area () const override;
-    double perimeter () const override;
+    void move(int, int)override;
+    double area() const override;
+    double perimeter() const override;
 
     void drawID();
 };
