@@ -75,7 +75,9 @@ void Line::drawID()
     int leftmostPoint;  /*! < leftmostpoint holds the x- axis value*/
     int upmostPoint;    /*! < upmostPoint holds the y- axis value*/
 
+    const int VERTICAL_BUFFER = 5; /*! <Vertical Buffer for Drawing ID*/
+
     one.rx() < two.rx()? leftmostPoint = one.rx() : leftmostPoint = two.rx();
     one.ry() < two.ry()? upmostPoint = one.ry() : upmostPoint = two.ry();
-    getQPainter()->drawText(leftmostPoint, upmostPoint - 5, stringID);
+    getQPainter()->drawText(leftmostPoint, upmostPoint - VERTICAL_BUFFER, stringID);
 }

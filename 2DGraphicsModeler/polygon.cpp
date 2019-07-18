@@ -74,6 +74,8 @@ double Polygon::perimeter() const
 
 void Polygon::drawID()
 {
+    const int VERTICAL_BUFFER = 5;
+
     int leftmostPoint = polygon.point(0).rx();
     int upmostPoint = polygon.point(0).ry();
 
@@ -90,5 +92,5 @@ void Polygon::drawID()
         }
 
     }
-    getQPainter()->drawText(leftmostPoint, upmostPoint - 5, stringID);
+    getQPainter()->drawText(leftmostPoint, upmostPoint - VERTICAL_BUFFER, stringID);
 }

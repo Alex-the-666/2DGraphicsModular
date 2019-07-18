@@ -66,6 +66,7 @@ double PolyLine::perimeter() const
 
 void PolyLine::drawID()
 {
+    const int VERTICAL_BUFFER = 5;
     int leftmostPoint = qPolygon.point(0).rx();
     int upmostPoint = qPolygon.point(0).ry();
 
@@ -82,7 +83,7 @@ void PolyLine::drawID()
         }
 
     }
-    getQPainter()->drawText(leftmostPoint, upmostPoint - 5, stringID);
+    getQPainter()->drawText(leftmostPoint, upmostPoint - VERTICAL_BUFFER, stringID);
 }
 
 

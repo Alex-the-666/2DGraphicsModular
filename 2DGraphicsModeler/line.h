@@ -11,6 +11,12 @@
 class Line: public Shape
 {
 public:
+
+      //!Default line class constructor
+      /*!Function calls default base class constructor
+      * Base Class Constructor calls setShape() and assigns
+      * \enum LINE to the shape base class
+      */
     Line():Shape(){setShape(LINE);}
 
     //!   Line Class Constructor
