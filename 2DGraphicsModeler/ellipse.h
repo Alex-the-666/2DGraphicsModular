@@ -14,6 +14,7 @@ public:
     void move(const int x, const int y) override;
     double area() const override;
     double perimeter() const override;
+    void drawID();
 
 
 protected:
@@ -22,6 +23,7 @@ protected:
     int x;
     int y;
     QRect myRect;
+    QString stringID;
 };
 
 #endif // ELLIPSE_H

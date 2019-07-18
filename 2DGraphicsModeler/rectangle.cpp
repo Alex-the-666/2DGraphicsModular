@@ -60,5 +60,6 @@ void Rectangle::move (int px, int py)
 
 void Rectangle::drawID()
 {
-    getQPainter()->drawText(x, y - 5, stringID);
+    const int VERTICAL_BUFFER = 5;
+    getQPainter()->drawText(x, y - VERTICAL_BUFFER, stringID);
 }

@@ -10,6 +10,8 @@ Ellipse::Ellipse(const ShapeBuffer& arg): Shape(arg)
     y = qRect.x();
     radius1 = qRect.width();
     radius2 = qRect.height();
+
+    stringID = QString::number(arg.getShapeID());
 }
 
 void Ellipse::draw(const int, const int)
@@ -25,6 +27,7 @@ void Ellipse::draw()
     getQPainter()->setPen(getPen());
     getQPainter()->setBrush(getBrush());
     //getQPainter()->drawEllipse(x, y, radius1, radius2);
+    drawID();
     getQPainter()->drawEllipse(myRect);
     passQPainter(nullptr);
 }
@@ -46,4 +49,10 @@ double Ellipse::perimeter() const
 double Ellipse::area() const
 {
     return M_PI * radius1 * radius2;
+}
+
+void Ellipse::drawID()
+{
+    const int VERTICAL_BUFFER = 5;
+    getQPainter()->drawText(x, y - VERTICAL_BUFFER, stringID);
 }
