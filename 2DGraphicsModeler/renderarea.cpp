@@ -91,7 +91,7 @@ void RenderArea::readOut(QTextStream& textStream)
         switch ((*it).getShape())
         {
             case LINE: textStream << (*it).getQPointOne().rx() << ", "
-                                  << (*it).getQPointOne().rx() << ", "
+                                  << (*it).getQPointOne().ry() << ", "
                                   << (*it).getQPointTwo().rx() << ", "
                                   << (*it).getQPointTwo().ry();
                        break;
