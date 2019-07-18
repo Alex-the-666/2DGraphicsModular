@@ -15,7 +15,7 @@ public:
       //!Default line class constructor
       /*!Function calls default base class constructor
       * Base Class Constructor calls setShape() and assigns
-      * \enum LINE to the shape base class
+      * enum LINE to the Shape base class.
       */
     Line():Shape(){setShape(LINE);}
 
@@ -29,6 +29,10 @@ public:
      //!  Virtual Line Class Destructor
     virtual ~Line()override;
 
+    //!   Setter Function that sets the ShapeBuffer to a Shape object
+  /*!   function that is passed a ShapeBuffer Object by reference
+  *     \param temp sets the temp ShapeBuffer objects values
+  */
     void setShapeBuffer(ShapeBuffer&)override;
 
     //!   Function that returns a QPoint value
@@ -63,8 +67,8 @@ public:
     /*!   Sets the QPainter objects pen
     *     Sets the QPainter objects brush
     *     Sets the QPainter coordinates from which to draw a line
-    *     \param one is the starting point of the line
-    *     \param two is the ending point of the line
+    *     \param x is the starting point of the line
+    *     \param y is the ending point of the line
     */
     void draw (const int x, const int y)override;
 
@@ -74,8 +78,6 @@ public:
     *     Sets the QPainter coordinates from which to draw a line
     *     calls the drawID function - which checks if out of bounds
     *     calls passQPainter function and passes a nullptr
-    *     \param one is the starting point of the line
-    *     \param two is the ending point of the line
     */
     void draw()override;
 
