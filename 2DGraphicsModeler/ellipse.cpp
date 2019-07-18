@@ -54,5 +54,5 @@ double Ellipse::area() const
 void Ellipse::drawID()
 {
     const int VERTICAL_BUFFER = 5;
-    getQPainter()->drawText(x, y - VERTICAL_BUFFER, stringID);
+    getQPainter()->drawText(myRect.x(), myRect.y() - VERTICAL_BUFFER, stringID);
 }
