@@ -36,9 +36,6 @@ public:
     QString getQStringText()const{return qStringText;}
     Qt::AlignmentFlag getAlignFlag()const{return alignFlag;}
 
-
-
-
 protected:
     int setInt(QString&)const;
     ShapeType setShape(QString&) const;

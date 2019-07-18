@@ -43,7 +43,14 @@ void Shape::setBrush(Qt::GlobalColor gc, Qt::BrushStyle bs)
     brush.setColor(gc);
     brush.setStyle(bs);
 }
-
+void Shape::setShapeBuffer(ShapeBuffer&)
+{
+    ShapeBuffer temp;
+    temp.shapeID = shapeId;
+    temp.shape = shape;
+    temp.pen = pen;
+    temp.brush = brush;
+}
 QPainter *Shape::getQPainter()
 {   
    return painter;

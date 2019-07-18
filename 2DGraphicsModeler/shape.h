@@ -111,6 +111,8 @@ public:
     //!    Get function to return a pen object
     const QPen& getPen()const;
 
+    void setShapeBuffer(ShapeBuffer&);
+
     //!Function to receive a QPaint pointer
     /*!A QPainter pointer is passed to the function.
     *\param painter is assigned the value of the passed QPainer pointer
