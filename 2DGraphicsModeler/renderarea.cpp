@@ -1,5 +1,7 @@
 #include "renderarea.h"
 #include <QStyleOption>
+#include <QMouseEvent>
+
 const QSize minSize(1000,500);
 
 RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
@@ -8,6 +10,17 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     setBackgroundRole(QPalette::Base);
     move(120, 36);
     setStyleSheet("background-color:white;");
+    setUpdatesEnabled(true);
+    setMouseTracking(true);
+}
+
+void RenderArea::mouseMoveEvent(QMouseEvent *event){
+    int x = event->x();
+    int y = event->y();
+    for (auto it = shapeVector.begin(); it != shapeVector.end(); it++){
+        (*it)->move(x, y);
+    }
+    repaint();
 }
 
 void RenderArea::createShapeBuffer(QTextStream& is)

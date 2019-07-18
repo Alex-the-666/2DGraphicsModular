@@ -22,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent) :
     palette->show();
 }
 
-
 MainWindow::~MainWindow()
 {
     delete ui;
