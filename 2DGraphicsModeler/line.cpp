@@ -56,13 +56,13 @@ void Line::draw()
 
 void Line::move(int x, int y)
 {
-    if(one.x()+x<1000 && one.y()+y< 500 &&\
-        two.x()+x<1000 && two.y()+y<500 )
+    QPoint offset (two-one);
+    QPoint tempOne(QPoint(x,y));
+    QPoint tempTwo(QPoint(x,y)+offset);
+    if(tempOne.x()<1000 &&tempOne.y()<500 && tempTwo.x()<1000 && tempTwo.y()<500)
     {
-        one.setX(one.x()+x);
-        one.setY(one.y()+y);
-        one.setX(one.x()+x);
-        one.setY(one.y()+y);
+        one = tempOne;
+        two = tempOne+offset;
     }
 }
 
