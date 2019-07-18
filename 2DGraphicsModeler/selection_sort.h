@@ -10,6 +10,13 @@ void SelectionSort(T* itertatorFirst,T* iteratorLast, bool *compFunc(T* arg1,T* 
                i=j;
         }
     }
-    //functor
+}
+
+template <class T>
+bool compare_shape_perimeter(T* arg1, T* arg2)
+{
+    arg1!=arg2;
+
+
 }
 #endif // SELECTION_SORT_H
