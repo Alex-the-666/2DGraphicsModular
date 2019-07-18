@@ -16,10 +16,7 @@
 class Shape
 {
 public:
-      //!Default constructor.
-      /*!\var painter is assigned a nullptr.
-      *\var shapeId is assigned integer value returned by getCount()
-      */
+      //!Default Inline constructor.
     Shape(): painter{nullptr}, shapeId {getCount()}{}
 
      //!Delete the object created by the default copy constructor
@@ -69,13 +66,15 @@ public:
 
     //!    Get function to return a pen object
     const QPen& getPen()const;
-
+    //!Default copy constructor
+    /*!\param temp is a Shapebuffer object passed by reference
+    * temp object copies its values from the shape object
+    */
     virtual void setShapeBuffer(ShapeBuffer&);
 
     //!Function to receive a QPaint pointer
     /*!A QPainter pointer is passed to the function.
     *\param arg is a pointer of QPainter class
-    *\var painter is assigned the value of the passed QPainer pointer
     */
     void passQPainter(QPainter* arg ){painter=arg;}
 
@@ -99,7 +98,6 @@ public:
       //!    Set function to assign a pen object
       /*!    Takes QPen object and assigns it to the pen object
       *     \param qP is a QPen object to set the pen style
-      *     \var pen is assigned the QPen object
       */
     void setPen(QPen qP){pen= qP;}
 
