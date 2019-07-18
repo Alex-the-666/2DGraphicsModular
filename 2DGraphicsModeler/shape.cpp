@@ -1,4 +1,5 @@
 #include "shape.h"
+#include <QCursor>
 
 Shape::Shape(const ShapeBuffer & buffer)
 {

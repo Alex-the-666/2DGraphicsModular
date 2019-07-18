@@ -1,6 +1,9 @@
 #ifndef SHAPEINFO_H
 #define SHAPEINFO_H
 #include <QDialog>
+#include <QTreeWidget>
+#include <QString>
+#include <QPen>
 
 
 namespace Ui {
@@ -16,21 +19,14 @@ public:
     ~ShapeInfo();
 
 private slots:
-//    //Line
-//    void on_pushButton_clicked();
-//    //Polyline
-//    void on_pushButton_2_clicked();
-//    //Polygon
-//    void on_pushButton_3_clicked();
-//    //Rectangle
-//    void on_pushButton_4_clicked();
-//    //Elipse
-//    void on_pushButton_5_clicked();
-//    //Text
-//    void on_pushButton_6_clicked();
+    void addTreeRoot(QString name, QString description);
+    void addTreeChild(QTreeWidgetItem *parent,
+                         QString name, QString description);
 
 private:
     Ui::ShapeInfo *ui;
+    QBrush brush;
+    QPen pen;
 
 };
 #endif // SHAPEINFO_H

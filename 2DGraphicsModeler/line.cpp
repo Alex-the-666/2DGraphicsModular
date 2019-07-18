@@ -71,8 +71,10 @@ double Line::perimeter() const
 
 void Line::drawID()
 {
-    int leftmostPoint;
-    int upmostPoint;
+    //! Int variables that hold the coordinates for left most point of the object
+    int leftmostPoint;  /*! < leftmostpoint holds the x- axis value*/
+    int upmostPoint;    /*! < upmostPoint holds the y- axis value*/
+
     one.rx() < two.rx()? leftmostPoint = one.rx() : leftmostPoint = two.rx();
     one.ry() < two.ry()? upmostPoint = one.ry() : upmostPoint = two.ry();
     getQPainter()->drawText(leftmostPoint, upmostPoint - 5, stringID);

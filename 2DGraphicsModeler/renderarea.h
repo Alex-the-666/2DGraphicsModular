@@ -24,11 +24,10 @@ public:
     bool testValue = true;
     custom::vector<Shape*>& getShapeVector();
     void readOut(QTextStream&);
-
 protected:
     void transferToShapes();
     void paintEvent(QPaintEvent *event) override;
-
+    void mouseMoveEvent(QMouseEvent *event) override;
 signals:
 
 public slots:
