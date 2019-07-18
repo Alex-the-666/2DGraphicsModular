@@ -18,7 +18,8 @@ public:
     Shape(const ShapeBuffer&);
 
     bool operator ==(Shape& rhs){return (shapeId==rhs.shapeId);}
-    bool operator <=(Shape& rhs){return (shapeId<=rhs.shapeId);}
+    bool operator <(Shape& rhs){return (shapeId<=rhs.shapeId);}
+    bool operator >(Shape& rhs) {return (area()>rhs.area());}
 
 
     virtual ~Shape();

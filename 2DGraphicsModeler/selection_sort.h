@@ -1,8 +1,9 @@
 #ifndef SELECTION_SORT_H
 #define SELECTION_SORT_H
-
+#include "shape.h"
+#include "vector.h"
 template<class T>
-void SelectionSort(T* itertatorFirst,T* iteratorLast, bool *compFunc(T* arg1,T* arg2))
+void selectionSort(T* itertatorFirst,T* iteratorLast, bool *compFunc(T* arg1,T* arg2))
 {
     for (T* i = itertatorFirst; i != iteratorLast; i++) {
         for (T* j = itertatorFirst; j != iteratorLast; j++) {
@@ -13,10 +14,15 @@ void SelectionSort(T* itertatorFirst,T* iteratorLast, bool *compFunc(T* arg1,T* 
 }
 
 template <class T>
-bool compare_shape_perimeter(T* arg1, T* arg2)
+class compare_shape_perimeter
 {
-    arg1!=arg2;
+public:
+    compare_shape_perimeter(custom::vector<T> shapeVector);
+    bool operator()(T* arg1, T* arg2)
+    {
+        return arg1 <= arg2;
+    }
+//selectionSort (x.begin(),x.end(),compare_shape_perimeter(x))
 
-
-}
+};
 #endif // SELECTION_SORT_H
