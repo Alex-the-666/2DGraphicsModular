@@ -65,26 +65,6 @@ void Palette::updateBackground(){
     w->renderArea->setStyleSheet(QString("background:rgb(%1,%2,%3);").arg(backgroundR).arg(backgroundG).arg(backgroundB));
 }
 
-//Background R
-void Palette::on_horizontalSlider_actionTriggered(int action)
-{
-    backgroundR = action;
-    updateBackground();
-}
-
-//Background G
-void Palette::on_horizontalSlider_2_actionTriggered(int action)
-{
-    backgroundG = action;
-    updateBackground();
-}
-//Background B
-void Palette::on_horizontalSlider_3_actionTriggered(int action)
-{
-    backgroundB = action;
-    updateBackground();
-}
-
 //Shape R
 void Palette::on_horizontalSlider_6_actionTriggered(int action)
 {
@@ -101,4 +81,25 @@ void Palette::on_horizontalSlider_5_actionTriggered(int action)
 void Palette::on_horizontalSlider_4_actionTriggered(int action)
 {
     shapeB = action;
+}
+
+//Background R
+void Palette::on_horizontalSlider_valueChanged(int value)
+{
+    backgroundR = value;
+    updateBackground();
+}
+
+//Background G
+void Palette::on_horizontalSlider_2_valueChanged(int value)
+{
+    backgroundG = value;
+    updateBackground();
+}
+
+//Background B
+void Palette::on_horizontalSlider_3_valueChanged(int value)
+{
+    backgroundB = value;
+    updateBackground();
 }
