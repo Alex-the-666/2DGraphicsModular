@@ -1,0 +1,84 @@
+ShapeId: 1
+ShapeType: 0
+ShapeDimensions: 20, 90, 100, 20
+PenColor: blue
+PenWidth: 2
+PenStyle: DashDotLine
+PenCapStyle: FlatCap
+PenJoinStyle: MiterJoin
+
+ShapeId: 2
+ShapeType: 1
+ShapeDimensions: 460, 90, 470, 20, 530, 40, 540, 80, 
+PenColor: green
+PenWidth: 6
+PenStyle: SolidLine
+PenCapStyle: FlatCap
+PenJoinStyle: MiterJoin
+
+ShapeId: 3
+ShapeType: 2
+ShapeDimensions: 900, 90, 910, 20, 970, 40, 980, 80, 
+PenColor: cyan
+PenWidth: 6
+PenStyle: DashDotDotLine
+PenCapStyle: FlatCap
+PenJoinStyle: MiterJoin
+BrushColor: yellow
+BrushStyle: SolidPattern
+
+ShapeId: 4
+ShapeType: 3
+ShapeDimensions: 20, 200, 170, 100
+PenColor: blue
+PenWidth: 0
+PenStyle: SolidLine
+PenCapStyle: RoundCap
+PenJoinStyle: RoundJoin
+BrushColor: red
+BrushStyle: VerPattern
+
+ShapeId: 5
+ShapeType: 4
+ShapeDimensions: 250, 150, 200
+PenColor: red
+PenWidth: 0
+PenStyle: SolidLine
+PenCapStyle: RoundCap
+PenJoinStyle: RoundJoin
+BrushColor: blue
+BrushStyle: HorPattern
+
+ShapeId: 6
+ShapeType: 5
+ShapeDimensions: 520, 200, 170, 100
+PenColor: black
+PenWidth: 12
+PenStyle: SolidLine
+PenCapStyle: FlatCap
+PenJoinStyle: MiterJoin
+BrushColor: white
+BrushStyle: NoBrush
+
+ShapeId: 7
+ShapeType: 6
+ShapeDimensions: 750, 150, 200
+PenColor: black
+PenWidth: 12
+PenStyle: SolidLine
+PenCapStyle: FlatCap
+PenJoinStyle: MiterJoin
+BrushColor: magenta
+BrushStyle: SolidPattern
+
+ShapeId: 8
+ShapeType: 7
+ShapeDimensions: 100, 425, 50, 500
+TextString: Class Project 2 - 2D Graphics Modeler
+TextColor: blue
+TextAlignment: AlignCenter
+TextPointSize: 10
+TextFontFamily: Comic Sans MS
+TextFontStyle: 
+TextFontWeight: Normal
+
