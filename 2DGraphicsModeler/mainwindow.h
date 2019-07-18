@@ -8,6 +8,7 @@
 #include "adminlogin.h"
 #include "contact.h"
 #include "palette.h"
+#include "shapeinfo.h"
 
 namespace Ui {
 class MainWindow;
@@ -30,6 +31,7 @@ private slots:
     void on_actionSave_triggered();
     void on_actionOpen_triggered();
     void on_actionQuit_triggered();
+    void on_actionInfo_triggered();
     
     void on_actionOpen_palette_triggered();
 
@@ -41,6 +43,7 @@ private:
     adminLogin *admin;
     Contact    *contact;
     Palette    *palette;
+     ShapeInfo *shapeInfo;
     QTime initialTime;
 };
 

@@ -39,6 +39,7 @@ SOURCES += \
         renderarea.cpp \
         shape.cpp \
         shapebuffer.cpp \
+        shapeinfo.cpp \
         square.cpp \
         text.cpp
 
@@ -50,7 +51,6 @@ HEADERS += \
         line.h \
         mainwindow.h \
         palette.h \
-        palette.h \
         polygon.h \
         polyline.h \
         rectangle.h \
@@ -58,6 +58,7 @@ HEADERS += \
         selection_sort.h \
         shape.h \
         shapebuffer.h \
+        shapeinfo.h \
         square.h \
         text.h \
         vector.h
@@ -66,7 +67,8 @@ FORMS += \
         adminlogin.ui \
         contact.ui \
         mainwindow.ui \
-        palette.ui
+        palette.ui \
+        shapeinfo.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -75,3 +77,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resources.qrc
+
+DISTFILES +=

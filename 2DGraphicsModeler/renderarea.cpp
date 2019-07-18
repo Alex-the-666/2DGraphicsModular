@@ -6,7 +6,7 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
 {
     setMinimumSize(minSize);
     setBackgroundRole(QPalette::Base);
-    move(0, 36);
+    move(120, 36);
     setStyleSheet("background-color:white;");
 }
 
