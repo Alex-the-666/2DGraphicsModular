@@ -9,7 +9,8 @@ public:
     Circle():Ellipse(){setShape(CIRCLE);}
     Circle(const ShapeBuffer&);
     ~Circle() override {}
-    void setDimension(int x, int y, int r1, int r2);
+    void setShapeBuffer(ShapeBuffer&)override;
+    void setDimension(int , int, int, int){}
     void draw(const int x, const int y) override;
     void draw()override;
     void move(const int x, const int y) override;

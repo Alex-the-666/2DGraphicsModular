@@ -10,9 +10,8 @@ public:
     Square():Shape(){setShape(SQUARE);}
 
     Square(const ShapeBuffer& arg);
-
     virtual ~Square()override{}
-
+    void setShapeBuffer(ShapeBuffer&)override;
     void setDimension(int x, int y);
 
     void draw (const int x, const int y)override;

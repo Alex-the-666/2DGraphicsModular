@@ -10,6 +10,8 @@ public:
     Polygon():Shape(), polygon(G_DEFAULTQRECT) {setShape(POLYGON);};
     Polygon(const ShapeBuffer& buffer);
     ~Polygon()override{}
+
+    void setShapeBuffer(ShapeBuffer&)override;
     void draw(const int x, const int y) override;
     void draw()override;
     void move(const int x, const int y)override;

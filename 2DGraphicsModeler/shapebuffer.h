@@ -14,11 +14,13 @@ class MyException{};
 
 class Circle; class Ellipse; class Line; class Polygon;
 class Rectangle; class Square; class Shape; class Text;
+class Polyine;
+
 class ShapeBuffer
 {
     friend class Circle; friend class Ellipse; friend class Line;
     friend class Polygon; friend class Rectangle; friend class Square;
-    friend class Shape; friend class Text;
+    friend class Shape; friend class Text; friend class PolyLine;
 
 public:
     ShapeBuffer();

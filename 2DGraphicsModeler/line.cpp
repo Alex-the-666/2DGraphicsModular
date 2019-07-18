@@ -21,6 +21,13 @@ Line::~Line()
 
 }
 
+void Line::setShapeBuffer(ShapeBuffer & temp)
+{
+    Shape::setShapeBuffer(temp);
+    temp.one = one;
+    temp.two = two;
+}
+
 QPoint Line::getQPointOne() const
 {
     return one;

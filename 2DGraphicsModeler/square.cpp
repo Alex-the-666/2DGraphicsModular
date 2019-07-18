@@ -10,6 +10,12 @@ Square::Square(const ShapeBuffer& arg): Shape(arg)
     _y = qRect.y();
     stringID = QString::number(arg.getShapeID());
 }
+
+void Square::setShapeBuffer(ShapeBuffer &temp)
+{
+    Shape::setShapeBuffer(temp);
+    temp.qRect.setRect(_x,_y,side,side);
+}
 void Square::draw(const int, const int)
 {
     getQPainter()->setPen(getPen());
