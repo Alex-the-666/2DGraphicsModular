@@ -47,12 +47,12 @@ void ShapeInfo::addTreeRoot(QString name, QString description)
     treeItem->setText(0, name);
     treeItem->setText(1, description);
    // temp=shape->getPen();
-    addTreeChild(treeItem,  "ShapeId", " ");
-    addTreeChild(treeItem,  "PenColor", " ");
-    addTreeChild(treeItem,  "PenWidth", " ");
-    addTreeChild(treeItem,  "PenStyle", " ");
-    addTreeChild(treeItem,  "PenCapStyle", " ");
-    addTreeChild(treeItem,  "PenJoinStyle", " ");
+     addTreeChild(treeItem,  "ShapeId", shape->getPenStyle());
+     addTreeChild(treeItem,  "PenColor"," "); //shape->getPenColor());
+     addTreeChild(treeItem,  "PenWidth"," "); // shape->getPenStyle());
+    addTreeChild(treeItem,  "PenStyle", " "); //shape->getPenStyle());
+    addTreeChild(treeItem,  "PenCapStyle", " "); //shape->getPenCapStyle());
+    addTreeChild(treeItem,  "PenJoinStyle", " "); //shape->getPenJoint());
 }
 
 void ShapeInfo::addTreeChild(QTreeWidgetItem *parent,
