@@ -4,7 +4,6 @@
 
 namespace Ui {
 class Palette;
-
 }
 
 class Palette : public QDialog

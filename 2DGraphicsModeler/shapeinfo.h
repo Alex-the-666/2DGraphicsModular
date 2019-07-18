@@ -32,6 +32,5 @@ private slots:
 private:
     Ui::ShapeInfo *ui;
 
-    void updateBackground();
 };
 #endif // SHAPEINFO_H

@@ -69,12 +69,6 @@ void MainWindow::on_actionLogin_triggered()
     admin -> show();
 }
 
-void MainWindow::on_actionInfo_triggered()
-{
-    shapeInfo = new ShapeInfo(this);
-    shapeInfo -> show();
-}
-
 void MainWindow::on_actionContact_Us_triggered()
 {
     contact = new Contact(this);
@@ -132,4 +126,11 @@ void MainWindow::on_actionOpen_palette_triggered()
 {
     palette = new Palette(this);
     palette -> show();
+}
+
+
+void MainWindow::on_actionShow_Info_triggered()
+{
+    shapeInfo = new ShapeInfo(this);
+    shapeInfo -> show();
 }

@@ -50,8 +50,3 @@ ShapeInfo::~ShapeInfo()
 //void ShapeInfo::on_pushButton_6_clicked()
 //{
 
-
-void ShapeInfo::updateBackground(){
-    MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
- //   w->renderArea->setStyleSheet(QString("background:rgb(%1,%2,%3);").arg(backgroundR).arg(backgroundG).arg(backgroundB));
-}

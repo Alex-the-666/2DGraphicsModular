@@ -49,7 +49,6 @@
      <string>Show </string>
     </property>
     <addaction name="actionShow_Info"/>
-    <addaction name="separator"/>
    </widget>
    <addaction name="menuHome"/>
    <addaction name="menuFile"/>
