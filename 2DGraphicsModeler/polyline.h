@@ -2,7 +2,21 @@
 #define POLYLINE_H
 
 #include "shape.h"
-
+/*! \mainpage My Personal Index Page
+*
+* \section intro_sec Introduction
+*
+* This is the introduction.
+*
+* \section install_sec Installation
+*
+* \subsection step1 Step 1: Opening the box
+*     This comment block is saved in polyline.h for modification purposes
+* etc...
+*     \section list_sec Done so far:
+*     shape class \n
+*     line class \n
+*/
 
 class PolyLine: public Shape
 {
