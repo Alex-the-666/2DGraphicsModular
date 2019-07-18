@@ -99,8 +99,45 @@ void RenderArea::readOut(QTextStream& textStream)
     for (auto it = buffer.begin(); it != buffer.end(); it++)
     {
         textStream << "ShapeId: " << (*it).getShapeID() << endl
-                   << "ShapeType: " << (*it).getShape() << endl
-                   << "ShapeDimensions: ";
+                   << "ShapeType: ";
+        if (it->getShape() == 0)
+        {
+            textStream << "Line";
+        }
+        else if (it->getShape() == 1)
+        {
+            textStream << "Polyline";
+        }
+        else if (it->getShape() == 2)
+        {
+            textStream << "Polygon";
+        }
+        else if (it->getShape() == 3)
+        {
+            textStream << "Rectangle";
+        }
+        else if (it->getShape() == 4)
+        {
+            textStream << "Square";
+        }
+        else if (it->getShape() == 5)
+        {
+            textStream << "Ellipse";
+        }
+        else if (it->getShape() == 6)
+        {
+            textStream << "Circle";
+        }
+        else if (it->getShape() == 7)
+        {
+            textStream << "Text";
+        }
+        else
+        {
+            textStream << "Line";
+        }
+        textStream << endl;
+        textStream << "ShapeDimensions: ";
         switch (it->getShape())
         {
             case LINE: textStream << it->getQPointOne().rx() << ", "
