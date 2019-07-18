@@ -11,16 +11,12 @@ class Shape
 {
 public:
     Shape() = delete;
-    Shape(Shape&) = delete;
-    Shape& operator =(Shape&)= delete;
 
     Shape(QPaintDevice *): shapeId {0} {}
     Shape(const ShapeBuffer&);
 
-    bool operator ==(Shape& rhs){return (shapeId==rhs.shapeId);}
-    bool operator <(Shape& rhs){return (shapeId<=rhs.shapeId);}
-    bool operator >(Shape& rhs) {return (area()>rhs.area());}
-
+    Shape(Shape&) = delete;
+    Shape& operator =(Shape&)= delete;
 
     virtual ~Shape();
 
