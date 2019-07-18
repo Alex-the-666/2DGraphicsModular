@@ -184,6 +184,8 @@ private:
     //! QBrush object to set the brush styles
     QBrush brush;
     //! Static member function, returns integer value referred to as count
+      /*!Each function call increases count by one
+      */
     static int getCount();
 
 };
