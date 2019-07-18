@@ -13,6 +13,7 @@ public:
 
      ~PolyLine() override {}
 
+
     void draw (const int x, const int y)override;
     void draw () override;
     void move(int x, int y) override;
@@ -25,6 +26,18 @@ private:
     QString stringID;
 };
 
-
+//    QString getPenStyle()
+//    {
+//        if(getPen().style()==Qt::SolidLine)
+//            return "Solid  Line";
+//        else if(getPen().style()==Qt::DashDotDotLine)
+//            return "DashDotDotLine";
+//        else if(getPen().style()==Qt::DashDotLine)
+//            return "DashDotLine";
+//        else if(getPen().style()==Qt::DotLine)
+//            return "DotLine";
+//        else if(getPen().style()==Qt::DashLine)
+//            return "DashLine";
+//    }
 
 #endif // POLYLINE_H

@@ -38,7 +38,7 @@ void ShapeInfo::addTreeRoot(QString name, QString description)
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
     ShapeBuffer buffer;
 
-    Line* shape = new Line(buffer);
+    Shape* shape = new Line(buffer);
 
     // QTreeWidgetItem(QTreeWidget * parent, int type = Type)
     QTreeWidgetItem *treeItem = new QTreeWidgetItem(ui->treeWidget);
@@ -47,12 +47,13 @@ void ShapeInfo::addTreeRoot(QString name, QString description)
     treeItem->setText(0, name);
     treeItem->setText(1, description);
    // temp=shape->getPen();
-     addTreeChild(treeItem,  "ShapeId", shape->getPenStyle());
+     addTreeChild(treeItem,  "PenStyle", shape->getPenStyle());
      addTreeChild(treeItem,  "PenColor"," "); //shape->getPenColor());
      addTreeChild(treeItem,  "PenWidth"," "); // shape->getPenStyle());
-    addTreeChild(treeItem,  "PenStyle", " "); //shape->getPenStyle());
+    addTreeChild(treeItem,  "ShapeId", " "); //shape->getPenStyle());
     addTreeChild(treeItem,  "PenCapStyle", " "); //shape->getPenCapStyle());
     addTreeChild(treeItem,  "PenJoinStyle", " "); //shape->getPenJoint());
+
 }
 
 void ShapeInfo::addTreeChild(QTreeWidgetItem *parent,
