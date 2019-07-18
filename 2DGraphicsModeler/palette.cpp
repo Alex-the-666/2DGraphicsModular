@@ -32,10 +32,11 @@ void Palette::on_pushButton_clicked()
 void Palette::on_pushButton_2_clicked()
 {
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
-    //PolyLine* shape = new PolyLine(w->renderArea, w->buffer);
-    //shape->setPoints(int nPoints, int firstx, int firsty, ...)
-    //shape->move(10,10); //,200,200,300,440,223,345);//shape->setDimension(0, 0, 100, 100);
-    //w->renderArea->shapeVector.push_back(shape);
+    ShapeBuffer buffer;
+    PolyLine* shape = new PolyLine(buffer);
+
+    w->renderArea->getShapeVector().push_back(shape);
+    w->renderArea->repaint();
 }
 
 //Polygon
@@ -57,4 +58,47 @@ void Palette::on_pushButton_5_clicked()
 void Palette::on_pushButton_6_clicked()
 {
 
+}
+
+void Palette::updateBackground(){
+    MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
+    w->renderArea->setStyleSheet(QString("background:rgb(%1,%2,%3);").arg(backgroundR).arg(backgroundG).arg(backgroundB));
+}
+
+//Background R
+void Palette::on_horizontalSlider_actionTriggered(int action)
+{
+    backgroundR = action;
+    updateBackground();
+}
+
+//Background G
+void Palette::on_horizontalSlider_2_actionTriggered(int action)
+{
+    backgroundG = action;
+    updateBackground();
+}
+//Background B
+void Palette::on_horizontalSlider_3_actionTriggered(int action)
+{
+    backgroundB = action;
+    updateBackground();
+}
+
+//Shape R
+void Palette::on_horizontalSlider_6_actionTriggered(int action)
+{
+    shapeR = action;
+}
+
+//Shape G
+void Palette::on_horizontalSlider_5_actionTriggered(int action)
+{
+    shapeG = action;
+}
+
+//Shape B
+void Palette::on_horizontalSlider_4_actionTriggered(int action)
+{
+    shapeB = action;
 }
