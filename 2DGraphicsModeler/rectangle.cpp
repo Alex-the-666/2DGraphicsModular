@@ -17,6 +17,12 @@ Rectangle::Rectangle (const ShapeBuffer& arg) :\
 
 Rectangle::~Rectangle () {}
 
+void Rectangle::setShapeBuffer(ShapeBuffer &temp)
+{
+    Shape::setShapeBuffer(temp);
+    temp.qRect.setRect(x,y,width,height);
+}
+
 double Rectangle::area () const
 {
     return height * width;

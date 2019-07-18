@@ -29,6 +29,8 @@ public:
      //!  Virtual Line Class Destructor
     virtual ~Line()override;
 
+    void setShapeBuffer(ShapeBuffer&)override;
+
     //!   Function that returns a QPoint value
     /*!    QPoint function returns QPoint one
     *     QPoint one is made up of two int values

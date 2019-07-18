@@ -14,6 +14,12 @@ Ellipse::Ellipse(const ShapeBuffer& arg): Shape(arg)
     stringID = QString::number(arg.getShapeID());
 }
 
+void Ellipse::setShapeBuffer(ShapeBuffer & temp)
+{
+    Shape::setShapeBuffer(temp);
+    temp.qRect = myRect;
+}
+
 void Ellipse::draw(const int, const int)
 {
     getQPainter()->setPen(getPen());

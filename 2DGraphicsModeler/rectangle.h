@@ -21,6 +21,7 @@ public:
     /*DESTRUCTOR*/
     ~Rectangle()override;
 
+      void setShapeBuffer(ShapeBuffer&)override;
     void draw(int, int)override;
     void draw()override;
 
