@@ -55,6 +55,7 @@ HEADERS += \
         polyline.h \
         rectangle.h \
         renderarea.h \
+        selection_sort.h \
         shape.h \
         shapebuffer.h \
         square.h \

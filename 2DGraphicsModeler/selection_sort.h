@@ -10,7 +10,6 @@ void SelectionSort(T* itertatorFirst,T* iteratorLast, bool *compFunc(T* arg1,T* 
                i=j;
         }
     }
-
-
+    //functor
 }
 #endif // SELECTION_SORT_H
