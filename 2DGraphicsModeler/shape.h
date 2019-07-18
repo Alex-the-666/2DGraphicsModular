@@ -70,7 +70,7 @@ public:
     //!    Get function to return a pen object
     const QPen& getPen()const;
 
-    void setShapeBuffer(ShapeBuffer&);
+    virtual void setShapeBuffer(ShapeBuffer&);
 
     //!Function to receive a QPaint pointer
     /*!A QPainter pointer is passed to the function.

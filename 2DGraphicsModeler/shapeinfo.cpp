@@ -47,7 +47,7 @@ void ShapeInfo::addTreeRoot(QString name, QString description)
     treeItem->setText(0, name);
     treeItem->setText(1, description);
    // temp=shape->getPen();
-     addTreeChild(treeItem,  "PenStyle", shape->getPenStyle());
+   //  addTreeChild(treeItem,  "PenStyle", shape->getPenStyle());
      addTreeChild(treeItem,  "PenColor" ,  ""); // shape->getPenColor()); //shape->getPenColor());
      addTreeChild(treeItem,  "PenWidth"," "); // shape->getPenStyle());
     addTreeChild(treeItem,  "ShapeId", " "); //shape->getPenStyle());

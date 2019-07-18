@@ -43,9 +43,8 @@ void Shape::setBrush(Qt::GlobalColor gc, Qt::BrushStyle bs)
     brush.setColor(gc);
     brush.setStyle(bs);
 }
-void Shape::setShapeBuffer(ShapeBuffer&)
+void Shape::setShapeBuffer(ShapeBuffer& temp)
 {
-    ShapeBuffer temp;
     temp.shapeID = shapeId;
     temp.shape = shape;
     temp.pen = pen;

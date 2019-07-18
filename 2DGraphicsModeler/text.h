@@ -8,6 +8,7 @@ class Text : public Shape
 public:
     Text():Shape(), myRect(G_DEFAULTQRECT){setShape(TEXT);}
     Text(const ShapeBuffer& arg);
+    void setShapeBuffer(ShapeBuffer&)override;
     void draw(const int x, const int y) override;
     void draw()override;
     void move(const int x1, const int y1) override;

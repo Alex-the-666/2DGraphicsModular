@@ -15,6 +15,14 @@ Text::Text(const ShapeBuffer& arg) : Shape(arg) {
 
 }
 
+void Text::setShapeBuffer(ShapeBuffer &temp)
+{
+    Shape::setShapeBuffer(temp);
+    temp.alignFlag=alignFlag;
+
+
+}
+
 void Text::draw(const int, const int){
 
     getQPainter()->setPen(getPen());

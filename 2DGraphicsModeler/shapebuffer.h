@@ -12,10 +12,13 @@ enum ShapeType{LINE, POLYLINE, POLYGON, RECTANGLE,\
                SQUARE, ELLIPSE, CIRCLE, TEXT};
 class MyException{};
 
-class Shape;
+class Circle; class Ellipse; class Line; class Polygon;
+class Rectangle; class Square; class Shape; class Text;
 class ShapeBuffer
 {
-friend class Shape;
+    friend class Circle; friend class Ellipse; friend class Line;
+    friend class Polygon; friend class Rectangle; friend class Square;
+    friend class Shape; friend class Text;
 
 public:
     ShapeBuffer();
