@@ -101,16 +101,8 @@ void MainWindow::on_actionSave_triggered()
         QTextStream ostream(&file);
         renderArea->readOut(ostream);
     }
-        //std::stringstream ss;
-    /*
-    custom::vector<Shape*> shapeVector = renderArea->shapeVector;
-
-    for(Shape* shape : shapeVector){
-        shape->write(ss);
-        ss << std::endl;
-    }*/
-    //std::string str = ss.str();
-    //file.write(str.c_str());
+    file.close();
+    file.flush();
 }
 
 void MainWindow::on_actionQuit_triggered()
