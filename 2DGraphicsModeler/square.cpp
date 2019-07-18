@@ -54,7 +54,8 @@ double Square::perimeter() const
 
 void Square::drawID()
 {
-    getQPainter()->drawText(_x, _y - 5, stringID);
+    const int VERTICAL_BUFFER = 5;
+    getQPainter()->drawText(_x, _y - VERTICAL_BUFFER, stringID);
 }
 
 
