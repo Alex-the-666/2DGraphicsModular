@@ -13,7 +13,7 @@
 #include "square.h"
 #include "vector.h"
 #include "text.h"
-#include <vector>
+#include "selection_sort.h"
 
 class RenderArea : public QWidget
 {
