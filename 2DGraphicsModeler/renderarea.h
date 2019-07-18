@@ -23,6 +23,7 @@ public:
     void createShapeBuffer(QTextStream&);
     bool testValue = true;
     custom::vector<Shape*>& getShapeVector();
+    void readOut(QTextStream&);
 
 protected:
     void transferToShapes();
