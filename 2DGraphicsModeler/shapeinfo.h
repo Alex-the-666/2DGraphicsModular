@@ -3,6 +3,7 @@
 #include <QDialog>
 #include <QTreeWidget>
 #include <QString>
+#include <QPen>
 
 
 namespace Ui {
@@ -24,6 +25,8 @@ private slots:
 
 private:
     Ui::ShapeInfo *ui;
+    QBrush brush;
+    QPen pen;
 
 };
 #endif // SHAPEINFO_H
