@@ -6,11 +6,13 @@
 class Rectangle : public Shape
 {
 private:
-    int width;
-    int height;
-    int x;
-    int y;
-    QString stringID;
+  int x;
+  int y;
+  int width;
+  int height;
+
+  QString stringID;
+  QRect xyWH;
 
 public:
     /*CONSTRUCTORS*/
@@ -21,6 +23,7 @@ public:
     /*DESTRUCTOR*/
     ~Rectangle()override;
 
+      void setShapeBuffer(ShapeBuffer&)override;
     void draw(int, int)override;
     void draw()override;
 

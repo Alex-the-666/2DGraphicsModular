@@ -16,10 +16,7 @@
 class Shape
 {
 public:
-      //!Default constructor.
-      /*!\param painter is assigned a nullptr.
-      *\param shapeId is assigned integer value returned by getCount()
-      */
+      //!Default Inline constructor.
     Shape(): painter{nullptr}, shapeId {getCount()}{}
 
      //!Delete the object created by the default copy constructor
@@ -69,12 +66,15 @@ public:
 
     //!    Get function to return a pen object
     const QPen& getPen()const;
-
+    //!Default copy constructor
+    /*!\param temp is a Shapebuffer object passed by reference
+    * temp object copies its values from the shape object
+    */
     virtual void setShapeBuffer(ShapeBuffer&);
 
     //!Function to receive a QPaint pointer
     /*!A QPainter pointer is passed to the function.
-    *\param painter is assigned the value of the passed QPainer pointer
+    *\param arg is a pointer of QPainter class
     */
     void passQPainter(QPainter* arg ){painter=arg;}
 
@@ -86,7 +86,7 @@ public:
 
     //!    Set function to assign a pen object
     /*!    Takes QT styles and assigns them to the pen object
-    *     \param gc is a QT style to set the color of the pen
+    *     \param gc1 is a QT style to set the color of the pen
     *     \param width is an int variable to set the width of the pen
     *     \param ps is a QT style to set the pen style
     *     \param pcs is a QT style to set the pen cap style
@@ -103,7 +103,7 @@ public:
 
       //!    Set function to assign to a brush object
       /*!   Takes QT styles as paramaters and assigns them to the brush object
-      *     \param gc is a QT style for global color- sets the brush color
+      *     \param gc2 is a QT style for global color- sets the brush color
       *     \param bs is a QT style to set the brush style
       */
     void setBrush(Qt::GlobalColor gc2, Qt::BrushStyle bs);

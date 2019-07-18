@@ -8,6 +8,8 @@ public:
     Ellipse():Shape(),myRect(G_DEFAULTQRECT){setShape(ELLIPSE);}
     Ellipse(const ShapeBuffer&);
     ~Ellipse() override {}
+
+    void setShapeBuffer(ShapeBuffer&)override;
     void setDimension(int x, int y, int r1, int r2);
     void draw(const int x, const int y) override;
     void draw()override;
