@@ -163,7 +163,7 @@ void ShapeBuffer::readOut(QTextStream & os)
         os << "TextString: " << qStringText <<endl;
         os << "TextColor: " << printGobalColor(pen.color()) << endl;
         os << "TextAlignment: " << printAlign() << endl;
-        os << printFont();
+        os << printFont() << endl;
     }break;
     }
 }
@@ -509,9 +509,9 @@ QString ShapeBuffer::printFontStyle() const
 {
     switch(font.style())
     {
-    case QFont::StyleNormal: return "FlatCap";
-    case QFont::StyleItalic: return "FlatCap";
-    case QFont::StyleOblique:return "FlatCap";
+    case QFont::StyleNormal: return "StyleNormal";
+    case QFont::StyleItalic: return "StyleItalic";
+    case QFont::StyleOblique:return "StlyeOblique";
     }
 }
 
