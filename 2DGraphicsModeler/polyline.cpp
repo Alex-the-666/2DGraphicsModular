@@ -41,19 +41,18 @@ double PolyLine::area() const
 
 void PolyLine::move(int x, int y)
 {
-    bool allowMove = true;
-    for (int i = 0; i < qPolygon.size(); i++)
-    {
-        if ((qPolygon.point(i).x() + x) > 1000 || (qPolygon.point(i).y() + y > 500))
-        {
-            allowMove = false;
-        }
-    }
+    /*VECTOR TO STORE DISTANCES RELATIVE TO STARTING POINT*/
+    QPolygon relDistance;
 
-    if (allowMove)
-    {
-        qPolygon.translate(x,y);
-    }
+    for (int i = 0; i < qPolygon.size() - 1; ++i)
+        relDistance << QPoint(qPolygon.point(i+1) - qPolygon.point(0));
+
+    /*RESETTING STARTING POINT OF SHAPE TO COORDINATES IN PARAMETER*/
+    qPolygon.setPoint(0,QPoint (x,y));
+
+    /*RESETTING ALL OTHER POINTS OF SHAPE RELATIVE TO STARTING POINT*/
+    for (int i = 0; i < relDistance.size(); ++i)
+        qPolygon.setPoint ((i + 1), QPoint (qPolygon.point (0) + relDistance.point(i)));
 }
 
 
@@ -76,6 +75,9 @@ void PolyLine::drawID()
     int leftmostPoint = qPolygon.point(0).rx();
     int upmostPoint = qPolygon.point(0).ry();
 
+    /*testing purposes */
+    QString temp = QString::number (leftmostPoint) + " " + QString::number (upmostPoint);
+
     for (int i = 1; i < qPolygon.size(); i++)
     {
         if (qPolygon.point(i).rx() < leftmostPoint)
@@ -89,7 +91,7 @@ void PolyLine::drawID()
         }
 
     }
-    getQPainter()->drawText(leftmostPoint, upmostPoint - VERTICAL_BUFFER, stringID);
+    getQPainter()->drawText(leftmostPoint, upmostPoint - VERTICAL_BUFFER, temp);
 }
 
 

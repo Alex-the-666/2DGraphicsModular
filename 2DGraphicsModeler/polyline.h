@@ -2,7 +2,7 @@
 #define POLYLINE_H
 
 #include "shape.h"
-/*! \mainpage Team Ratatouille
+/*! \mainpage My Personal Index Page
 *
 * \section intro_sec Introduction
 *
