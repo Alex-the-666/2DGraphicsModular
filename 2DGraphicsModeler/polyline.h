@@ -4,8 +4,6 @@
 #include "shape.h"
 /*! \mainpage Team Ratatouille
 *
-*  \subsection intro_sec Introduction
-*
 * This product is a 2D Graphic Modeller that can create a variety of shapes and text objects.
 * This program can read in from a text file, and save to a text file.\n
 * The objects that appear on screen can have their: location, color, border, and text modified.\n\n\n
