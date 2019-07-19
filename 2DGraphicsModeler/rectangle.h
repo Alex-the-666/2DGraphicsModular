@@ -82,7 +82,7 @@ public:
     */
     void move(int, int)override;
 
-    //!Function that returns the perimeter of a rectangle
+    //!Function that returns the area of a rectangle
     /*! Returns a double value of the height * width
     */
     double area() const override;
