@@ -61,6 +61,8 @@ public:
     //!   Shape Class Destructor
     virtual ~Shape();
 
+    //!    Return ID
+    int getID()const{return shapeId;}
     //!    Get function to return a shape object
     ShapeType getShape() const;
 

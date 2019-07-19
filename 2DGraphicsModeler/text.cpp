@@ -29,7 +29,6 @@ void Text::draw(const int, const int){
     getQPainter()->setBrush(getBrush());
     getQPainter()->setFont(font);
     getQPainter()->drawText(myRect,alignFlag,myQString);
-    passQPainter(nullptr);
 }
 
 void Text::draw(){
@@ -38,6 +37,9 @@ void Text::draw(){
     getQPainter()->setBrush(getBrush());
     getQPainter()->setFont(font);
     getQPainter()->drawText(myRect,alignFlag,myQString);
+
+    QString temp = QString::number (x) + " " + QString::number (y);
+    getQPainter()->drawText(x, y - 5, QVariant(Shape::getID()).toString());
     passQPainter(nullptr);
 }
 
