@@ -509,9 +509,9 @@ QString ShapeBuffer::printFontStyle() const
 {
     switch(font.style())
     {
-    case QFont::StyleNormal: return "StyleNormal";
-    case QFont::StyleItalic: return "StyleItalic";
-    case QFont::StyleOblique:return "StyleOblique";
+    case QFont::StyleNormal: return "FlatCap";
+    case QFont::StyleItalic: return "FlatCap";
+    case QFont::StyleOblique:return "FlatCap";
     }
 }
 

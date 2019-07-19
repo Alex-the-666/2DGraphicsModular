@@ -39,7 +39,6 @@ void RenderArea::createShapeBuffer(QTextStream& is)
             buffer.push_back(x);
 
         is.readLine();//get rid of the space
-        is.flush();
     }
    shapeBufferReady=true;
 }
@@ -75,7 +74,6 @@ void RenderArea::transferToShapes()
        }//end of switch
 
    }// end of for loop
-
 }
 
 void RenderArea::paintEvent(QPaintEvent* event)
@@ -85,7 +83,7 @@ void RenderArea::paintEvent(QPaintEvent* event)
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
     QWidget::paintEvent(event);
-     QPainter painter(this);
+    // QPainter painter(this);
     if(shapeBufferReady == true)
     {
           transferToShapes();
@@ -93,7 +91,7 @@ void RenderArea::paintEvent(QPaintEvent* event)
     }
         for (auto it = shapeVector.begin(); it != shapeVector.end(); it++)
         {
-            (*it)->passQPainter(&painter);
+            (*it)->passQPainter(&p);
             (*it)->draw();
         }
 
