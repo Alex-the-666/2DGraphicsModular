@@ -3,9 +3,19 @@
 #include <stdexcept>
 #include <iostream>
 
+//!    Constant Variable initialized to 8
+/*! Creates a new Vector element if the vector is full
+*/
 const int STARTSIZE = 8;
 
+
 namespace  custom {
+
+//!   Custom Vector Class for Parsing Objects
+/*!   Vector description here.\n
+*     This is a test to see how Doxygen accepts the template prototype.\n
+*     Vector created and developed by Arthur.
+*/
 template<typename T>
 class vector
 {
@@ -102,11 +112,11 @@ public:
 			if (i < size_v)
 				temp[i] = elem[i];
 		}
-		// this is not like the real STL vector 
+		// this is not like the real STL vector
 		//where we can accept another default argument to initialize
 		//data if our old vector is smaller that the resize, this means
 		// the default constructor will be used.
-		
+
 		size_v = newsize;
 		space = newsize;
 		delete[] elem;
@@ -217,7 +227,7 @@ public:
 		{
 			temp[i] = *j;
 		}
-		
+
 		iterator returnIt = temp + i;
 		i++;
 
@@ -226,7 +236,7 @@ public:
 			temp[i] = *j;
 			j++;
 		}
-		
+
 		size_v--;
 
 		delete[] elem;
