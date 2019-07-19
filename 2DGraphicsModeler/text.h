@@ -17,7 +17,7 @@ public:
       * enum value of TEXT- passes object to shape object.
       * rectangle object is assigned default properties
       */
-    Text():Shape(), myRect(G_DEFAULTQRECT){setShape(TEXT);}
+    Text():Shape(), myRect(G_DEFAULTQRECT), myQString(QString("cheese")), font(QFont()), alignFlag(Qt::AlignmentFlag::AlignLeft), x(x), y(y), wide(300), tall(100) {setShape(TEXT);}
 
     //!   Text Class Copy Constructor
     /*!   Copy Constructor for the text object
