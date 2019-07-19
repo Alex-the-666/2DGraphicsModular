@@ -22,7 +22,7 @@ public:
     * Base Class Constructor calls setShape() and assigns
     * enum value of ELLIPSE- passes object to a rectangle object.
     * \param radius1 holds the height value of the object
-    * \param radius 2 holds the width value of the object
+    * \param radius2 holds the width value of the object
     * \param x holds the x-value of the coordinate of the object
     * \param y holds the y-value of the coordinate of the object
     */
