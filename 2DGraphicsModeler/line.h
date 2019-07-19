@@ -17,7 +17,11 @@ public:
       * Base Class Constructor calls setShape() and assigns
       * enum LINE to the Shape base class.
       */
-    Line():Shape(){setShape(LINE);}
+    Line():Shape(){
+        setShape(LINE);
+        setPointOne(100, 100);
+        setPointTwo(100, 200);
+    }
 
     //!   Line Class Constructor
     /*!   Constructor for the line object

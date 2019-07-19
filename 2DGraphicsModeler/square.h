@@ -16,7 +16,8 @@ public:
       * Base Class Constructor calls setShape() and assigns
       * enum value of SQUARE.
       */
-    Square():Shape(){setShape(SQUARE);}
+    Square():Shape(), side{100},\
+        _x{50}, _y{50} {setShape(SQUARE);}
 
     //!   Square Class Copy Constructor
     /*!   Copy Constructor for the square object
