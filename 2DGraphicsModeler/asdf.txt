@@ -1,5 +1,5 @@
 ShapeId: 1
-ShapeType: 0
+ShapeType: Line
 ShapeDimensions: 20, 90, 100, 20
 PenColor: blue
 PenWidth: 2
@@ -8,8 +8,8 @@ PenCapStyle: FlatCap
 PenJoinStyle: MiterJoin
 
 ShapeId: 2
-ShapeType: 1
-ShapeDimensions: 460, 90, 470, 20, 530, 40, 540, 80, 
+ShapeType: Polyline
+ShapeDimensions: 460, 90, 470, 20, 530, 40, 540, 80
 PenColor: green
 PenWidth: 6
 PenStyle: SolidLine
@@ -17,8 +17,8 @@ PenCapStyle: FlatCap
 PenJoinStyle: MiterJoin
 
 ShapeId: 3
-ShapeType: 2
-ShapeDimensions: 900, 90, 910, 20, 970, 40, 980, 80, 
+ShapeType: Polygon
+ShapeDimensions: 900, 90, 910, 20, 970, 40, 980, 80
 PenColor: cyan
 PenWidth: 6
 PenStyle: DashDotDotLine
@@ -28,18 +28,18 @@ BrushColor: yellow
 BrushStyle: SolidPattern
 
 ShapeId: 4
-ShapeType: 3
+ShapeType: Rectangle
 ShapeDimensions: 20, 200, 170, 100
 PenColor: blue
 PenWidth: 0
-PenStyle: SolidLine
+PenStyle: DashLine
 PenCapStyle: RoundCap
 PenJoinStyle: RoundJoin
 BrushColor: red
 BrushStyle: VerPattern
 
 ShapeId: 5
-ShapeType: 4
+ShapeType: Square
 ShapeDimensions: 250, 150, 200
 PenColor: red
 PenWidth: 0
@@ -50,7 +50,7 @@ BrushColor: blue
 BrushStyle: HorPattern
 
 ShapeId: 6
-ShapeType: 5
+ShapeType: Ellipse
 ShapeDimensions: 520, 200, 170, 100
 PenColor: black
 PenWidth: 12
@@ -61,7 +61,7 @@ BrushColor: white
 BrushStyle: NoBrush
 
 ShapeId: 7
-ShapeType: 6
+ShapeType: Circle
 ShapeDimensions: 750, 150, 200
 PenColor: black
 PenWidth: 12
@@ -72,13 +72,12 @@ BrushColor: magenta
 BrushStyle: SolidPattern
 
 ShapeId: 8
-ShapeType: 7
-ShapeDimensions: 100, 425, 50, 500
+ShapeType: Text
+ShapeDimensions: 100, 425, 500, 50
 TextString: Class Project 2 - 2D Graphics Modeler
 TextColor: blue
-TextAlignment: AlignCenter
+AlignmentFlag: AlignCenter
 TextPointSize: 10
 TextFontFamily: Comic Sans MS
-TextFontStyle: 
+TextFontStyle: StyleNormal
 TextFontWeight: Normal
-

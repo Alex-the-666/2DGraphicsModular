@@ -144,6 +144,31 @@ void ShapeBuffer::readIn(QTextStream& is)
     }
 }
 
+void ShapeBuffer::readOut(QTextStream & os)
+{
+    os << "ShapeId: " << getShapeID() << endl;
+    os << "ShapeType: " << printShapeType() << endl;
+    os << "ShapeDimensions: " << printShapeDimensions() << endl;
+    switch(shape)
+    {
+    case LINE:
+    case POLYLINE: os<< printPen() << endl; break;
+    case POLYGON:
+    case RECTANGLE:
+    case SQUARE:
+    case ELLIPSE:
+    case CIRCLE: os<< printPen() << endl << printBrush(); break;
+    case TEXT:
+    {
+        os << "TextString: " << qStringText <<endl;
+        os << "TextColor: " << printGobalColor(pen.color()) << endl;
+        os << "TextAlignment: " << printAlign() << endl;
+        os << printFont();
+    }break;
+    }
+}
+
+
 int ShapeBuffer::setInt(QString& arg)const
 {
     QStringList myList = arg.split(' ');
@@ -341,4 +366,178 @@ QString ShapeBuffer::setQStringText(QString & x) const
     QStringList myList = x.split(':');
     QString temp = myList[1];
     return temp.trimmed();
+}
+
+QString ShapeBuffer::printShapeType()const
+{
+    switch(shape)// no need for break. Using return.
+    {
+    case LINE: return "Line";
+    case POLYLINE: return "Polyline";
+    case POLYGON: return "Polygon";
+    case RECTANGLE: return "Rectangle";
+    case SQUARE: return "Square";
+    case ELLIPSE: return "Ellipse";
+    case CIRCLE: return "Circle";
+    case TEXT: return "Text";
+    }
+}
+
+QString ShapeBuffer::printShapeDimensions() const
+{
+    QString temp;
+    switch(shape)// no need for breaks because of return
+    {
+    case LINE:
+    {
+        temp = QString::number(one.x()) + ", "
+                +  QString::number(one.y()) + ", "
+                +   QString::number(two.x()) +  ", "
+                +   QString::number(two.y());
+        return temp;
+    }
+    case POLYLINE:
+    case POLYGON:
+    {
+        for (int i = 0; i <  qPolygon.size(); i++)
+        {
+            if(i==0)
+                temp = QString::number(qPolygon.point(i).x()) + ", "
+                        + QString::number(qPolygon.point(i).y());
+            else
+
+                temp = temp + ", " +  QString::number(qPolygon.point(i).x()) + ", "
+                        + QString::number(qPolygon.point(i).y());
+        }
+        return temp;
+    }
+    case SQUARE:
+    case CIRCLE:
+    {
+        temp =   QString::number(qRect.x()) + ", "
+                + QString::number(qRect.y()) + ", "
+                + QString::number(qRect.width());
+        return temp;
+    }
+
+    case RECTANGLE:
+    case ELLIPSE:
+    case TEXT:
+    {
+        temp =   QString::number(qRect.x()) + ", "
+                + QString::number(qRect.y()) + ", "
+                + QString::number(qRect.width()) + ", "
+                + QString::number(qRect.height());
+        return temp;
+    }
+    }
+}
+
+QString ShapeBuffer::printPen() const
+{
+   QString temp = "PenColor: " + printGobalColor(pen.color()) + '\n';
+
+   temp = temp + "PenWidth: "+ QString::number(pen.width()) + '\n';
+
+   switch(pen.style())
+   {
+   case Qt::NoPen: temp = temp + "PenStyle: NoPen" + '\n'; break;
+   case Qt::SolidLine: temp = temp + "PenStyle: SolidLine" +'\n'; break;
+   case Qt::DashDotDotLine: temp = temp + "PenStyle: DashDotDotLine" + '\n'; break;
+   case Qt::DashDotLine: temp = temp + "PenStyle: DashDotLine" + '\n'; break;
+   case Qt::DotLine: temp = temp + "PenStyle: DotLine" + '\n'; break;
+   case Qt::DashLine: temp = temp + "PenStyle: DashLine" + '\n';break;
+   default: temp = temp + "PenStyle: SolidLine"+'\n';
+   }
+
+   switch(pen.capStyle())
+   {
+   case Qt::FlatCap:temp = temp  + "PenCapStyle: FlatCap" + '\n';break;
+   case Qt::RoundCap:temp = temp + "PenCapStyle: RoundCap" + '\n';break;
+   case Qt::SquareCap:temp = temp + "PenCapStyle: SquareCap" + '\n';break;
+   case Qt::MPenCapStyle:temp = temp + "PenCapStyle: MPenCapStyle" + '\n';break;
+   }
+
+   switch(pen.joinStyle())
+   {
+   case Qt::MiterJoin: temp = temp + "PenJoinStyle: MiterJoin";break;
+   case Qt::BevelJoin: temp = temp + "PenJoinStyle: BevelJoin";break;
+   case Qt::RoundJoin: temp = temp + "PenJoinStyle: RoundJoin";break;
+   case Qt::MPenJoinStyle: temp = temp + "PenJoinStyle: MPenJoinStyle";break;
+   case Qt::SvgMiterJoin: temp = temp + "PenJoinStyle: SvgMiterJoin";break;
+   }
+   return temp;
+}
+
+QString ShapeBuffer::printBrush() const
+{
+    QString temp = "BrushColor: " + printGobalColor(brush.color()) + '\n';
+    switch (brush.style())
+    {
+    case Qt::NoBrush:temp = temp + "BrushStyle: NoBrush" + '\n';break;
+    case Qt::SolidPattern:temp = temp + "BrushStyle: SolidPattern" + '\n';break;
+    case Qt::HorPattern: temp = temp + "BrushStyle: HorPattern" + '\n';break;
+    case Qt::VerPattern: temp = temp + "BrushStyle: VerPattern" + '\n';break;
+    default: temp = temp + "BrushStyle: NoBrush" + '\n';break;
+    }
+    return temp;
+}
+
+QString ShapeBuffer::printAlign() const
+{
+   switch(alignFlag)
+   {
+   case Qt::AlignLeft: return "AlignLeft";
+   case Qt::AlignRight:return "AlignRight";
+   case Qt::AlignTop:return "AlignTop";
+   case Qt::AlignBottom:return "AlignBottom";
+   case Qt::AlignCenter:return "AlignCenter";
+   default: return "AlignLeft";
+   }
+}
+
+QString ShapeBuffer::printFont() const
+{
+   QString temp =  "TextPointSize: "+ QString::number(font.pointSize()) + '\n';
+   temp = temp + "TextFontFamily: " + QVariant(font.family()).toString() + '\n';
+   temp = temp + "TextFontStyle: " + printFontStyle() + '\n';
+   temp = temp + "TextFontWeight: " + printFontWeight() ;
+   return temp;
+}
+
+QString ShapeBuffer::printFontStyle() const
+{
+    switch(font.style())
+    {
+    case QFont::StyleNormal: return "StyleNormal";
+    case QFont::StyleItalic: return "StyleItalic";
+    case QFont::StyleOblique:return "StyleOblique";
+    }
+}
+
+QString ShapeBuffer::printFontWeight() const
+{
+    switch(font.weight())
+    {
+    case QFont::Thin: return "Thin";
+    case QFont::Light: return "Light";
+    case QFont::Normal: return "Normal";
+    case QFont::Bold: return "Bold";
+    default: return "Thin";
+    }
+}
+
+QString ShapeBuffer::printGobalColor(QColor arg) const
+{
+
+    if(arg==Qt::red) return "red";
+    if(arg==Qt::black) return "black";
+    if(arg==Qt::white) return "white";
+    if(arg==Qt::green) return "green";
+    if(arg==Qt::blue) return "blue";
+    if(arg== Qt::cyan) return "cyan";
+    if(arg==Qt::magenta) return "magenta";
+    if(arg== Qt::yellow) return "yellow";
+    if(arg== Qt::gray) return "gray";
+    return "red";
 }

@@ -26,6 +26,7 @@ public:
     ShapeBuffer();
 
     void readIn(QTextStream&);
+    void readOut(QTextStream&);
 
     int getShapeID()const{return shapeID;}
     ShapeType getShape()const{return shape;}
@@ -60,6 +61,18 @@ protected:
      QRect setQRect(QString&)const;
      QRect setEllipseOrSquare(QString&)const;
      QString setQStringText(QString&)const;
+
+    QString printShapeType()const;
+    QString printShapeDimensions()const;
+    QString printPen()const;
+    QString printBrush()const;
+    QString printAlign()const;
+    QString printFont()const;
+    QString printFontStyle()const;
+    QString printFontWeight()const;
+    QString printGobalColor(QColor) const;
+
+
 private:
 
      int shapeID=0;

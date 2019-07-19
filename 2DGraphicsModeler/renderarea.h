@@ -38,7 +38,7 @@ private:
     custom::vector<Shape*> shapeVector;
     bool isAdmin = false;
     bool shapeBufferReady = false;
-    int indexToChange = 0;
+    int indexToChange = -1;
 };
 
 #endif // RENDERAREA_H
