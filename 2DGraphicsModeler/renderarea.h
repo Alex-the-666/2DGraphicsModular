@@ -24,6 +24,8 @@ public:
     custom::vector<Shape*>& getShapeVector();
     void readOut(QTextStream&);
     void setIndex(int);
+    void enableAdmin(){isAdmin=true;}
+    void disableAdmin(){isAdmin=false;}
 protected:
     void transferToShapes();
     void paintEvent(QPaintEvent *event) override;
