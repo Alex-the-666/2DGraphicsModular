@@ -1,6 +1,7 @@
 #ifndef PALETTE_H
 #define PALETTE_H
 #include <QDialog>
+#include "shape.h"
 
 namespace Ui {
 class Palette;
@@ -15,6 +16,8 @@ public:
     ~Palette();
 
 private slots:
+    //Draws shape
+    void addShape(Shape* shape);
     //Line
     void on_pushButton_clicked();
     //Polyline
@@ -27,27 +30,32 @@ private slots:
     void on_pushButton_5_clicked();
     //Text
     void on_pushButton_6_clicked();
-    //Shape R
-    void on_horizontalSlider_6_actionTriggered(int action);
-    //Shape G
-    void on_horizontalSlider_5_actionTriggered(int action);
-    //Shape B
-    void on_horizontalSlider_4_actionTriggered(int action);
+    //Circle
+    void on_pushButton_7_clicked();
+    //Square
+    void on_pushButton_8_clicked();
     //Background R
     void on_horizontalSlider_valueChanged(int value);
     //Background G
     void on_horizontalSlider_2_valueChanged(int value);
     //Background B
     void on_horizontalSlider_3_valueChanged(int value);
+    //Shape R
+    void on_horizontalSlider_6_valueChanged(int value);
+    //Shape G
+    void on_horizontalSlider_5_valueChanged(int value);
+    //Shape B
+    void on_horizontalSlider_4_valueChanged(int value);
+
 
 private:
     Ui::Palette *ui;
-    int backgroundR;
-    int backgroundG;
-    int backgroundB;
-    int shapeR;
-    int shapeG;
-    int shapeB;
+    int backgroundR = 0;
+    int backgroundG = 0;
+    int backgroundB = 0;
+    int shapeR = 0;
+    int shapeG = 0;
+    int shapeB = 0;
     void updateBackground();
 };
 
