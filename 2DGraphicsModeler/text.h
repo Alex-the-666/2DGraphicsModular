@@ -72,6 +72,10 @@ public:
     //!  Virtual Text Class Destructor
     ~Text() override;
 
+    int getX() const override { return x; }
+
+    int getY() const override { return y; }
+
 private:
       //! A variable of type int, holds the left-most x value
     int x;

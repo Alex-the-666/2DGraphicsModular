@@ -112,6 +112,9 @@ public:
     */
     void drawID();
 
+    int getX() const override;
+
+    int getY() const override;
 private:
 
     //! A variable of type QPoint- takes two int values for (x,y) coordinates for each variable

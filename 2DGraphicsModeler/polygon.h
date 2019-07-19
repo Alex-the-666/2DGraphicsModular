@@ -18,7 +18,8 @@ public:
     double area() const override;
     double perimeter() const override;
     void drawID();
-
+    int getX() const override;
+    int getY() const override;
 
 private:
     QPolygon polygon;

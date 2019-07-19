@@ -66,6 +66,14 @@ void Line::move(int x, int y)
     }
 }
 
+int Line::getX() const {
+    return one.x();
+}
+
+int Line::getY() const {
+    return one.y();
+}
+
 double Line::area() const
 {
     return 0;

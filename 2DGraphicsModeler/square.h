@@ -82,6 +82,10 @@ public:
     */
     void drawID();
 
+    int getX() const override { return _x; }
+
+    int getY() const override { return _y; }
+
 private:
       //! A variable of type int, holds the distance between two points
     int side;

@@ -131,11 +131,14 @@ public:
 
     //!Pure virtual function- allows for operator overloading of derived classes
     virtual double perimeter() const =0;
+
+    virtual int getX() const = 0;
+
+    virtual int getY() const = 0;
 protected:
 
     //!Function returns *this pointer, a pointer of type QPainter
     QPainter* getQPainter();
-
 private:
     //! A pointer of type QPainter
     QPainter* painter;

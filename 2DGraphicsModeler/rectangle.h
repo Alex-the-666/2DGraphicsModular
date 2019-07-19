@@ -97,6 +97,10 @@ public:
     * an integer value to the object that displays on screen.
     */
     void drawID();
+
+    int getX() const override { return x; }
+
+    int getY() const override { return y; }
 };
 
 #endif // RECTANGLE_H

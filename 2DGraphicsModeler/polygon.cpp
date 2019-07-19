@@ -61,6 +61,14 @@ double Polygon::area() const
       return area/2;
 }
 
+int Polygon::getX() const {
+    return polygon.point(0).rx();
+}
+
+int Polygon::getY() const {
+    return polygon.point(0).ry();
+}
+
 double Polygon::perimeter() const
 {
     double perimeter;
