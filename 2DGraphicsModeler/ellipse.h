@@ -15,8 +15,9 @@ public:
      * Base Class Constructor calls setShape() and assigns
      * enum value of ELLIPSE- passes object to a rectangle object.
      */
-    Ellipse():Shape(),myRect(G_DEFAULTQRECT){setShape(ELLIPSE);}
+    Ellipse():Shape(),myRect(G_DEFAULTQRECT), radius1(100), radius2(200), x(100), y(100) {setShape(ELLIPSE);}
 
+    Ellipse(int radius1, int radius2, int x, int y) : Shape(), myRect(G_DEFAULTQRECT), radius1(radius1), radius2(radius2), x(x), y(y) { setShape(ELLIPSE);}
     //!   Ellipse Class Copy Constructor
     /*!   Copy Constructor for the ellipse object
     *     \param &arg is a ShapeBuffer object
