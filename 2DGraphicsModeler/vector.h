@@ -11,24 +11,26 @@ const int STARTSIZE = 8;
 
 namespace  custom {
 
-//!   Custom Vector Class for Parsing Objects
-/*!   Vector description here.\n
-*     This is a test to see how Doxygen accepts the template prototype.\n
-*     Vector created and developed by Arthur.
-*/
+//! Custom templated vector approximating STL vector.
 template<typename T>
 class vector
 {
 public:
+  //! Default constructor.
     vector() :size_v{ 0 }, elem{ nullptr }, space{ 0 }
 	{}// end of vector
 
+  //! Default constructor with parameter value defining 'space'
     explicit vector(int s) : size_v{ 0 }, space{ s }
 	{
 		elem = new T[s];
 	}// end of vector(int)
 
-
+  //! Copy constructor.
+  /*! Constructor with parameter value defining a RHS/source vector
+      to be copied
+      \param rhs a source vector with internal data to be copied
+      */
 	vector(const vector& rhs) : space{ rhs.space }, size_v{ rhs.size_v }
 	{
 		elem = new T[rhs.space];
@@ -38,6 +40,10 @@ public:
 		}
 	}//end of vector(const vector&)
 
+  //! Overloaded copy-assignment operator.
+  /*! \param rhs a const-qualified reference to a source vector to be copied.
+      \return Reference to the vector to be assigned.
+  */
 	vector& operator=(const vector& rhs) // copy assignment
 	{
 		if (this != &rhs)
@@ -58,6 +64,11 @@ public:
 		}
 		return  *this;
 	}
+
+//! Move assignment constructor.
+/*! Constructor whose temporary parameter vector _will_ be destroyed
+    \param rhs a r-value to source vector (temporary object).
+ */
 	vector(vector&& rhs) noexcept // move constructor
 		:size_v{ rhs.size_v }, space{ rhs.space }
 	{
@@ -66,6 +77,11 @@ public:
 		rhs.size_v = 0;
 		rhs.space = 0;
 	}
+
+//! Overloaded move-assignment operator.
+/*! \param rhs a r-value to source vector (temporary object).
+    \return Reference to vector object to be assigned.
+    */
 	vector& operator=(vector&& rhs) noexcept // move assignment
 	{
 		if (this != &rhs)
@@ -81,11 +97,19 @@ public:
 		}
 		return *this;
 	}
+
+//! Destructor.
+/*! Destroys instantiated vector object and de-allocates dynamically assigned
+   internal array */
 	~vector() // destructor
 	{
 		delete[] elem;
 		elem = nullptr;
 	}
+
+//! Overloaded [] operator.
+/*! \param index integer value of index within internal array.
+    \returns reference value/address of element at index value passed */
 	const T& operator[] (int index) // access: return reference
 	{
 		if (index >= size_v)
@@ -94,14 +118,27 @@ public:
 		}
 		return elem[index];
 	}
+
+//! Member function returning current 'count'.
+/*! \returns current count (i.e. size_v) of elements within internal array */
 	int size() const // the current size
 	{
 		return size_v;
 	}
+
+  //! Member function returning current max capacity ('space').
+  /*! \returns current max capacity (i.e. space) of internal array */
 	int capacity() const // current available space
 	{
 		return space;
 	}
+
+  //! Member function to resize internal array and add additional space.
+  /*! Re-allocates a new internal array (i.e. 'elem') with size given and copies
+     current elements over to new array. note: re-allocation of new array also
+     initializes empty elements with default type-constructor.
+     \param newsize integer value to define new 'space' of internal array
+     */
 	void resize(int newsize) // grow
 	{
 
@@ -123,6 +160,11 @@ public:
 		elem = temp;
 		temp = nullptr;
 	}
+
+  //! Member function for item insertion.
+  /*! add new element passed by parameter to end of vector (that is, after
+     most recent addition)
+     \param val object of templated type to be inserted. */
 	void push_back(T val) // add element
 	{
 		if (size_v < space)
@@ -146,6 +188,13 @@ public:
             }
 		}
 	}
+
+  //! Member function to resize internal array and add additional space.
+  /*! Re-allocates a new internal array (i.e. 'elem') with size given and copies
+     current elements over to new array. note: re-allocation of new array
+     occurs _without_ initializing empty elements with type-constructor
+     \param newalloc integer value to define new 'space' of internal array
+     */
 	void reserve(int newalloc) // get more space
 	{
 		if (newalloc > space)
@@ -161,24 +210,50 @@ public:
 			space = newalloc;
 		}
 	}
+
+  /* DEFINING ITERATOR SPECIFIC TO VECTOR */
+  //! Iterator Type pointer
 	using iterator = T * ;
+  //!Const-qualified Iterator Type
 	using const_iterator = const T*;
+
+  //! Iterator member function to return address of first element.
+  /*! \returns a pointer associated with first element in internal array.
+     Random access iterator. */
 	iterator begin() // points to first element
 	{
 		return elem;
 	}
+
+  //! Iterator member function to return address of first element.
+  /*! \returns const-qualified pointer associated with first element of
+     internal array. Read only iterator. */
 	const_iterator begin() const
 	{
 		return elem;
 	}
+
+  //! Iterator member function to return address of last element.
+  /*! \returns a pointer associated with one-past the last element of internal
+   array. */
 	iterator end() // points to one beyond the last element
 	{
 		return (elem + size_v);
 	}
+
+  //! Iterator member function to return address of last element.
+  /*! \returns const-qualified pointer associated with one-past the last elements
+   of internal array. Read only iterator. */
 	const_iterator end() const
 	{
 		return elem + size_v;
 	}
+      //!Function to insert an element
+      /*!Function to insert a new element (V) before element (P)
+      *  pointed to by the iterator
+      * \param p is of type iterator
+      *\param v is a constant reference template type
+      */
 	iterator insert(iterator p, const T& v)// insert a new element v before p
 	{
 		T* temp = nullptr;
@@ -218,6 +293,10 @@ public:
 
 		return returnIt;
 	}
+      //!Function to remove element pointed to by the iterator
+      /*!Function to remove an element pointed to by the iterator.
+      * \param p is of type iterator
+      */
 	iterator erase(iterator p) // remove element pointed to by p
 	{
 		T* temp = new T[space];
@@ -246,8 +325,11 @@ public:
 		return returnIt;
 	}
 private:
+      //!CURRENT COUNT OF ELEMENTS IN INTERNAL ARRAY
 	int size_v;
+      //!POINTER TO INTERNAL DYNAMIC ARRAY OF TEMPLATED TYPE
 	T* elem;
+      //!MAXIMUM SIZE OF INTERNAL ARRAY
 	int space;
 };
 }

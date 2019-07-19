@@ -2,6 +2,7 @@
 #include "shape.h"
 #include "mainwindow.h"
 #include "ui_palette.h"
+#include <cstdlib>
 #include <Qt>
 
 Palette::Palette(QWidget *parent) :
@@ -24,6 +25,10 @@ void Palette::addShape(Shape* shape){
     color.setGreen(shapeG);
     color.setBlue(shapeB);
     shape->setBrush(color);
+    shape->setPen(color);
+    int randX = rand() % 1000;
+    int randY = rand() % 500;
+    shape->move(randX, randY);
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
     w->renderArea->getShapeVector().push_back(shape);
     w->renderArea->update();

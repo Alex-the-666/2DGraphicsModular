@@ -25,6 +25,14 @@ void PolyLine::draw(const int, const int)
     passQPainter(nullptr);
 }
 
+int PolyLine::getX() const {
+    return qPolygon.point(0).rx();
+}
+
+int PolyLine::getY() const {
+    return qPolygon.point(0).ry();
+}
+
 void PolyLine::draw()
 {
     getQPainter()->setPen(getPen());

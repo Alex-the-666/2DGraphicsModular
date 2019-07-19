@@ -7,10 +7,10 @@
 #include <cmath>
 #include "shapebuffer.h"
 
-//!     Base Class Shape
+//!   Base Class Shape
 /*!   Shape is the base class for the shape objects-
 *     all other shapes are derived from this class.
-*     contains Pure virtual functions.
+*     Contains Pure virtual functions.
 *     Abstract Base Class.
 */
 class Shape
@@ -30,34 +30,39 @@ public:
     //!   Shape Class Copy Constructor
     /*!   Constructor for the shape object
     *     \param &buffer is a ShapeBuffer object
-    *     passed by const ref.
+    *     Passed by const ref.
     */
     Shape(const ShapeBuffer&);
 
     //!   Overloaded Equality Operator for Shape objects
-    /*!    Overloaded equality operator: returns true if
-    *       shapeId == the shapeId of the passed paramater
-    *       \param rhs is a shape object passed by reference
+    /*!  Overloaded equality operator: returns true if
+    *    shapeId == the shapeId of the passed paramater.\n
+    *    Allows for operator overloading in derived classes.
+    *    \param rhs is a shape object passed by reference
     */
     bool operator ==(Shape& rhs){return (shapeId==rhs.shapeId);}
 
-    //!   Overloaded Less-Than/Equal To Operator for Shape objects
-    /*!    Overloaded less than/equal to operator: returns true if
-    *      shapeId <= the shapeId of the passed paramater
-    *      \param rhs is a shape object passed by reference
+    //!  Overloaded Less-Than Operator for Shape objects
+    /*!  Overloaded less than operator: returns true if
+    *    shapeId <= the shapeId of the passed paramater.\n
+    *    Allows for operator overloading in derived classes.
+    *    \param rhs is a shape object passed by reference
     */
     bool operator <(Shape& rhs){return (shapeId<=rhs.shapeId);}
 
-    //!   Overloaded Greater-Than Operator for Shape objects
-    /*!    Overloaded greater than operator: returns true if
-    *      shapeId > the shapeId of the passed paramater
-    *      \param rhs is a shape object passed by reference
+    //!  Overloaded Greater-Than Operator for Shape objects
+    /*!  Overloaded greater than operator: returns true if
+    *    shapeId > the shapeId of the passed paramater.
+    *    Allows for operator overloading in derived classes.
+    *    \param rhs is a shape object passed by reference
     */
     bool operator >(Shape& rhs) {return (area()>rhs.area());}
 
     //!   Shape Class Destructor
     virtual ~Shape();
 
+    //!    Return ID
+    int getID()const{return shapeId;}
     //!    Get function to return a shape object
     ShapeType getShape() const;
 
@@ -66,9 +71,9 @@ public:
 
     //!    Get function to return a pen object
     const QPen& getPen()const;
-    //!Default copy constructor
+    //!Set function to set the base class properties
     /*!\param temp is a Shapebuffer object passed by reference
-    * temp object copies its values from the shape object
+    * Temp object copies its values from the shape object.
     */
     virtual void setShapeBuffer(ShapeBuffer&);
 
@@ -79,13 +84,13 @@ public:
     void passQPainter(QPainter* arg ){painter=arg;}
 
     //!    Set function to assign a shape object
-    /*!    Takes a shapetype obj, assigns it to Shape
+    /*!    Takes a shapetype obj, assigns it to Shape.
     *     \param arg is a ShapeType object
     */
     void setShape(ShapeType arg);
 
     //!    Set function to assign a pen object
-    /*!    Takes QT styles and assigns them to the pen object
+    /*!    Takes QT styles and assigns them to the pen object.
     *     \param gc1 is a QT style to set the color of the pen
     *     \param width is an int variable to set the width of the pen
     *     \param ps is a QT style to set the pen style
@@ -96,20 +101,20 @@ public:
                  Qt::PenStyle ps, Qt::PenCapStyle pcs, Qt::PenJoinStyle pjs);
 
       //!    Set function to assign a pen object
-      /*!    Takes QPen object and assigns it to the pen object
+      /*!    Takes QPen object and assigns it to the pen object.
       *     \param qP is a QPen object to set the pen style
       */
     void setPen(QPen qP){pen= qP;}
 
       //!    Set function to assign to a brush object
-      /*!   Takes QT styles as paramaters and assigns them to the brush object
+      /*!   Takes QT styles as paramaters and assigns them to the brush object.
       *     \param gc2 is a QT style for global color- sets the brush color
       *     \param bs is a QT style to set the brush style
       */
     void setBrush(QColor gc2, Qt::BrushStyle bs);
 
     //!    Set function to assign to a brush object
-    /*!   Takes QBrush object as paramater and assigns it to the brush object
+    /*!   Takes QBrush object as paramater and assigns it to the brush object.
     *     \param qB is a QBrush object - sets the brush color
     */
     void setBrush(QBrush qB){brush = qB;}
@@ -128,11 +133,16 @@ public:
 
     //!Pure virtual function- allows for operator overloading of derived classes
     virtual double perimeter() const =0;
+
+    //!Function that returns the x value
+    virtual int getX() const = 0;
+
+    //!Function that returns the y value
+    virtual int getY() const = 0;
 protected:
 
-      //!     Function returns *this pointer, a pointer of type QPainter
+    //!Function returns *this pointer, a pointer of type QPainter
     QPainter* getQPainter();
-
 private:
     //! A pointer of type QPainter
     QPainter* painter;

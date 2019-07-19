@@ -14,6 +14,28 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     setMouseTracking(true);
 }
 
+void RenderArea::mousePressEvent(QMouseEvent *event){
+    int x = event->x();
+    int y = event->y();
+    int index = 0;
+    if(indexToChange == -1){
+    for (auto it = shapeVector.begin(); it != shapeVector.end(); it++){
+        Shape* shape = (*it);
+        if(x < shape->getX() + shape->perimeter() / 8 && x > shape->getX() - shape->perimeter() / 8){
+            if(y < shape->getY() + shape->perimeter() / 8 && y > shape->getY() - shape->perimeter() / 8){
+                indexToChange = index;
+            }
+        }
+        index++;
+    }
+    }
+    if(index == 0 && indexToChange != -1){
+        indexToChange = -1;
+    }
+    repaint();
+}
+
+
 void RenderArea::mouseMoveEvent(QMouseEvent *event){
     if(isAdmin)
     {
@@ -35,10 +57,8 @@ void RenderArea::createShapeBuffer(QTextStream& is)
     {
         ShapeBuffer x;
         x.readIn(is);
-        if(!is.atEnd())
-            buffer.push_back(x);
-
-        is.readLine();//get rid of the space
+        buffer.push_back(x);
+        is.readLine();//get rid of the space at BOTTOM
     }
    shapeBufferReady=true;
 }
@@ -49,8 +69,7 @@ custom::vector<Shape*>& RenderArea::getShapeVector(){
 
 void RenderArea::transferToShapes()
 {
-   for(auto sbIt = buffer.begin();\
-       sbIt != buffer.end(); sbIt++)
+   for(auto sbIt = buffer.begin();sbIt != buffer.end(); sbIt++)
    {
        ShapeType shapeType = sbIt->getShape();
        switch(shapeType)
@@ -111,7 +130,7 @@ void RenderArea::readOut(QTextStream& os)
 
 void RenderArea::setIndex(int x)
 {
-    if(x<shapeVector.size())
+    if(x<=shapeVector.size())
         indexToChange= x-1;
 }
 

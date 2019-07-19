@@ -30,7 +30,7 @@ double Rectangle::area () const
 
 double Rectangle::perimeter () const
 {
-  return (2*xyWH.width()) + (2*xyWH.height());
+  return (2*height) + (2*width);
 }
 
 void Rectangle::draw (int x, int y)
