@@ -57,8 +57,7 @@ void RenderArea::createShapeBuffer(QTextStream& is)
     {
         ShapeBuffer x;
         x.readIn(is);
-        if(!is.atEnd())
-            buffer.push_back(x);
+        buffer.push_back(x);
         is.readLine();//get rid of the space at BOTTOM
     }
    shapeBufferReady=true;
