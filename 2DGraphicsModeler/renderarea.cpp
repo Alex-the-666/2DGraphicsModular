@@ -15,12 +15,17 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
 }
 
 void RenderArea::mouseMoveEvent(QMouseEvent *event){
+    if(isAdmin)
+    {
     int x = event->x();
     int y = event->y();
-    for (auto it = shapeVector.begin(); it != shapeVector.end(); it++){
-        (*it)->move(x, y);
-    }
+    //for (auto it = shapeVector.begin(); it != shapeVector.end(); it++){
+      //  (*it)->move(x, y);
+    //}
+    //ACTUAL CODE TO IMPLEMENT:
+    (*(shapeVector.begin()+indexToChange))->move(x,y);
     repaint();
+    }
 }
 
 void RenderArea::createShapeBuffer(QTextStream& is)
@@ -473,5 +478,10 @@ void RenderArea::readOut(QTextStream& textStream)
             textStream << endl << endl;
         }
     }
+}
+
+void RenderArea::setIndex(int x)
+{
+    indexToChange= x-1;
 }
 

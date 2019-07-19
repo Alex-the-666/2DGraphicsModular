@@ -1,6 +1,7 @@
 #include "adminlogin.h"
 #include "ui_adminlogin.h"
 #include "QMessageBox"
+#include "mainwindow.h"
 #include <QPixmap>
 
 adminLogin::adminLogin(QWidget *parent) :
@@ -29,6 +30,8 @@ void adminLogin::on_loginButton_clicked()
     {
         QMessageBox::information(this, "Login", "Welcome back, Admin!");
         close();
+        MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
+        w->renderArea->enableAdmin();
     }
     else
     {
