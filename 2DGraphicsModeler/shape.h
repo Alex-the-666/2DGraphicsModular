@@ -132,8 +132,10 @@ public:
     //!Pure virtual function- allows for operator overloading of derived classes
     virtual double perimeter() const =0;
 
+    //!Function that returns the x value
     virtual int getX() const = 0;
 
+    //!Function that returns the y value
     virtual int getY() const = 0;
 protected:
 
