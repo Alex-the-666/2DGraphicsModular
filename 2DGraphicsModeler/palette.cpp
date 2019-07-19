@@ -16,48 +16,58 @@ Palette::~Palette()
     delete ui;
 }
 
+//Add shape
+void Palette::addShape(Shape* shape){
+    MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
+    w->renderArea->getShapeVector().push_back(shape);
+    w->renderArea->update();
+}
+
 //Line
 void Palette::on_pushButton_clicked()
 {
-    MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
-
-    Shape* shape = new Line();
-    dynamic_cast<Line*>(shape)->setPointOne(10, 10);
-    dynamic_cast<Line*>(shape)->setPointOne(100, 100);
-    w->renderArea->getShapeVector().push_back(shape);
-    w->renderArea->update();
+    addShape(new Line());
 }
 
 //Polyline
 void Palette::on_pushButton_2_clicked()
 {
-    MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
-
-    Shape* shape = new PolyLine();
-    w->renderArea->getShapeVector().push_back(shape);
-    w->renderArea->update();
+    addShape(new PolyLine());
 }
 
 //Polygon
 void Palette::on_pushButton_3_clicked()
 {
-
+    addShape(new Polygon());
 }
 //Rectangle
 void Palette::on_pushButton_4_clicked()
 {
-
+    addShape(new Rectangle());
 }
 //Elipse
 void Palette::on_pushButton_5_clicked()
 {
-
+    addShape(new Ellipse());
 }
 //Text
 void Palette::on_pushButton_6_clicked()
 {
-
+    addShape(new Text());
 }
+
+//Circle
+void Palette::on_pushButton_7_clicked()
+{
+    addShape(new Circle());
+}
+
+//Square
+void Palette::on_pushButton_8_clicked()
+{
+    addShape(new Square());
+}
+
 
 void Palette::updateBackground(){
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
