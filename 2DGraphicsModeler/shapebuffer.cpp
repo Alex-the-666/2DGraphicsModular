@@ -7,13 +7,10 @@ ShapeBuffer::ShapeBuffer()
 
 void ShapeBuffer::readIn(QTextStream& is)
 {
-    try{
         QString myString = is.readLine();
         shapeID = setInt(myString);
         myString = is.readLine();
         shape = setShape(myString);
-        if(!is.atEnd())
-        {
     switch (shape)
     {
     case LINE:
@@ -133,15 +130,6 @@ void ShapeBuffer::readIn(QTextStream& is)
     }
         break;
     }//end switch block
-    }//end if block
-}//end try block
-   catch(MyException){
-
-    }
-    catch(...)
-    {
-
-    }
 }
 
 void ShapeBuffer::readOut(QTextStream & os)
