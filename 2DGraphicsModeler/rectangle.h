@@ -67,7 +67,7 @@ public:
     /*!   Sets the QPainter objects pen.\n
     *     Sets the QPainter objects brush.\n
     *     Sets the QPainter coordinates from which to draw a rectangle.
-    *     calls the drawID function - which checks if out of bounds
+    *     calls the drawID function - which assigns an ID# to the object
     *     calls passQPainter function and passes a nullptr
     */
     void draw()override;
@@ -98,8 +98,10 @@ public:
     */
     void drawID();
 
+    //!Function that returns the x value
     int getX() const override { return x; }
 
+    //!Function that returns the y value
     int getY() const override { return y; }
 };
 

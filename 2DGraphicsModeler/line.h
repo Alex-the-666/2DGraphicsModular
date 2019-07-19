@@ -86,13 +86,13 @@ public:
     void draw()override;
 
     //!   Function that moves an object
-   /*!   Checks to make sure that the new coordinates that are
-   *     passed as parameters does not force the object off the screen.
-   *     If it passes the logic check, the passed parameters are saved
-   *     as new QPoint one and two.
-   *     \param x is the x-axis value of the top left corner of the object
-   *     \param y is the y-axis value of the top left corner of the object
-   */
+    /*!   Checks to make sure that the new coordinates that are
+    *     passed as parameters does not force the object off the screen.
+    *     If it passes the logic check, the passed parameters are saved
+    *     as new QPoint one and two.
+    *     \param x is the x-axis value of the top left corner of the object
+    *     \param y is the y-axis value of the top left corner of the object
+    */
     void move(const int x,const int y) override;
 
     //!Function that returns the area of the line
@@ -112,8 +112,10 @@ public:
     */
     void drawID();
 
+    //!Function that returns the x value
     int getX() const override;
 
+    //!Function that returns the y value
     int getY() const override;
 private:
 

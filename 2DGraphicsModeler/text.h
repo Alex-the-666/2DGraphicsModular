@@ -72,8 +72,10 @@ public:
     //!  Virtual Text Class Destructor
     ~Text() override;
 
+    //!Function that returns the x value
     int getX() const override { return x; }
 
+    //!Function that returns the y value
     int getY() const override { return y; }
 
 private:
