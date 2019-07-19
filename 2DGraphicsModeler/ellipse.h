@@ -91,8 +91,10 @@ public:
     */
     void setShapeBuffer (ShapeBuffer&);
 
+    //!Function that returns the x value
     int getX() const override { return x; }
 
+    //!Function that returns the y value
     int getY() const override { return y; }
 protected:
       //! A variable of type int, holds the width of the object
