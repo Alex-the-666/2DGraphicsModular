@@ -15,10 +15,21 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
 }
 
 void RenderArea::mousePressEvent(QMouseEvent *event){
+    int x = event->x();
+    int y = event->y();
+    int index = 0;
+    if(indexToChange == -1){
     for (auto it = shapeVector.begin(); it != shapeVector.end(); it++){
         Shape* shape = (*it);
+        if(x < shape->getX() + shape->perimeter() / 8 && x > shape->getX() - shape->perimeter() / 8){
+            if(y < shape->getY() + shape->perimeter() / 8 && y > shape->getY() - shape->perimeter() / 8){
+                indexToChange = index;
+            }
+        }
+        index++;
     }
-    if(indexToChange != -1){
+    }
+    if(index == 0 && indexToChange != -1){
         indexToChange = -1;
     }
     repaint();
