@@ -33,19 +33,18 @@ void Polygon::draw()
 
 void Polygon::move(int x, int y)
 {
-    bool allowMove = true;
-    for (int i = 0; i < polygon.size(); i++)
-    {
-        if ((polygon.point(i).rx() + x) > 1000 || (polygon.point(i).ry() + y > 500))
-        {
-            allowMove = false;
-        }
-    }
+    /*VECTOR TO STORE DISTANCES RELATIVE TO STARTING POINT*/
+    QPolygon relDistance;
 
-    if (allowMove)
-    {
-        polygon.translate(x,y);
-    }
+    for (int i = 0; i < polygon.size() - 1; ++i)
+        relDistance << QPoint(polygon.point(i+1) - polygon.point(0));
+
+    /*RESETTING STARTING POINT OF SHAPE TO COORDINATES IN PARAMETER*/
+    polygon.setPoint(0,QPoint (x,y));
+
+    /*RESETTING ALL OTHER POINTS OF SHAPE RELATIVE TO STARTING POINT*/
+    for (int i = 0; i < relDistance.size(); ++i)
+        polygon.setPoint ((i + 1), QPoint (polygon.point (0) + relDistance.point(i)));
 }
 
 double Polygon::area() const
