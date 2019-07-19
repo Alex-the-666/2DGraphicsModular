@@ -107,7 +107,6 @@ void RenderArea::readOut(QTextStream& os)
             os<<endl;
         temp.readOut(os);
     }
-    os << endl;
 }
 
 void RenderArea::setIndex(int x)
