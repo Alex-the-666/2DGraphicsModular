@@ -15,7 +15,7 @@ public:
       * Base Class Constructor calls setShape() and assigns
       * enum value of CIRCLE- passes object to a Circle object.
       */
-    Circle():Ellipse(){setShape(CIRCLE);}
+    Circle():Ellipse(100, 100, 100, 100) {setShape(CIRCLE);}
 
     //!   Circle Class Copy Constructor
     /*!   Copy Constructor for the circle object

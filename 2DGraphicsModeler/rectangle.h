@@ -34,7 +34,7 @@ public:
     * Base Class Constructor calls setShape() and assigns
     * enum value of RECTANGLE- passes object to rectangle class.
     */
-    Rectangle(): Shape(), width{100},height{100},\
+    Rectangle(): Shape(), width{200},height{100},\
         x{50}, y{50} {setShape(RECTANGLE);}
 
       //!   Rectangle Class Copy Constructor
