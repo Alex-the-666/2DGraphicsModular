@@ -3,9 +3,9 @@
 
 #include "shape.h"
 
-//!    Derived Class: Rectangle
-/*!   Rectangle is a derived class of the shape class-
-*     Takes integer values to form dimensions of the rectangle
+//!    Derived Class From Base Class Shape
+/*!   Rectangle is a derived class of the shape class.\n
+*     Takes integer values to form dimensions of the rectangle.\n
 *     Rectangle can be styled with different pens, colors, and brushes.
 */
 class Rectangle : public Shape
@@ -19,7 +19,7 @@ private:
   int width;
 //! A variable of type int, holds the height between two points
   int height;
-//! A variable of type QString, used for testing purposes in drawId()
+//! A variable of type QString, used for testing purposes and in drawId()
   QString stringID;
 //! A variable of type QRect
 /*! Rectangle object used to set the private variables of
@@ -30,7 +30,7 @@ private:
 public:
     /*CONSTRUCTORS*/
     //!Default rectangle class constructor
-    /*!Function calls default base class constructor
+    /*!Function calls default base class constructor.\n
     * Base Class Constructor calls setShape() and assigns
     * enum value of RECTANGLE- passes object to rectangle class.
     */
@@ -38,9 +38,9 @@ public:
         x{50}, y{50} {setShape(RECTANGLE);}
 
       //!   Rectangle Class Copy Constructor
-      /*!   Copy Constructor for the rectangle object
+      /*!   Copy Constructor for the rectangle object.
+      *     Parameter is passed by const ref.
       *     \param &arg is a ShapeBuffer object
-      *     passed by const ref.
       */
     Rectangle(const ShapeBuffer& arg);
 
@@ -49,24 +49,24 @@ public:
     ~Rectangle()override;
 
     //!   Setter Function that sets the ShapeBuffer to a Rectangle object
-    /*!   function that is passed a ShapeBuffer Object by reference
+    /*!   Function is passed a ShapeBuffer Object by reference.
     *     \param temp sets the new Rectangle objects values
     */
     void setShapeBuffer(ShapeBuffer&)override;
 
     //!   Function that draws a Rectangle
-    /*!   Sets the QPainter objects pen
-    *     Sets the QPainter objects brush
-    *     Sets the QPainter coordinates from which to draw a rectangle
+    /*!   Sets the QPainter objects pen.\n
+    *     Sets the QPainter objects brush.\n
+    *     Sets the QPainter coordinates from which to draw a rectangle.
     *     \param x is the left-most coordinate of the object
     *     \param y is the up-most coordinate of the object
     */
     void draw(int, int)override;
 
     //!   Function that draws a Rectangle
-    /*!   Sets the QPainter objects pen
-    *     Sets the QPainter objects brush
-    *     Sets the QPainter coordinates from which to draw a rectangle
+    /*!   Sets the QPainter objects pen.\n
+    *     Sets the QPainter objects brush.\n
+    *     Sets the QPainter coordinates from which to draw a rectangle.
     *     calls the drawID function - which checks if out of bounds
     *     calls passQPainter function and passes a nullptr
     */
@@ -74,9 +74,9 @@ public:
 
     //!   Function that moves a Rectangle
     /*!   Checks to make sure that the new coordinates that are
-    *     passed as parameters does not force the object off the screen.
+    *     passed as parameters does not force the object off the screen.\n
     *     If it passes the logic check, the passed parameters are saved
-    *     as new values
+    *     as new values.
     *     \param px is the x-axis value of the top left corner of the object
     *     \param py is the y-axis value of the top left corner of the object
     */
