@@ -482,6 +482,7 @@ void RenderArea::readOut(QTextStream& textStream)
 
 void RenderArea::setIndex(int x)
 {
-    indexToChange= x-1;
+    if(x<8&&x>0)
+        indexToChange= x-1;
 }
 

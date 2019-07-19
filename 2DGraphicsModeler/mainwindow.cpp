@@ -54,7 +54,7 @@ QTime MainWindow::timeDifference (const QTime& begin, const QTime& end)
     return QTime (tempHour, tempMinute, tempSecond);
 }
 
-void MainWindow::timerEvent (QTimerEvent* event)
+void MainWindow::timerEvent (QTimerEvent*)
 {
     /*CONTINUOUS TIME COUNT IN WINDOW TITLE*/
     QString temp = "2D-SHAPE MODELER : [" + QTime::currentTime ().toString ("hh:mm:ss") + "]";
@@ -137,5 +137,6 @@ void MainWindow::on_actionShow_Info_triggered()
 void MainWindow::on_moveButton_clicked()
 {
     QString input = ui -> moveInput -> text();
+    renderArea->setIndex(input.toInt());
 
 }
