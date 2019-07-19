@@ -82,8 +82,10 @@ public:
     */
     void drawID();
 
+    //!Function that returns the _x value
     int getX() const override { return _x; }
 
+    //!Function that returns the _y value
     int getY() const override { return _y; }
 
 private:
