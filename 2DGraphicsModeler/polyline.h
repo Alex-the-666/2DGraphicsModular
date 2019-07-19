@@ -52,7 +52,7 @@ public:
     //!   Function that draws a PolyLine
     /*!   Sets the QPainter objects pen.\n
     *     Sets the QPainter objects brush.\n
-    *     Sets the QPainter coordinates from which to draw a rectangle.
+    *     Sets the QPainter coordinates from which to draw a polyline.
     *     calls the drawID function - which checks if out of bounds
     *     calls passQPainter function and passes a nullptr
     */
