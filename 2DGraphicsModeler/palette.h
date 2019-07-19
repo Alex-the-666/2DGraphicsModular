@@ -53,9 +53,9 @@ private:
     int backgroundR = 255;
     int backgroundG = 255;
     int backgroundB = 255;
-    int shapeR = 255;
-    int shapeG = 255;
-    int shapeB = 255;
+    int shapeR = 0;
+    int shapeG = 0;
+    int shapeB = 0;
     void updateBackground();
 };
 

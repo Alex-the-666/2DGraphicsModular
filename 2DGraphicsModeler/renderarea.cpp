@@ -14,6 +14,17 @@ RenderArea::RenderArea(QWidget *parent) : QWidget(parent)
     setMouseTracking(true);
 }
 
+void RenderArea::mousePressEvent(QMouseEvent *event){
+    for (auto it = shapeVector.begin(); it != shapeVector.end(); it++){
+        Shape* shape = (*it);
+    }
+    if(indexToChange != -1){
+        indexToChange = -1;
+    }
+    repaint();
+}
+
+
 void RenderArea::mouseMoveEvent(QMouseEvent *event){
     if(isAdmin)
     {
