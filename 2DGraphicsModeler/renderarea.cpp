@@ -48,8 +48,7 @@ void RenderArea::createShapeBuffer(QTextStream& is)
         x.readIn(is);
         if(!is.atEnd())
             buffer.push_back(x);
-
-        is.readLine();//get rid of the space
+        is.readLine();//get rid of the space at BOTTOM
     }
    shapeBufferReady=true;
 }
@@ -60,8 +59,7 @@ custom::vector<Shape*>& RenderArea::getShapeVector(){
 
 void RenderArea::transferToShapes()
 {
-   for(auto sbIt = buffer.begin();\
-       sbIt != buffer.end(); sbIt++)
+   for(auto sbIt = buffer.begin();sbIt != buffer.end(); sbIt++)
    {
        ShapeType shapeType = sbIt->getShape();
        switch(shapeType)

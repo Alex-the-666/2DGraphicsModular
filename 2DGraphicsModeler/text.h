@@ -3,57 +3,57 @@
 
 #include "shape.h"
 
-//!    Derived Class: Text
-/*!   Text is a derived class of the shape class-
-*     Takes integer values to form dimensions of the rectangle box surrounding the text.
-*     The text and rectangle can be styled with different pens, colors, and brushes.
+//!    Derived Class From Base Class Shape
+/*!   Text is a derived class of the shape class.\n
+*     Takes integer values to form dimensions of the rectangle box surrounding the text.\n
+*     The text and rectangle can be styled with different pens, colors, and brushes.\n
 */
 class Text : public Shape
 {
 public:
       //!Default text class constructor
-      /*!Function calls default base class constructor
+      /*!Function calls default base class constructor.\n
       * Base Class Constructor calls setShape() and assigns
-      * enum value of TEXT- passes object to shape object.
-      * rectangle object is assigned default properties
+      * enum value of TEXT- passes object to shape object.\n
+      * Rectangle object is assigned default properties.
       */
     Text():Shape(), myRect(G_DEFAULTQRECT), myQString(QString("cheese")), font(QFont()), alignFlag(Qt::AlignmentFlag::AlignLeft), x(x), y(y), wide(300), tall(100) {setShape(TEXT);}
 
     //!   Text Class Copy Constructor
-    /*!   Copy Constructor for the text object
+    /*!   Copy Constructor for the text object..\n
+    *     pShapeBufferassed by const ref.- sets values of private rectangle.
     *     \param &arg is a ShapeBuffer rectangle object
-    *     passed by const ref.- sets values of private rectangle
     */
     Text(const ShapeBuffer& arg);
 
     //!   Setter Function that sets the text object to the Shape Buffer's values
-    /*!   function that is passed a ShapeBuffer Object by reference
+    /*!   Function that is passed a ShapeBuffer Object by reference.
     *     \param temp sets the new text objects values
     */
     void setShapeBuffer(ShapeBuffer&)override;
 
    //!   Function that draws Text in a Rectangle
-   /*!   Sets the QPainter objects pen
-   *     Sets the QPainter objects brush
-   *     Sets the QPainter coordinates from which to draw a rectangle box for the text.
+   /*!   Sets the QPainter objects pen.\n
+   *     Sets the QPainter objects brush.\n
+   *     Sets the QPainter coordinates from which to draw a rectangle box for the text.\n
    *     \param x is the left-most coordinate of the object
    *     \param y is the up-most coordinate of the object
    */
     void draw(const int x, const int y) override;
 
     //!   Function that draws Text in a Rectangle
-    /*!   Sets the QPainter objects pen
-    *     Sets the QPainter objects brush
-    *     Sets the QPainter coordinates from which to draw a rectangle box for the text
-    *     calls passQPainter function and passes a nullptr
+    /*!   Sets the QPainter objects pen.\n
+    *     Sets the QPainter objects brush.\n
+    *     Sets the QPainter coordinates from which to draw a rectangle box for the text.\n
+    *     Calls passQPainter function and passes a nullptr.
     */
     void draw()override;
 
     //!   Function that moves a Text Box
     /*!   Checks to make sure that the new coordinates that are
-    *     passed as parameters does not force the object off the screen.
+    *     passed as parameters does not force the object off the screen.\n
     *     If it passes the logic check, the passed parameters are saved
-    *     as new values
+    *     as new values.
     *     \param x1 is the x-axis value of the top left corner of the object
     *     \param y1 is the y-axis value of the top left corner of the object
     */
