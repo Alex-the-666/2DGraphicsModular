@@ -3,12 +3,11 @@
 // just need the qrect for the constructor: x, y, height, width
 Text::Text(const ShapeBuffer& arg) : Shape(arg) {
       myRect = arg.getQRect();
-      QRect qRect = arg.getQRect();
 
-      x = qRect.x();
-      y = qRect.y();
-      wide = qRect.width();
-      tall = qRect.height();
+      x = myRect.x();
+      y = myRect.y();
+      wide = myRect.width();
+      tall = myRect.height();
       alignFlag = arg.getAlignFlag();
       myQString = arg.getQStringText();
       font = arg.getQFont();
@@ -46,11 +45,18 @@ void Text::move(const int x1, const int y1) {
       const int MAXX = 1000;    //largest x-axis value to remain on screen
       const int MAXY = 500;     //largest y-axis value to remain on screen
 
-          if (wide + x1 < MAXX && wide + y1 < MAXY && tall + x1 < MAXX && tall + y1 < MAXY ) {
-              x = x1;
-              y = y1;
-              //draw(x, y)?
-          }
+//          if (wide + x1 < MAXX && wide + y1 < MAXY && tall + x1 < MAXX && tall + y1 < MAXY ) {
+//              x = x1;
+//              y = y1;
+//              //draw(x, y)?
+//          }
+    /* BOUNDARY CHECKING */
+    if (!(x1 + wide > MAXX || y1 + tall > MAXY))
+    {
+        myRect.setX(x1);
+        myRect.setY(y1);
+    }
+
 }
 
 double Text::area () const {
