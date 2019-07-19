@@ -1,5 +1,6 @@
 #include "shape.h"
 #include <QCursor>
+#include <QColor>
 
 Shape::Shape(const ShapeBuffer & buffer)
 {
@@ -38,7 +39,7 @@ void Shape::setPen(Qt::GlobalColor gc, int width,\
    pen.setJoinStyle(pjs);
 }
 
-void Shape::setBrush(Qt::GlobalColor gc, Qt::BrushStyle bs)
+void Shape::setBrush(QColor gc, Qt::BrushStyle bs)
 {
     brush.setColor(gc);
     brush.setStyle(bs);

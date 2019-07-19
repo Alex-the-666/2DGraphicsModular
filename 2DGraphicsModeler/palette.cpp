@@ -2,6 +2,7 @@
 #include "shape.h"
 #include "mainwindow.h"
 #include "ui_palette.h"
+#include <Qt>
 
 Palette::Palette(QWidget *parent) :
     QDialog(parent),
@@ -18,6 +19,11 @@ Palette::~Palette()
 
 //Add shape
 void Palette::addShape(Shape* shape){
+    QColor color;
+    color.setRed(shapeR);
+    color.setGreen(shapeG);
+    color.setBlue(shapeB);
+    shape->setBrush(color);
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
     w->renderArea->getShapeVector().push_back(shape);
     w->renderArea->update();

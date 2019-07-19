@@ -106,7 +106,7 @@ public:
       *     \param gc2 is a QT style for global color- sets the brush color
       *     \param bs is a QT style to set the brush style
       */
-    void setBrush(Qt::GlobalColor gc2, Qt::BrushStyle bs);
+    void setBrush(QColor gc2, Qt::BrushStyle bs);
 
     //!    Set function to assign to a brush object
     /*!   Takes QBrush object as paramater and assigns it to the brush object
