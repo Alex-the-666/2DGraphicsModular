@@ -25,7 +25,7 @@ public:
     */
     Square(const ShapeBuffer& arg);
 
-    //!  Virtual Line Class Destructor
+    //!  Virtual Square Class Destructor
     virtual ~Square()override{}
 
     //!   Setter Function that sets the ShapeBuffer to a Square object
