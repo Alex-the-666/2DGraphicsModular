@@ -63,7 +63,7 @@ public:
     /*!   Checks to make sure that the new coordinates that are
     *     passed as parameters does not force the object off the screen.
     *     If it passes the logic check, the passed parameters are saved
-    *     as new QPoint one and two
+    *     as new values
     *     \param x is the x-axis value of the top left corner of the object
     *     \param y is the y-axis value of the top left corner of the object
     */
@@ -74,16 +74,14 @@ public:
     */
     double area() const override;
 
-    //!Function that returns the perimeter of s square
+    //!Function that returns the perimeter of a square
     /*! Returns a double value of the variable side * 4
     */
     double perimeter() const override;
 
     //!Function to find the top left corner of an object
-    /*!Compares the first x axis point with the second x axis point-
-    * the smaller number is the left most point.
-    * Compares the first y axis point with the second y axis point-
-    * the smaller number is the highest-up(upmost) point.
+    /*!Finds the top - left corner of an object, and assigns
+    * an integer value to the object that displays on screen.
     */
     void drawID();
 
