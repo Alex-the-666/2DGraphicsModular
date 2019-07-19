@@ -35,6 +35,8 @@ void on_actionShow_Info_triggered();
     
     void on_actionOpen_palette_triggered();
 
+    void on_moveButton_clicked();
+
 protected:
     void timerEvent (QTimerEvent* event);
 
