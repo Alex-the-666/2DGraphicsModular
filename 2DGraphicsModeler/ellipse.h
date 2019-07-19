@@ -2,9 +2,9 @@
 #define ELLIPSE_H
 #include "shape.h"
 
-//!    Derived Class: Ellipse
-/*!   Ellipse is a derived class of the shape class-
-*     Takes integer values to form dimensions of the ellipse
+//!    Derived Class From Base Class Shape
+/*!   Ellipse is a derived class of the shape class.\n
+*     Takes integer values to form dimensions of the ellipse.\n
 *     Ellipse can be styled with different pens, colors, and brushes.
 */
 class Ellipse : public Shape
@@ -17,25 +17,29 @@ public:
      */
     Ellipse():Shape(),myRect(G_DEFAULTQRECT), radius1(100), radius2(200), x(100), y(100) {setShape(ELLIPSE);}
 
+    //!Ellipse overloaded class constructor
+    /*!Function calls default base class constructor
+    * Base Class Constructor calls setShape() and assigns
+    * enum value of ELLIPSE- passes object to a rectangle object.
+    * \param radius1 holds the height value of the object
+    * \param radius2 holds the width value of the object
+    * \param x holds the x-value of the coordinate of the object
+    * \param y holds the y-value of the coordinate of the object
+    */
     Ellipse(int radius1, int radius2, int x, int y) : Shape(), myRect(G_DEFAULTQRECT), radius1(radius1), radius2(radius2), x(x), y(y) { setShape(ELLIPSE);}
     //!   Ellipse Class Copy Constructor
     /*!   Copy Constructor for the ellipse object
+    *     paramater passed by const ref. to the ellipse object.
     *     \param &arg is a ShapeBuffer object
-    *     passed by const ref.
     */
     Ellipse(const ShapeBuffer&);
 
     //!  Virtual Ellipse Class Destructor
     ~Ellipse() override {}
 
-    //!   Setter Function that sets the ellipse objects dimensions
-    /*!   \param int x is the x axis value
-    *     \param int y is the y axis value
-    *     \param r1 is the width int value
-    *     \param r2 is the height int value
-    */
+
     //this function has no definition- only a prototype
-    void setDimension(int x, int y, int r1, int r2);
+    /*void setDimension(int x, int y, int r1, int r2);*/
 
     //!   Function that draws an Ellipse
     /*!   Sets the QPainter objects pen
