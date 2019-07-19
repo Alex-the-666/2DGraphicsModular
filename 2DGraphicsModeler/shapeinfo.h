@@ -16,12 +16,14 @@ class ShapeInfo: public QDialog
 
 public:
     explicit ShapeInfo(QWidget *parent = nullptr);
+
     ~ShapeInfo();
 
 private slots:
-    void addTreeRoot(QString name, QString description);
-    void addTreeChild(QTreeWidgetItem *parent,
-                         QString name, QString description);
+    void onTreeWidgetItemDoubleClicked(QTreeWidgetItem * item, int column);
+//    void addTreeRoot(QString name, QString description);
+//    void addTreeChild(QTreeWidgetItem *parent,
+//                         QString name, QString description);
 
 private:
     Ui::ShapeInfo *ui;

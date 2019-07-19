@@ -13,43 +13,404 @@
   <property name="windowTitle">
    <string>ShapeInfo</string>
   </property>
-  <widget class="QTreeWidget" name="treeWidget">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>0</y>
-     <width>421</width>
-     <height>381</height>
+     <y>20</y>
+     <width>381</width>
+     <height>361</height>
     </rect>
    </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="allColumnsShowFocus">
-    <bool>false</bool>
-   </property>
-   <property name="expandsOnDoubleClick">
-    <bool>true</bool>
-   </property>
-   <attribute name="headerMinimumSectionSize">
-    <number>18</number>
-   </attribute>
-   <column>
-    <property name="text">
-     <string>Shapes                                                    </string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Information</string>
-    </property>
-   </column>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTreeWidget" name="treeWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="allColumnsShowFocus">
+       <bool>false</bool>
+      </property>
+      <property name="expandsOnDoubleClick">
+       <bool>true</bool>
+      </property>
+      <attribute name="headerMinimumSectionSize">
+       <number>18</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Shapes                                                    </string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Information</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>Line</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Shape Id</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Area</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Perimeter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Color</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Width</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Cap Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Join Style</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>PolyLine</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Shape Id</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Area</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Perimeter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Color</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Width</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Cap Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Join Style</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>Rectangle</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Shape Id</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Area</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Perimeter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Color</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Width</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Cap Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Width</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Brush Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Brush Color</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>Square</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Shape Id</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Area</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Perimeter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Color</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Width</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Cap Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Join Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Brush Color</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Brush Style</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>Circle</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Shape Id</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Area</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Perimeter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Cap Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Join Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Brush Color</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Brush Style</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>Ellipse</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Shape Id</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Area</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Perimeter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Color</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Width</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Cap Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Join Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Brush Color</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Brush Style</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>Polygon</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Shape Id</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Area</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Perimeter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Color</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Width</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Cap Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pen Join Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Brush Style</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Brush Color</string>
+        </property>
+       </item>
+      </item>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
