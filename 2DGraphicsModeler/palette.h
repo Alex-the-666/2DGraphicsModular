@@ -27,12 +27,6 @@ private slots:
     void on_pushButton_5_clicked();
     //Text
     void on_pushButton_6_clicked();
-    //Shape R
-    void on_horizontalSlider_6_actionTriggered(int action);
-    //Shape G
-    void on_horizontalSlider_5_actionTriggered(int action);
-    //Shape B
-    void on_horizontalSlider_4_actionTriggered(int action);
     //Background R
     void on_horizontalSlider_valueChanged(int value);
     //Background G
@@ -40,14 +34,20 @@ private slots:
     //Background B
     void on_horizontalSlider_3_valueChanged(int value);
 
+    void on_horizontalSlider_6_valueChanged(int value);
+
+    void on_horizontalSlider_5_valueChanged(int value);
+
+    void on_horizontalSlider_4_valueChanged(int value);
+
 private:
     Ui::Palette *ui;
-    int backgroundR;
-    int backgroundG;
-    int backgroundB;
-    int shapeR;
-    int shapeG;
-    int shapeB;
+    int backgroundR = 0;
+    int backgroundG = 0;
+    int backgroundB = 0;
+    int shapeR = 0;
+    int shapeG = 0;
+    int shapeB = 0;
     void updateBackground();
 };
 
