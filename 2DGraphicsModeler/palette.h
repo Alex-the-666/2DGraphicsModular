@@ -50,12 +50,12 @@ private slots:
 
 private:
     Ui::Palette *ui;
-    int backgroundR = 0;
-    int backgroundG = 0;
-    int backgroundB = 0;
-    int shapeR = 0;
-    int shapeG = 0;
-    int shapeB = 0;
+    int backgroundR = 255;
+    int backgroundG = 255;
+    int backgroundB = 255;
+    int shapeR = 255;
+    int shapeG = 255;
+    int shapeB = 255;
     void updateBackground();
 };
 
