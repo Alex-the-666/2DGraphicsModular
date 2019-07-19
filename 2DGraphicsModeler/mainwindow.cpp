@@ -133,3 +133,9 @@ void MainWindow::on_actionShow_Info_triggered()
     shapeInfo = new ShapeInfo(this);
     shapeInfo -> show();
 }
+
+void MainWindow::on_moveButton_clicked()
+{
+    QString input = ui -> moveInput -> text();
+
+}
