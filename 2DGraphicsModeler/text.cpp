@@ -53,8 +53,7 @@ void Text::move(const int x1, const int y1) {
     /* BOUNDARY CHECKING */
     if (!(x1 + wide > MAXX || y1 + tall > MAXY))
     {
-        myRect.setX(x1);
-        myRect.setY(y1);
+        myRect.moveTo(x1,y1);
     }
 
 }
