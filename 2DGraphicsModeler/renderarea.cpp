@@ -130,7 +130,7 @@ void RenderArea::readOut(QTextStream& os)
 
 void RenderArea::setIndex(int x)
 {
-    if(x<shapeVector.size())
+    if(x<=shapeVector.size())
         indexToChange= x-1;
 }
 
