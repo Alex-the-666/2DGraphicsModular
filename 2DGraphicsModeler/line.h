@@ -103,10 +103,8 @@ public:
     double perimeter() const override;
 
     //!Function to find the top left corner of an object
-    /*!Compares the first x axis point with the second x axis point-
-    * the smaller number is the left most point.
-    * Compares the first y axis point with the second y axis point-
-    * the smaller number is the highest-up(upmost) point.
+    /*!Finds the top - left corner of an object, and assigns
+    * an integer value to the object that displays on screen.
     */
     void drawID();
 
