@@ -5,6 +5,8 @@
 #include <QString>
 #include <QPen>
 
+#include "shapebuffer.h"
+
 
 namespace Ui {
 class ShapeInfo;
@@ -20,15 +22,16 @@ public:
     ~ShapeInfo();
 
 private slots:
-    void onTreeWidgetItemDoubleClicked(QTreeWidgetItem * item, int column);
-//    void addTreeRoot(QString name, QString description);
-//    void addTreeChild(QTreeWidgetItem *parent,
-//                         QString name, QString description);
+    //void onTreeWidgetItemDoubleClicked(QTreeWidgetItem * item, int column);
+    void addTreeRoot(QString name, QString description);
+    void addTreeChild(QTreeWidgetItem *parent,
+                         QString name, QString description);
 
 private:
     Ui::ShapeInfo *ui;
     QBrush brush;
     QPen pen;
+
 
 };
 #endif // SHAPEINFO_H
