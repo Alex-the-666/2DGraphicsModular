@@ -2,7 +2,7 @@
 #define ELLIPSE_H
 #include "shape.h"
 
-//!    Derived Class From Base Class Shape
+//!    Derived Class From Derived Circle Class and Base Shape Class
 /*!   Ellipse is a derived class of the shape class.\n
 *     Takes integer values to form dimensions of the ellipse.\n
 *     Ellipse can be styled with different pens, colors, and brushes.
