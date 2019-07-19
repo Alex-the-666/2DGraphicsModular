@@ -91,7 +91,7 @@ void PolyLine::drawID()
         }
 
     }
-    getQPainter()->drawText(leftmostPoint, upmostPoint - VERTICAL_BUFFER, temp);
+    getQPainter()->drawText(leftmostPoint, upmostPoint - VERTICAL_BUFFER, stringID);
 }
 
 
