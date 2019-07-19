@@ -20,7 +20,7 @@ public:
     Line():Shape(){
         setShape(LINE);
         setPointOne(100, 100);
-        setPointTwo(100, 200);
+        setPointTwo(200, 100);
     }
 
     //!   Line Class Copy Constructor

@@ -26,8 +26,8 @@ void Palette::addShape(Shape* shape){
     color.setBlue(shapeB);
     shape->setBrush(color);
     shape->setPen(color);
-    int randX = rand() % 1000 + 0;
-    int randY = rand() % 500 + 0;
+    int randX = rand() % 1000;
+    int randY = rand() % 500;
     shape->move(randX, randY);
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
     w->renderArea->getShapeVector().push_back(shape);

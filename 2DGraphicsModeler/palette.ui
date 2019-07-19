@@ -249,7 +249,7 @@
     </rect>
    </property>
    <property name="plainText">
-    <string>255</string>
+    <string>0</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -314,7 +314,8 @@
     </rect>
    </property>
    <property name="plainText">
-    <string>255
+    <string>0
+
 </string>
    </property>
   </widget>
@@ -331,7 +332,7 @@
     <number>255</number>
    </property>
    <property name="value">
-    <number>255</number>
+    <number>0</number>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -347,7 +348,7 @@
     </rect>
    </property>
    <property name="plainText">
-    <string>255</string>
+    <string>0</string>
    </property>
   </widget>
   <widget class="QSlider" name="horizontalSlider_5">
@@ -363,7 +364,7 @@
     <number>255</number>
    </property>
    <property name="value">
-    <number>255</number>
+    <number>0</number>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -382,7 +383,7 @@
     <number>255</number>
    </property>
    <property name="value">
-    <number>255</number>
+    <number>0</number>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
