@@ -1,7 +1,4 @@
-//#include "shapeinfo.h"
-//#include "shape.h"
 #include "mainwindow.h"
-//#include "ui_shapeinfo.h"
 #include "shape.h"
 #include "shapeinfo.h"
 #include "shapebuffer.h"
@@ -9,19 +6,17 @@
 #include "vector.h"
 #include <regex>
 
-
 ShapeInfo::ShapeInfo(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ShapeInfo)
 {
-
     ui->setupUi(this);
     setWindowTitle(tr("Shape Info"));
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
     custom::vector<Shape*>& shp = w->renderArea ->getShapeVector();
     QTreeWidgetItem *item = new QTreeWidgetItem;
 
-    for(auto i = shp.begin(); i != shp.end(); i++)
+    for(auto i = shp.begin(); i != shp.end(); ++i)
     {
         ShapeBuffer temp;
         (*i)->setShapeBuffer(temp);
@@ -38,9 +33,11 @@ ShapeInfo::ShapeInfo(QWidget *parent) :
         case RECTANGLE:
         case SQUARE:
         case ELLIPSE:
-        case CIRCLE:  {addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printBrush().trimmed());//remove(QRegExp("\\n")));//remove(QChar('\0')));//simplified()); //remove(QRegExp("[\n\t\r]")));
-                       addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printPen());}
-
+        case CIRCLE:
+        {
+            addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printPen());
+            addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printBrush().trimmed());
+        }
             break;
         case TEXT:
         {
