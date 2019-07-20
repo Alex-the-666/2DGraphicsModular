@@ -7,7 +7,7 @@
 #include "shapebuffer.h"
 #include "ui_shapeinfo.h"
 #include "vector.h"
-
+#include <regex>
 
 
 ShapeInfo::ShapeInfo(QWidget *parent) :
@@ -38,7 +38,7 @@ ShapeInfo::ShapeInfo(QWidget *parent) :
         case RECTANGLE:
         case SQUARE:
         case ELLIPSE:
-        case CIRCLE:  {addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printBrush());
+        case CIRCLE:  {addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printBrush().trimmed());//remove(QRegExp("\\n")));//remove(QChar('\0')));//simplified()); //remove(QRegExp("[\n\t\r]")));
                        addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printPen());}
 
             break;
