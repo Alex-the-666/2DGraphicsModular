@@ -16,7 +16,7 @@ ShapeInfo::ShapeInfo(QWidget *parent) :
     custom::vector<Shape*>& shp = w->renderArea ->getShapeVector();
     QTreeWidgetItem *item = new QTreeWidgetItem;
 
-    for(auto i = shp.begin(); i != shp.end(); ++i)
+    for(auto i = shp.begin(); i != shp.end(); i++)
     {
         ShapeBuffer temp;
         (*i)->setShapeBuffer(temp);
@@ -47,9 +47,10 @@ ShapeInfo::ShapeInfo(QWidget *parent) :
            addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printFont());
         }break;
         }
+
     }
     //ui->treeWidget->setColumnCount(1);
-    delete item;
+    //delete item;
     item = nullptr;
 }
 
