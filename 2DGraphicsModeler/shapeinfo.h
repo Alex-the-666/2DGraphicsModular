@@ -12,7 +12,7 @@ namespace Ui {
 class ShapeInfo;
 }
 
-class ShapeInfo: public QDialog
+class ShapeInfo: public QDialog, public ShapeBuffer
 {
     Q_OBJECT
 
@@ -22,10 +22,8 @@ public:
     ~ShapeInfo();
 
 private slots:
-    //void onTreeWidgetItemDoubleClicked(QTreeWidgetItem * item, int column);
-    void addTreeRoot(QString name, QString description);
-    void addTreeChild(QTreeWidgetItem *parent,
-                         QString name, QString description);
+    QTreeWidgetItem* addTreeRoot(QString name);
+    void addTreeChild(QTreeWidgetItem *parent, QString name);
 
 private:
     Ui::ShapeInfo *ui;
