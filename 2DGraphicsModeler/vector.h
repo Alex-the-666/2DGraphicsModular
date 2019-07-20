@@ -248,6 +248,12 @@ public:
 	{
 		return elem + size_v;
 	}
+      //!Function to insert an element
+      /*!Function to insert a new element (V) before element (P)
+      *  pointed to by the iterator
+      * \param p is of type iterator
+      *\param v is a constant reference template type
+      */
 	iterator insert(iterator p, const T& v)// insert a new element v before p
 	{
 		T* temp = nullptr;
@@ -287,6 +293,10 @@ public:
 
 		return returnIt;
 	}
+      //!Function to remove element pointed to by the iterator
+      /*!Function to remove an element pointed to by the iterator.
+      * \param p is of type iterator
+      */
 	iterator erase(iterator p) // remove element pointed to by p
 	{
 		T* temp = new T[space];
@@ -315,9 +325,12 @@ public:
 		return returnIt;
 	}
 private:
-	int size_v; /*!< CURRENT COUNT OF ELEMENTS IN INTERNAL ARRAY */
-	T* elem; /*!< POINTER TO INTERNAL DYNAMIC ARRAY OF TEMPLATED TYPE */
-	int space;  /*!< MAXIMUM SIZE OF INTERNAL ARRAY */
+      //!CURRENT COUNT OF ELEMENTS IN INTERNAL ARRAY
+	int size_v;
+      //!POINTER TO INTERNAL DYNAMIC ARRAY OF TEMPLATED TYPE
+	T* elem;
+      //!MAXIMUM SIZE OF INTERNAL ARRAY
+	int space;
 };
 }
 #endif // VECTOR_H

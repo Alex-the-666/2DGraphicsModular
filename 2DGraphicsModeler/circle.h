@@ -2,7 +2,7 @@
 #define CIRCLE_H
 #include "ellipse.h"
 
-//!    Derived Class From Base Class Ellipse
+//!    Derived Class From Derived Class Ellipse From Base Class Shape
 /*!   Circle is a derived class of the ellipse class.\n
 *     Inherits private variables from protected class of ellipse.\n
 *     Circle can be styled with different pens, colors, and brushes.
