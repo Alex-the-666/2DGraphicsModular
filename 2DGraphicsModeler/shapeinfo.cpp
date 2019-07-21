@@ -4,7 +4,7 @@
 #include "shapebuffer.h"
 #include "ui_shapeinfo.h"
 #include "vector.h"
-#include <regex>
+#include <Qt>
 
 ShapeInfo::ShapeInfo(QWidget *parent) :
     QDialog(parent),

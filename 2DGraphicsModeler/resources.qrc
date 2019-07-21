@@ -2,5 +2,6 @@
     <qresource prefix="/img">
         <file>img/logo.png</file>
         <file>img/Palette-icon.png</file>
+        <file>img/ShowI.png</file>
     </qresource>
 </RCC>

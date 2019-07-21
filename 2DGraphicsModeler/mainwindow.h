@@ -31,7 +31,8 @@ private slots:
     void on_actionSave_triggered();
     void on_actionOpen_triggered();
     void on_actionQuit_triggered();
-void on_actionShow_Info_triggered();
+
+    void on_actionShow_Info_triggered();
     
     void on_actionOpen_palette_triggered();
 

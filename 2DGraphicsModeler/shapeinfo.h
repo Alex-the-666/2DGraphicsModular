@@ -29,7 +29,7 @@ private:
     Ui::ShapeInfo *ui;
     QBrush brush;
     QPen pen;
-      QTreeWidgetItem *item;
+    QTreeWidgetItem *item;
 
 
 };
