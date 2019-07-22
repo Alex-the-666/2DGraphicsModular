@@ -8,6 +8,8 @@ ShapeBuffer::ShapeBuffer()
 void ShapeBuffer::readIn(QTextStream& is)
 {
         QString myString = is.readLine();
+        if(myString.isEmpty())
+            throw MyException();
         shapeID = setInt(myString);
         myString = is.readLine();
         shape = setShape(myString);
