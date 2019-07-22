@@ -39,7 +39,7 @@ void Text::draw(){
     getQPainter()->drawText(myRect,alignFlag,myQString);
 
     QString temp = QString::number (x) + " " + QString::number (y);
-    getQPainter()->drawText(x, y - 5, QVariant(Shape::getID()).toString());
+    getQPainter()->drawText(myRect.x(), myRect.y() - 5, QVariant(Shape::getID()).toString());
     passQPainter(nullptr);
 }
 
