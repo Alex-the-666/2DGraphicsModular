@@ -2,7 +2,7 @@ ShapeId: 1
 ShapeType: Text
 ShapeDimensions: 250, 425, 500, 50
 TextString: sdsds
-TextColor: blue
+TextColor: bluasdsadasd
 TextAlignment: AlignCenter
 TextPointSize: 10
 TextFontFamily: Comic Sans MS

@@ -1,6 +1,7 @@
 #include "renderarea.h"
 #include <QStyleOption>
 #include <QMouseEvent>
+#include <QMessageBox>
 
 const QSize minSize(1000,500);
 
@@ -49,18 +50,27 @@ void RenderArea::mouseMoveEvent(QMouseEvent *event){
 
 void RenderArea::createShapeBuffer(QTextStream& is)
 {
-    if(buffer.size()!=0)
-        buffer.resize(0);
-    if(shapeVector.size()!=0)
-        shapeVector.resize(0);
-    while(!is.atEnd())
-    {
-        ShapeBuffer x;
-        x.readIn(is);
-        buffer.push_back(x);
-        is.readLine();//get rid of the space at BOTTOM
+    try {
+        if(buffer.size()!=0)
+            buffer.resize(0);
+        if(shapeVector.size()!=0)
+            shapeVector.resize(0);
+        while(!is.atEnd())
+        {
+            ShapeBuffer x;
+            x.readIn(is);
+            buffer.push_back(x);
+            is.readLine();//get rid of the space at BOTTOM
+        }
+        shapeBufferReady=true;
     }
-   shapeBufferReady=true;
+
+    catch (MyException) {
+        shapeBufferReady=false;
+        buffer.resize(0);
+        QMessageBox::information(this, "CORRUPT FILE", "Correct the errors in the database or select another file.");
+
+    }
 }
 
 custom::vector<Shape*>& RenderArea::getShapeVector(){
