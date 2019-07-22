@@ -17,7 +17,9 @@ class ShapeInfo: public QDialog, public ShapeBuffer
     Q_OBJECT
 
 public:
+    enum SortType{ID,AREA,PERIM};
     explicit ShapeInfo(QWidget *parent = nullptr);
+    explicit ShapeInfo(QWidget *parent = nullptr, SortType = ID);
 
     ~ShapeInfo();
 

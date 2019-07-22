@@ -16,9 +16,6 @@ ShapeInfo::ShapeInfo(QWidget *parent) :
     setWindowTitle(tr("Shape Info"));
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
     custom::vector<Shape*>& shp = w->renderArea ->getShapeVector();
-    compare_shape_perimeter sP;
-    selectionSort(shp.begin(),shp.end(),sP);
-    selectionSort(shp.begin(),shp.end());
     item = new QTreeWidgetItem;
 
     for(auto i = shp.begin(); i != shp.end(); i++)
@@ -56,6 +53,68 @@ ShapeInfo::ShapeInfo(QWidget *parent) :
     }
     item = nullptr;
 }
+
+ShapeInfo::ShapeInfo(QWidget *parent, SortType z) :
+    QDialog(parent),
+    ui(new Ui::ShapeInfo)
+{
+    ui->setupUi(this);
+    setWindowTitle(tr("Shape Info"));
+    MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
+    custom::vector<Shape*>& shp = w->renderArea ->getShapeVector();
+    switch (z)
+    {
+    case ID:  selectionSort(shp.begin(),shp.end());
+        break;
+    case AREA:
+    {
+        compare_shape_perimeter sP;
+        selectionSort(shp.begin(),shp.end(),sP);
+    }break;
+    case PERIM:
+    {
+        compare_shape_area sA;
+        selectionSort(shp.begin(),shp.end(),sA);
+    }
+    }
+    item = new QTreeWidgetItem;
+
+    for(auto i = shp.begin(); i != shp.end(); i++)
+    {
+        ShapeBuffer temp;
+        (*i)->setShapeBuffer(temp);
+        item = addTreeRoot("ID #" + QString::number(temp.getShapeID()));
+        addTreeChild(item, "Shape: " + static_cast<ShapeInfo*>(&temp) -> printShapeType());
+        addTreeChild(item, "Dimensions: " + static_cast<ShapeInfo*>(&temp) -> printShapeDimensions());
+        addTreeChild(item, "Area: " + QString::number((*i) -> area()));
+        addTreeChild(item, "Perimeter: " + QString::number((*i) -> perimeter()));
+        switch(static_cast<ShapeInfo*>(&temp) -> getShape())
+        {
+        case LINE:
+        case POLYLINE: addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printPen()); break;
+        case POLYGON:
+        case RECTANGLE:
+        case SQUARE:
+        case ELLIPSE:
+        case CIRCLE:
+        {
+            addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printPen());
+            addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printBrush().trimmed());
+        }
+            break;
+        case TEXT:
+        {
+           addTreeChild(item, "TextString: " + static_cast<ShapeInfo*>(&temp) -> getQStringText());
+           addTreeChild(item, "TextColor: " + static_cast<ShapeInfo*>(&temp) -> printGobalColor(pen.color()));
+           addTreeChild(item, "TextAlignment: " + static_cast<ShapeInfo*>(&temp) -> printAlign());
+           addTreeChild(item, static_cast<ShapeInfo*>(&temp) -> printFont());
+        }break;
+        }
+
+    }
+    item = nullptr;
+}
+
 
 ShapeInfo::~ShapeInfo()
 {

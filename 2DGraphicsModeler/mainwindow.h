@@ -38,6 +38,10 @@ private slots:
 
     void on_moveButton_clicked();
 
+    void on_actionShow_Area_triggered();
+
+    void on_actionShow_Perimeter_triggered();
+
 protected:
     void timerEvent (QTimerEvent* event);
 
@@ -46,7 +50,7 @@ private:
     adminLogin *admin;
     Contact    *contact;
     Palette    *palette;
-     ShapeInfo *shapeInfo;
+    ShapeInfo *shapeInfo;
     QTime initialTime;
 };
 

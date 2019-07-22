@@ -60,7 +60,7 @@
      <x>0</x>
      <y>0</y>
      <width>1285</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuHome">
@@ -89,6 +89,9 @@
      <string>Show </string>
     </property>
     <addaction name="actionShow_Info"/>
+    <addaction name="separator"/>
+    <addaction name="actionShow_Area"/>
+    <addaction name="actionShow_Perimeter"/>
    </widget>
    <addaction name="menuHome"/>
    <addaction name="menuFile"/>
@@ -104,7 +107,7 @@
     <enum>LeftToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
    <addaction name="actionOpen_palette"/>
    <addaction name="actionShow_Info"/>
@@ -150,6 +153,16 @@
    </property>
    <property name="text">
     <string>Open palette</string>
+   </property>
+  </action>
+  <action name="actionShow_Area">
+   <property name="text">
+    <string>Show Area</string>
+   </property>
+  </action>
+  <action name="actionShow_Perimeter">
+   <property name="text">
+    <string>Show Perimeter</string>
    </property>
   </action>
   <action name="actionShow_Info">

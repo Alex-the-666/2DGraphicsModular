@@ -130,7 +130,7 @@ void MainWindow::on_actionOpen_palette_triggered()
 
 void MainWindow::on_actionShow_Info_triggered()
 {
-    shapeInfo = new ShapeInfo(this);
+    shapeInfo = new ShapeInfo(this,ShapeInfo::SortType::ID);
     shapeInfo -> show();
 }
 
@@ -139,4 +139,16 @@ void MainWindow::on_moveButton_clicked()
     QString input = ui -> moveInput -> text();
     renderArea->setIndex(input.toInt());
 
+}
+
+void MainWindow::on_actionShow_Area_triggered()
+{
+    shapeInfo = new ShapeInfo(this,ShapeInfo::SortType::AREA);
+     shapeInfo -> show();
+}
+
+void MainWindow::on_actionShow_Perimeter_triggered()
+{
+    shapeInfo = new ShapeInfo(this,ShapeInfo::SortType::PERIM);
+    shapeInfo -> show();
 }
