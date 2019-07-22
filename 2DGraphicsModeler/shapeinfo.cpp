@@ -16,8 +16,9 @@ ShapeInfo::ShapeInfo(QWidget *parent) :
     setWindowTitle(tr("Shape Info"));
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
     custom::vector<Shape*>& shp = w->renderArea ->getShapeVector();
-    compare_shape_area sa;
-    selectionSort(shp.begin(),shp.end(),sa);
+    compare_shape_perimeter sP;
+    selectionSort(shp.begin(),shp.end(),sP);
+    selectionSort(shp.begin(),shp.end());
     item = new QTreeWidgetItem;
 
     for(auto i = shp.begin(); i != shp.end(); i++)
