@@ -48,15 +48,7 @@ public:
     *    Allows for operator overloading in derived classes.
     *    \param rhs is a shape object passed by reference
     */
-    bool operator <(Shape& rhs){return (shapeId<=rhs.shapeId);}
-
-    //!  Overloaded Greater-Than Operator for Shape objects
-    /*!  Overloaded greater than operator: returns true if
-    *    shapeId > the shapeId of the passed paramater.
-    *    Allows for operator overloading in derived classes.
-    *    \param rhs is a shape object passed by reference
-    */
-    bool operator >(Shape& rhs) {return (area()>rhs.area());}
+    bool operator <(Shape& rhs){return (shapeId<rhs.shapeId);}
 
     //!   Shape Class Destructor
     virtual ~Shape();

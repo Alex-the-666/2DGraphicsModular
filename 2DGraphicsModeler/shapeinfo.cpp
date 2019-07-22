@@ -4,6 +4,8 @@
 #include "shapebuffer.h"
 #include "ui_shapeinfo.h"
 #include "vector.h"
+#include "comp_func.h"
+#include "selection_sort.h"
 #include <Qt>
 
 ShapeInfo::ShapeInfo(QWidget *parent) :
@@ -14,6 +16,8 @@ ShapeInfo::ShapeInfo(QWidget *parent) :
     setWindowTitle(tr("Shape Info"));
     MainWindow* w = dynamic_cast<MainWindow*>(this->parentWidget());
     custom::vector<Shape*>& shp = w->renderArea ->getShapeVector();
+    compare_shape_area sa;
+    selectionSort(shp.begin(),shp.end(),sa);
     item = new QTreeWidgetItem;
 
     for(auto i = shp.begin(); i != shp.end(); i++)

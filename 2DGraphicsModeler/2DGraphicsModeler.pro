@@ -46,6 +46,7 @@ SOURCES += \
 HEADERS += \
         adminlogin.h \
         circle.h \
+        comp_func.h \
         contact.h \
         ellipse.h \
         line.h \

@@ -1,28 +1,23 @@
 #ifndef SELECTION_SORT_H
 #define SELECTION_SORT_H
 #include "shape.h"
+#include <utility>
 #include "vector.h"
-template<class T>
-void selectionSort(T* itertatorFirst,T* iteratorLast, bool *compFunc(T* arg1,T* arg2))
+template<class T, class H>
+void selectionSort(T first,T last,H pred)
 {
-    for (T* i = itertatorFirst; i != iteratorLast; i++) {
-        for (T* j = itertatorFirst; j != iteratorLast; j++) {
-           if(compFunc(i,j))
-               i=j;
+    for (T i = first; i < last; ++i) {
+        for (T j = i; j < last-2; ++j)
+        {
+            if((*j<*(j+1)))
+            {
+
+            }
+            else
+            {
+                 std::swap(*j,*(j+1));
+            }
         }
     }
 }
-
-template <class T>
-class compare_shape_perimeter
-{
-public:
-    compare_shape_perimeter(custom::vector<T> shapeVector);
-    bool operator()(T* arg1, T* arg2)
-    {
-        return arg1 <= arg2;
-    }
-//selectionSort (x.begin(),x.end(),compare_shape_perimeter(x))
-
-};
 #endif // SELECTION_SORT_H
