@@ -58,7 +58,7 @@ double Polygon::area() const
           area += (polygon.point(j).rx()+polygon.point(i).rx()) * (polygon.point(j).ry()-polygon.point(i).ry());
           j = i;
       }
-      return area/2;
+      return abs(area/2);
 }
 
 int Polygon::getX() const {
