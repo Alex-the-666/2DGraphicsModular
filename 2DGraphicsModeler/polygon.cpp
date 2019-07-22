@@ -81,7 +81,7 @@ double Polygon::perimeter() const
                          * ((polygon.point((i + 1) % polygon.size()).ry()) - polygon.point(i).ry())));
     }
 
-    return 0;
+    return perimeter;
 
 }
 
