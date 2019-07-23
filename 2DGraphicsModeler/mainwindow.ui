@@ -68,6 +68,7 @@
      <string>Home</string>
     </property>
     <addaction name="actionLogin"/>
+    <addaction name="actionLog_Out"/>
     <addaction name="actionContact_Us"/>
    </widget>
    <widget class="QMenu" name="menuFile">
@@ -172,6 +173,11 @@
    </property>
    <property name="text">
     <string>Show Info</string>
+   </property>
+  </action>
+  <action name="actionLog_Out">
+   <property name="text">
+    <string>Log Out</string>
    </property>
   </action>
  </widget>

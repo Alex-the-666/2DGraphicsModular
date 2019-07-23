@@ -42,6 +42,8 @@ private slots:
 
     void on_actionShow_Perimeter_triggered();
 
+    void on_actionLog_Out_triggered();
+
 protected:
     void timerEvent (QTimerEvent* event);
 

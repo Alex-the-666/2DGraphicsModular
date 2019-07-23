@@ -152,3 +152,9 @@ void MainWindow::on_actionShow_Perimeter_triggered()
     shapeInfo = new ShapeInfo(this,ShapeInfo::SortType::PERIM);
     shapeInfo -> show();
 }
+
+void MainWindow::on_actionLog_Out_triggered()
+{
+    renderArea -> disableAdmin();
+    QMessageBox::information(this, "Log Out", "You have successfully logged out.");
+}
