@@ -1,42 +1,62 @@
-Inheritance:
-Composition:
-Exception Handlers:
-Virtual Function
-Two overloaded operators:
-Templated Class:
-Class with pointer:
-Tested Copy Constructor:
+Inheritance: polygon.h::LINE 11
 
-Use Qt QPainter:
-Use Qt QWidget render area:
+Composition:  shape.h::LINE 140-148
+
+Exception Handlers: shapebuffer.cpp::LINE 185, vector.h::LINE 117
+
+Virtual Functions: shape.h::LINE 115-127;
+
+Two overloaded operators: shape.h::LINE 43, shape.h::LINE 51
+
+Templated Class: vector.h::LINE 15-16, selection_sort.h::LINE 6-44
+
+Class with pointer: vector.h::LINE 331
+
+Tested Copy Constructor: vector.h::LINE 34 Refer to vector's tar package with valgrind results
+
+Use Qt QPainter: renderarea.cpp::LINE 112
+
+Use Qt QWidget render area: renderarea.cpp/renderarea.h
+
 Shape pure virtual functions:
-	a. draw
-	b. move
-	c.perimeter
-	d. area
-Shape Types: Line, Polyline, Polygon, Rectangle, Ellipse, Text
+	a. draw shape.h::LINE118
+	b. move shape.h::LINE121
+	c.perimeter shape.h::LINE124
+	d. area shape.h::LINE127
 
-Shape Properties et al:
+Shape Types: Line, Polyline, Polygon, Rectangle, Ellipse, Text: shapebuffer.h::LINE 11-12
+Refer to correspoding .h/.cpp files for more information.
 
-Shape Derived override functions:
-Shape equality overload:
-Shape less than relationship overload:
-Disable copy and assignment for Shapes:
+Shape Properties: Shape Dimensions, Pen Color, Pen Width,
+ Pen Style, Pen Cap Style, Pen Join Style, Brush Color, 
+Brush Style: shape.h::LINE 144-148
 
-Vector:
-	constructors for one or more arguments
-	default constructors
-	copy constructor 
-	copy assignment
-	move constructor
-	move assignment
-	destructor
+Text Properties Text String, Text Color, Text Alignment,
+ Text Point Size, Text Font Family, Text Font Style,
+ Text Font Weight: text.h::LINE 91 & LINE 95
+
+Shape Derived override functions: ex:rectangle.cpp::LINE 26-56
+
+Shape equality overload: shape.h::LINE 43
+
+Shape less than relationship overload: shape.h::LINE 51
+
+Disable copy and assignment for Shapes: shape.h::LINE 23 & LINE 28
+
+Vector: vector.h
+	constructors for one or more arguments: LINE 24
+	default constructors: LINE 20
+	copy constructor: LINE 34
+	copy assignment: LINE 47
+	move constructor: LINE 72
+	move assignment: LINE 85
+	destructor: LINE 104
 E.C.
-	selection sort:
-	compare_shape_perimeter:
-	compare_shape_area:
+	selection sort: select_sort.h::LINE 7-19
+	compare_shape_perimeter: comp_func::LINE 3-9
+	compare_shape_area: comp_func::LINE 11-16
 
-Contingency Handling:
+Contingency Handling: renderarea.cpp::LINE 68-73
 
 Final Checkpoints:
 
