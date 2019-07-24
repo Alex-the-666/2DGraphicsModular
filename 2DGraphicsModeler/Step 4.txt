@@ -39,47 +39,83 @@ E.C.
 Contingency Handling:
 
 Final Checkpoints:
+
 2. Contact Us with team name and logo
+   ex. contact.h::LINES 1-23
+   ex. contact.ui::LINES 53, 69
+
 3. Render Area
-Display all graphic objects (i.e. shapes including text) in rendering
-window. 
+   a. Display all graphic objects (i.e. shapes including text) in rendering window.
+      ex. renderarea.h::LINE 31
+      ex. renderarea.cpp::LINES 108-127
 
-The shape id will be displayed above each shape identifying
-it. 
-The rendering area to display shapes must have minimum
-dimensions of 1000 pixels (horizontal) by 500 pixels (vertical). 
+   b. The shape id will be displayed above each shape identifying it.
+      ex. ellipse.cpp::LINES 66-73
 
-The coordinate system is defined such that the top left corner of the
-rendering area is located at point (0,0), the bottom right corner at
-point (1000,500).
-4.Your program should read from a shape file that keeps track of all
-shapes currently being rendered by the 2D modeler. 
+   c. The rendering area to display shapes must have minimum
+      dimensions of 1000 pixels (horizontal) by 500 pixels (vertical).
+      ex. renderarea.cpp::LINES 8-16
 
-Shapes are identified by their type: line, polyline, polygon, rectangle, ellipse,
-text. 
+   d. The coordinate system is defined such that the top left corner of the
+      rendering area is located at point (0,0), the bottom right corner at
+      point (1000,500).
+      ex. renderarea.cpp::LINES 8-16
 
-Shapes have properties: shape dimensions, pen color, pen
-width, pen style, pen cap style, pen join style, brush color, brush
-shape. 
+4. File I/O
+   a. Your program should read from a shape file that keeps track of all
+      shapes currently being rendered by the 2D modeler.
+      ex. shapebuffer.h::LINE 28
 
-Text has properties: shape dimensions, text string, text 
-color, text alignment, text point size, text font family, text font
-style, text font weight. 
+   b. Shapes are identified by their type: line, polyline, polygon, rectangle, ellipse,
+      text.
+      ex. shapebuffer.cpp::LINES 16-132
 
-All shapes must also have a unique ID.
+   c. Shapes have properties: shape dimensions, pen color, pen
+      width, pen style, pen cap style, pen join style, brush color, brush
+      shape.
+      ex. shape.h::LINES 140-148
 
-5.Your program should be able to move shapes, including text, being
-rendered. This is accomplished via a move shape form. 
+   d. Text has properties: shape dimensions, text string, text
+      color, text alignment, text point size, text font family, text font
+      style, text font weight.
+      ex. text.h::LINES 83-97
 
-All changes
-are visible in the rendering area. – administrator only
+   e. All shapes must also have a unique ID.
+      ex. shape.h::LINE 142
+
+5. Shape Movement
+   a. Your program should be able to move shapes, including text, being
+      rendered. This is accomplished via a move shape form.
+      ex. rectangle.h::LINE 83
+      ex. rectangle.cpp::LINES 56-64
+      ex. renderarea.h::LINE 32
+      ex. renderarea.cpp::LINES 40-49
+
+   b. All changes are visible in the rendering area - adminstrator only.
+      ex. renderarea.cpp::LINES 18-49
+      ex. renderarea.h::LINES 27-28
 
 6. Add or remove shapes visible in render area
+   ex. palette.h::LINE 20
+   ex. palette.cpp::LINES 22-35
+   ex. palette.ui::LINES 164-241
 
-7.Shape listing reports by id with all shape properties
+7. Shape listing reports by id with all shape properties
+   ex. shapeinfo.ui::LINES 13-41
+   ex. shapeinfo.h::LINE 21
+   ex. shapeinfo.cpp::LINES 14-55
+   ex. mainwindow.ui::LINES 169-172
 
-8.Shape list by area
+8. Shape list by area
+   ex. shapeinfo.h::LINE 22
+   ex. shapeinfo.cpp::LINES 60-116
+   ex. mainwindow.ui::LINES 159-161
 
-9.Shape list by perimeter
+9. Shape list by perimeter
+   ex. shapeinfo.h::LINE 22
+   ex. shapeinfo.cpp::LINES 60-116
+   ex. mainwindow.ui::LINES 164-166
 
 10. Save all changes between executions
+    ex. renderarea.h::LINE 25
+    ex. renderarea.cpp::LINES 129-139
