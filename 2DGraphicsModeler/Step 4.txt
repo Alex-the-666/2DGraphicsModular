@@ -1,0 +1,85 @@
+Inheritance:
+Composition:
+Exception Handlers:
+Virtual Function
+Two overloaded operators:
+Templated Class:
+Class with pointer:
+Tested Copy Constructor:
+
+Use Qt QPainter:
+Use Qt QWidget render area:
+Shape pure virtual functions:
+	a. draw
+	b. move
+	c.perimeter
+	d. area
+Shape Types: Line, Polyline, Polygon, Rectangle, Ellipse, Text
+
+Shape Properties et al:
+
+Shape Derived override functions:
+Shape equality overload:
+Shape less than relationship overload:
+Disable copy and assignment for Shapes:
+
+Vector:
+	constructors for one or more arguments
+	default constructors
+	copy constructor 
+	copy assignment
+	move constructor
+	move assignment
+	destructor
+E.C.
+	selection sort:
+	compare_shape_perimeter:
+	compare_shape_area:
+
+Contingency Handling:
+
+Final Checkpoints:
+2. Contact Us with team name and logo
+3. Render Area
+Display all graphic objects (i.e. shapes including text) in rendering
+window. 
+
+The shape id will be displayed above each shape identifying
+it. 
+The rendering area to display shapes must have minimum
+dimensions of 1000 pixels (horizontal) by 500 pixels (vertical). 
+
+The coordinate system is defined such that the top left corner of the
+rendering area is located at point (0,0), the bottom right corner at
+point (1000,500).
+4.Your program should read from a shape file that keeps track of all
+shapes currently being rendered by the 2D modeler. 
+
+Shapes are identified by their type: line, polyline, polygon, rectangle, ellipse,
+text. 
+
+Shapes have properties: shape dimensions, pen color, pen
+width, pen style, pen cap style, pen join style, brush color, brush
+shape. 
+
+Text has properties: shape dimensions, text string, text 
+color, text alignment, text point size, text font family, text font
+style, text font weight. 
+
+All shapes must also have a unique ID.
+
+5.Your program should be able to move shapes, including text, being
+rendered. This is accomplished via a move shape form. 
+
+All changes
+are visible in the rendering area. – administrator only
+
+6. Add or remove shapes visible in render area
+
+7.Shape listing reports by id with all shape properties
+
+8.Shape list by area
+
+9.Shape list by perimeter
+
+10. Save all changes between executions
